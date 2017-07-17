@@ -40,9 +40,9 @@
 [log_in]: ./wireframes/log_in.png
 [sign_up]: ./wireframes/sign_up.png
 [home]: ./wireframes/home.png
-[user_boards]: ./wireframes.profile_boards.png
-[user_pins]: ./wireframes.profile_pins.png
-[board_detail]: ./wireframes.board_detail.png
-[pin_detail]: ./wireframes.pin_detail.png
-[new_board]: ./wireframes.new_board.png
-[new_pin]: ./wireframes.new_pin.png
+[user_boards]: ./wireframes/profile_boards.png
+[user_pins]: ./wireframes/profile_pins.png
+[board_detail]: ./wireframes/board_detail.png
+[pin_detail]: ./wireframes/pin_detail.png
+[new_board]: ./wireframes/new_board.png
+[new_pin]: ./wireframes/new_pin.png
