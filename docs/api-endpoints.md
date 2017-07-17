@@ -9,8 +9,7 @@
 
 ### Users
 + `GET /api/users` - Fetch Users
-  + Pin Search
-    + Accepts a `username` query param to filter specific users.
+  + User Search - Accepts a `username` query param to filter specific users.
 + `POST /api/users` - Create New User
 + `PATCH /api/users/:id` - Edit User Profile
 
@@ -22,8 +21,7 @@
 ### Pins
 
 + `GET /api/pins` - Fetch Pins
-  + Pin Search
-    + Accepts a `title` and `description` query param to filter specific pins.
+  + Pin Search - Accepts a `title` and `description` query param to filter specific pins.
 + `POST /api/pins` - Create New Pin
 + `GET /api/pins/:id` - Fetch Single Pin
 + `PATCH /api/pins/:id` - Update Pin
@@ -32,7 +30,7 @@
 ### Boards
 
 + `GET /api/boards` - Fetch Boards
-  + Accepts a `user_id` query param to filter specific boards.
+  + User's Boards - Accepts a `user_id` query param to filter specific boards of a specific user.
 + `POST /api/boards` - Create New Board
 + `GET /api/boards/:id` - Fetch Single Board
 + `PATCH /api/boards/:id` - Update Board
@@ -41,4 +39,4 @@
 ### Follows
 + `POST /api/follows` - Follow User
 + `DELETE /api/follows/:id` - Unfollow User
- + Uses currentUser on backend with user to unfollow from the front end to obtain follows id.
+  + Uses currentUser on backend with user to unfollow from the front end to obtain follows id.
