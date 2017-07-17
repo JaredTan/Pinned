@@ -3,7 +3,8 @@
   session: {
     currentUser: {
       id: 1,
-      username: "jaredtan123"
+      username: "jaredtan123",
+      image_url: "/app/assets/images/jared.png"
     }
   },
 

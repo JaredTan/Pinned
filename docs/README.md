@@ -43,7 +43,7 @@ Pinned is a full-stack web application inspired by Pinterest. This project utili
 
 ## Phase 3: Board Model, API, and Front End Components  (2 days)
 
-+ Objective: Set up Pin functionality with working backend AJAX requests. Be able to modify boards using React and Redux store and state. Style.
++ Objective: Set up Board functionality with working backend AJAX requests. Be able to modify boards using React and Redux store and state. Style.
 
 ## Phase 4: User Profiles and Followings (2 days)
 
