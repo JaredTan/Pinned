@@ -17,6 +17,15 @@
 + `POST /api/session`
 + `DELETE /api/session`
 
+### Search
+
++ `GET /search/pins`
+  + Pin Search
+    + Accepts a `search_item` query param to filter specific pins.
++ `GET /search/users`
+  + User Search
+    + Accepts a `search_item` query param to filter specific users.
+
 ### Pins
 
 + `GET /api/pins`

@@ -14,6 +14,8 @@
 
 + Search Container
   + Search Bar
+  + Users Index (Search Results)
+  + Pins Index (Pin Results)
 
 + Home Index Container
   + Home Index
@@ -42,16 +44,19 @@
 # Routes
 Path | Component
 ----- | -----
-"/sign-up" | "AuthFormContainer"
-"/log-in" | "AuthFormContainer"
-"/" |	"HomeContainer"
-"/:username" | "UserContainer"
-"/:username/edit" | "UserDetailEdit"
-"/:username/followers" | "FollowsContainer"
-"/:username/following" | "FollowsContainer"
-"/:username/pins" | "PinsContainer"
-"/:username/pins/new" | "New Pin"
-"/:username/boards" | "BoardsIndex"
-"/:username/boards/new" | "New Board"
-"/pin/:pinId" | "PinDetailContainer"
-"/board/:boardId" | "BoardDetailContainer"
+`/sign-up` | `AuthFormContainer`
+`/log-in` | `AuthFormContainer`
+`/` | `HomeContainer`
+`/search` | `PinSearchContainer`
+`/search/pins/:searchItem` | `UsersIndex`
+`/search/users/:searchItem` | `PinsIndex`
+`/:username` | `UserContainer`
+`/:username/edit` | `UserDetailEdit`
+`/:username/followers` | `FollowsContainer`
+`/:username/following` | `FollowsContainer`
+`/:username/pins` | `PinsContainer`
+`/:username/pins/new` | `NewPin`
+`/:username/boards` | `BoardsIndex`
+`/:username/boards/new` | `NewBoard`
+`/pin/:pinId` | `PinDetailContainer`
+`/board/:boardId` | `BoardDetailContainer`

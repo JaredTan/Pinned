@@ -28,6 +28,7 @@ id | integer | not null | primary key
 name | string |	not null
 description	| text |
 user_id |	integer |	not null, foreign key (references users), indexed
+secret | boolean | default false
 
 ## pinnings
 

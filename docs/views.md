@@ -10,7 +10,7 @@
 
 ## Home Page
 
-![index wireframe][home]
+![show wireframe][home]
 
 ## Profile Board Page
 
