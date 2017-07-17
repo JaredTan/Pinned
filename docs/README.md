@@ -1,8 +1,9 @@
 # Pinned
 
-Link to Live Site
+Link to Live Site - TBD
 
-Trello
+[Trello Link](https://trello.com/b/2voW9qIb/pinned)
+
 
 ## Minimum Viable Product
 
@@ -25,36 +26,36 @@ Pinned is a full-stack web application inspired by Pinterest. This project utili
 * [React Components][component_hierarchy]
 * [Sample State][sample-state]
 
-[db_schema]: ./docs/db_schema.md
-[views]: ./docs/views.md
-[api_endpoints]: ./docs/api_endpoints.md
-[component_hierarchy]: ./docs/componenthierarchy.md
-[sample-state]: ./docs/sample-state.md
+[db_schema]: ./db_schema.md
+[views]: ./views.md
+[api_endpoints]: ./api_endpoints.md
+[component_hierarchy]: ./componenthierarchy.md
+[sample-state]: ./sample-state.md
 
-## Implementation Timeline
+# Implementation Timeline
 
-# Phase 1: Backend Setup and Front End User Authentication (2 days)
+## Phase 1: Backend Setup and Front End User Authentication (2 days)
 
 + Objective: Build a functional Front End User Authentication, and a working database to store pin and board data.
 
-# Phase 2: Pin Model, API, and Front End Components (2 days)
+## Phase 2: Pin Model, API, and Front End Components (2 days)
 
 + Objective: Set up Pin functionality with working backend AJAX requests. Be able to modify pins using React and Redux store and state. Style.
 
-# Phase 3: Board Model, API, and Front End Components  (2 days)
+## Phase 3: Board Model, API, and Front End Components  (2 days)
 
 + Objective: Set up Pin functionality with working backend AJAX requests. Be able to modify boards using React and Redux store and state. Style.
 
-# Phase 4: User Profiles and Followings (2 days)
+## Phase 4: User Profiles and Followings (2 days)
 
 + Objective: Build functionality for users to create their profiles pages, and to follow other users with follower + following functionality.
 
-# Phase 5: Home Feed + (Search) (2 days)
+## Phase 5: Home Feed + (Search) (2 days)
 
-+ Objective: Design the home index page, with assorted pins shown with style. Create an explore feed on the NavBar to view trending pins. If time, implement a search bar at the top of the home page. If time, implement infinite scroll capability. 
++ Objective: Design the home index page, with assorted pins shown with style. Create an explore feed on the NavBar to view trending pins. If time, implement a search bar at the top of the home page. If time, implement infinite scroll capability.
 
 
-# Bonus Features (TBD)
+## Bonus Features (TBD)
 
 + Search
 + Infinite Scroll
