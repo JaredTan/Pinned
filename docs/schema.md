@@ -1,4 +1,4 @@
-# users
+## users
 
 column name |	data type | details
 ----------- | --------- | -------
@@ -9,7 +9,7 @@ description | text |
 password_digest | string | not null
 session_token | string |	not null
 
-# pins
+## pins
 
 column name |	data type | details
 ----------- | --------- | -------
@@ -20,7 +20,7 @@ image_url |	string |	not null
 description | text |
 user_id | integer | not null, foreign key (references users), indexed
 
-# boards
+## boards
 
 column name |	data type | details
 ----------- | --------- | -------
@@ -29,7 +29,7 @@ name | string |	not null
 description	| text |
 user_id |	integer |	not null, foreign key (references users), indexed
 
-# pinnings
+## pinnings
 
 column name |	data type | details
 ----------- | --------- | -------
@@ -37,7 +37,7 @@ id | integer | not null | primary key
 pin_id | integer | not null, foreign key (references pins), indexed
 board_id |	integer |	not null, foreign key (references boards), indexed
 
-# follows
+## follows
 
 column name |	data type | details
 ----------- | --------- | -------

@@ -30,12 +30,14 @@
       + User Boards Index
         + Board Detail Container
           + Board Detail
+          + Board Detail Edit
   + User Pins Container
     + New Pin
       + Users Pins Index
         + Pin Detail Container
           + Pin Detail
-           + Delete Pin
+            + Delete Pin
+          + Pin Detail Edit
 
 # Routes
 Path | Component

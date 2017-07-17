@@ -1,51 +1,63 @@
-Pinned
+# Pinned
+
 Link to Live Site
 
 Trello
 
-Minimum Viable Product
+## Minimum Viable Product
 
-Pinspired is a web application inspired by Pinterest built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+Pinned is a full-stack web application inspired by Pinterest. This project utilizes Ruby on Rails on the backend with a PostgreSQL database, and React.js with a Redux architectural framework on the frontend. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
- Hosting on Heroku
- New account creation, login, and guest/demo login
- Profile
- Boards and Pins
- Follows
- Discover Feed on home page
- Production README
-Design Docs
++ Hosting on Heroku
++ New User Sign Up and Sign In, Demo Login
++ Profile
++ Boards and Pins
++ Follows
++ Discover Feed on home page
++ Production README
++ Design Docs
 
-View Wireframes
-React Components
-API Endpoints
-DB Schema
-Sample State
-Implementation Timeline
+## Design Documents
 
-Phase 1: Backend Setup and Front End User Authentication (2 days)
+* [View Wireframes][views]
+* [Database Schema][db_schema]
+* [API Endpoints][api_endpoints]
+* [React Components][component_hierarchy]
+* [Sample State][sample-state]
 
-Objective: Create a functioning Rails project with front-end Authentication. Style Signup and Login forms.
+[db_schema]: ./docs/db_schema.md
+[views]: ./docs/views.md
+[api_endpoints]: ./docs/api_endpoints.md
+[component_hierarchy]: ./docs/componenthierarchy.md
+[sample-state]: ./docs/sample-state.md
 
-Phase 2: Pins Model, API, and Components (2 days)
+## Implementation Timeline
 
-Objective: Allow Pins to be created, read, edited and destroyed through the API. Style Pins.
+# Phase 1: Backend Setup and Front End User Authentication (2 days)
 
-Phase 3: Boards (2 days)
++ Objective: Build a functional Front End User Authentication, and a working database to store pin and board data.
 
-Objective: Allow Boards to be created, read, edited and destroyed through the API. Style Boards.
+# Phase 2: Pin Model, API, and Front End Components (2 days)
 
-Phase 4: Discover Feed and Infinite Scroll (1 day)
++ Objective: Set up Pin functionality with working backend AJAX requests. Be able to modify pins using React and Redux store and state. Style.
 
-Objective: Add a Discover Feed to home page and add infinite scroll to Pins. Style Discover Feed and Navigation Bar.
+# Phase 3: Board Model, API, and Front End Components  (2 days)
 
-Phase 5: Follows and User Profile (2 days)
++ Objective: Set up Pin functionality with working backend AJAX requests. Be able to modify boards using React and Redux store and state. Style.
 
-Objective: Allow Users to follow and unfollow other users and check who is following them. Style User Profile page and Follows pages.
+# Phase 4: User Profiles and Followings (2 days)
 
-Bonus Features (TBD)
++ Objective: Build functionality for users to create their profiles pages, and to follow other users with follower + following functionality.
 
- Search
- Notifications
- Private Boards
- Likes
+# Phase 5: Home Feed + (Search) (2 days)
+
++ Objective: Design the home index page, with assorted pins shown with style. Create an explore feed on the NavBar to view trending pins. If time, implement a search bar at the top of the home page. If time, implement infinite scroll capability. 
+
+
+# Bonus Features (TBD)
+
++ Search
++ Infinite Scroll
++ Notifications
++ Private Boards
++ Likes
