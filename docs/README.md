@@ -16,7 +16,6 @@ Pinned is a full-stack web application inspired by Pinterest. This project utili
 + Follows
 + Discover Feed on home page
 + Production README
-+ Design Docs
 
 ## Design Documents
 
@@ -26,10 +25,10 @@ Pinned is a full-stack web application inspired by Pinterest. This project utili
 * [React Components][component_hierarchy]
 * [Sample State][sample-state]
 
-[db_schema]: ./db_schema.md
+[db_schema]: ./schema.md
 [views]: ./views.md
-[api_endpoints]: ./api_endpoints.md
-[component_hierarchy]: ./componenthierarchy.md
+[api_endpoints]: ./api-endpoints.md
+[component_hierarchy]: ./component-hierarchy.md
 [sample-state]: ./sample-state.md
 
 # Implementation Timeline
