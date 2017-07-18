@@ -11,7 +11,7 @@
 + `GET /api/users` - Fetch Users
   + User Search - Accepts a `username` query param to filter specific users.
 + `POST /api/users` - Create New User
-+ `PATCH /api/users/:id` - Edit User Profile
++ `PUT /api/users/:id` - Edit User Profile
 
 ### Session
 
@@ -24,7 +24,7 @@
   + Pin Search - Accepts a `title` and `description` query param to filter specific pins.
 + `POST /api/pins` - Create New Pin
 + `GET /api/pins/:id` - Fetch Single Pin
-+ `PATCH /api/pins/:id` - Update Pin
++ `PUT /api/pins/:id` - Update Pin
 + `DELETE /api/pins/:id` - Remove Pin
 
 ### Boards
@@ -33,7 +33,7 @@
   + User's Boards - Accepts a `user_id` query param to filter specific boards of a specific user.
 + `POST /api/boards` - Create New Board
 + `GET /api/boards/:id` - Fetch Single Board
-+ `PATCH /api/boards/:id` - Update Board
++ `PUT /api/boards/:id` - Update Board
 + `DELETE /api/boards/:id` - Remove Board
 
 ### Follows

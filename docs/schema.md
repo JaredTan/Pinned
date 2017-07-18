@@ -38,7 +38,7 @@ id | integer | not null | primary key
 pin_id | integer | not null, foreign key (references pins), indexed
 board_id |	integer |	not null, foreign key (references boards), indexed
 
-## follows
+## followings
 
 column name |	data type | details
 ----------- | --------- | -------
