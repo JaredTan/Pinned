@@ -9,6 +9,28 @@ class User < ActiveRecord::Base
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
+  has_many :pins
+
+  has_many :boards
+
+  has_many :follows_as_followee,
+    foreign_key: :following_id,
+    primary_key: :id,
+    class_name: :Following
+
+  has_many :follows_as_follower,
+    foreign_key: :follower_id,
+    primary_key: :id,
+    class_name: :Following
+
+  has_many :followers,
+    through: :follows_as_followee,
+    source: :Following
+
+  has_many :followings,
+    through: :followers_as_follower,
+    source: :Following
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
