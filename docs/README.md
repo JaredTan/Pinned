@@ -9,13 +9,13 @@
 
 Pinned is a full-stack web application inspired by Pinterest. This project utilizes Ruby on Rails on the backend with a PostgreSQL database, and React.js with a Redux architectural framework on the frontend. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
-+ Hosting on Heroku
-+ New User Sign Up and Sign In, Demo Login
-+ Profile
-+ Boards and Pins
-+ Follows
-+ Discover Feed on home page
-+ Production README
+- [ ] Hosting on Heroku
+- [ ] New User Sign Up and Sign In, Demo Login
+- [ ] Profile
+- [ ] Boards and Pins
+- [ ] Follows
+- [ ] Discover Feed on home page
+- [ ] Production README
 
 ## Design Documents
 

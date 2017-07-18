@@ -16,10 +16,9 @@
 
 // ... a bunch of preloaded ignores
 
-// To add:
-node_modules/
+# Ignore node modules
+node_modules
+
+# Ignore bundle
 bundle.js
 bundle.js.map
-.byebug_history
-.DS_Store
-npm-debug.log
