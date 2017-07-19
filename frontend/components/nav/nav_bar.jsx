@@ -8,7 +8,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    let {currentUser} = this.props;
+    let {currentUser, logout} = this.props;
     return(
         <nav className="nav-bar">
           <div className="left-nav">
@@ -22,7 +22,7 @@ class NavBar extends React.Component {
             </h2>
           </div>
           <div className="right-nav">
-            <button onClick={()=>this.props.logout}>Logout</button>
+            <button onClick={logout}>Logout</button>
           </div>
         </nav>
     );
