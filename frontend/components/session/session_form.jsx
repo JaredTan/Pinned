@@ -28,11 +28,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm({user});
+    this.setState({username: '', password: ''});
   }
 
   swap() {
     const newUrl = (this.props.formType === 'login') ? `/signup` : `/login`;
-    console.log(newUrl);
     this.props.history.push(newUrl);
   }
 
@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-submit">
           <h5>Your ideas, pinned.</h5>
           <br/>
-          <h3 className="please">{words}</h3>
+          <h3 className="main-message">{words}</h3>
           {this.renderErrors()}
           <div className="login-form">
             <br/>
