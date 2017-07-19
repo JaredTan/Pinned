@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.swap = this.swap.bind(this);
   }
 
   componentWillReceiveProps( {loggedIn} ) {
@@ -29,12 +30,10 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
-    } else {
-      return <Link to="/login">log in instead</Link>;
-    }
+  swap() {
+    const newUrl = (this.props.formType === 'login') ? `/signup` : `/login`;
+    console.log(newUrl);
+    this.props.history.push(newUrl);
   }
 
   renderErrors() {
@@ -49,17 +48,27 @@ class SessionForm extends React.Component {
     );
   }
 
+
   render() {
+    const { formType, demoLogin } = this.props;
+    const words = (formType === 'login') ? 'Log In' : 'Sign Up';
+    const oppWords = (formType === 'login') ? 'Sign Up' : 'Log In';
+    const demoUser = {user: {username:"albert", password:"einstein"}};
     return (
-      <div className="login-form">
+
+
+      <div className="login-form-square">
+        <button className="top-corner-button" onClick={this.swap}>{oppWords}</button>
         <form onSubmit={this.handleSubmit} className="login-form-submit">
-          Your ideas, pinned.
+          <h5>Your ideas, pinned.</h5>
           <br/>
-          <h3>Please {this.props.formType} or {this.navLink()}</h3>
+          <h3 className="please">{words}</h3>
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Username:
+            <label>
+              <span>Username</span>
+              <br/>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -67,7 +76,9 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <label>Password:
+            <label>
+              <span className='password-label'>Password</span>
+              <br/>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -75,9 +86,10 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input type="submit" value="Submit" />
+            <input className="submit-form-button"type="submit" value={`${words}`} />
           </div>
         </form>
+        <button className="demo" onClick={() => demoLogin(demoUser)}>Demo</button>
       </div>
     );
   }

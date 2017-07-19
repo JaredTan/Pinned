@@ -13,11 +13,10 @@ const App = () => (
         <h1>Pinned</h1>
       </Link>
     </header>
-      <GreetingContainer/>
     <Switch>
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
-      <Route path='/' render={() => <span></span>}/>
+      <Route path='/' component={GreetingContainer}/>
     </Switch>
   </div>
 );
