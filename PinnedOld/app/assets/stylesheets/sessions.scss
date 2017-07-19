@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+
+h3 {
+  margin-top: -20px;
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+}
+
+.main-message {
+  margin-bottom: 38px;
+}
+
+h5 {
+  margin-top: 5px;
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 18px;
+  letter-spacing: -1.2px;
+}
+
+.login-form-square {
+  display: block;
+  margin: 100px auto;
+  background-color: #f2f2f2;
+  height: 429px;
+  width: 382px;
+  padding: 20px 10px;
+  border-radius: 8px;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+}
+
+.login-input {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 7px;
+  margin-bottom: 12px;
+  border-radius: 9px;
+  border: 0;
+  color: #333;
+  padding: 10px;
+  background-color: rgba(131, 122, 133, 0.11);
+  box-shadow: none;
+  width: 248px;
+  letter-spacing: -.4px;
+}
+
+
+.submit-form-button, .top-corner-button, .demo {
+  font-size: 15px;
+  font-weight: bold;
+  width: 144px;
+  height: 36px;
+  border: 0px;
+  height: 36px;
+  border-radius: 4px;
+  padding: 0 18px;
+  vertical-align: middle;
+  margin-top: 20px;
+  cursor: pointer;
+  color: black;
+  background-color: #f7d5cf;
+}
+
+.top-corner-button {
+   position: absolute;
+   top: 10px;
+   right: 20px;
+   width: 100px;
+  }
+
+
+.submit-form-button:hover, .top-corner-button:hover, .demo:hover {
+  background-color: #d82404;
+}
+
+.login-input:focus, .submit-form-button:focus, .demo:focus {
+  outline: none;
+}
