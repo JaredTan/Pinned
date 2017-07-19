@@ -12,4 +12,6 @@
  *
  *= require_self
  */
-@import 'sessions.scss';
+@import './api/sessions.scss';
+@import './api/nav.scss';
+@import './base/colors.scss';
