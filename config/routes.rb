@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :pins, except: [:new, :edit]
     resources :boards, except: [:new, :edit]
     resources :follows, only: [:create, :destroy]
+    resources :images, only: [:index, :create, :destroy]
   end
 
   root "static_pages#root"

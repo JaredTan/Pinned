@@ -9,7 +9,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.swap = this.swap.bind(this);
+    this.swapFormType = this.swapFormType.bind(this);
   }
 
   componentWillReceiveProps( {loggedIn} ) {
@@ -31,23 +31,10 @@ class SessionForm extends React.Component {
     this.setState({username: '', password: ''});
   }
 
-  swap() {
+  swapFormType() {
     const newUrl = (this.props.formType === 'login') ? `/signup` : `/login`;
     this.props.history.push(newUrl);
   }
-
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, idx) => (
-          <li key={`error ${idx}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
 
   render() {
     const { formType, demoLogin } = this.props;
@@ -58,12 +45,11 @@ class SessionForm extends React.Component {
 
 
       <div className="login-form-square">
-        <button className="top-corner-button" onClick={this.swap}>{oppWords}</button>
+        <button className="top-corner-button" onClick={this.swapFormType}>{oppWords}</button>
         <form onSubmit={this.handleSubmit} className="login-form-submit">
           <h5>Your ideas, pinned.</h5>
           <br/>
           <h3 className="main-message">{words}</h3>
-          {this.renderErrors()}
           <div className="login-form">
             <br/>
             <label>

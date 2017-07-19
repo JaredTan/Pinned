@@ -26,6 +26,8 @@ class Greeting extends React.Component {
         <div className='will-log-in'>
           <Link to={`/signup`}><h2>Sign Up!</h2></Link>
           <Link to={`/login`}><h2>Log In!</h2></Link>
+          <Link to={`/images`}><h2>Play around with images</h2></Link>
+
         </div>
       )}
     }
