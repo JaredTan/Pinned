@@ -13,7 +13,8 @@
  *= require_self
  */
 
-
+//   background: url("http://twibbon.s3.amazonaws.com/238/63bb30c8-2649-465e-9df1-ab2f8e5f7ecc.jpg");
+// http://res.cloudinary.com/jaredtan/image/upload/v1500513908/Norway_qragdu.jpg);
 .login-form-container {
   display: flex;
   align-items: center;
@@ -22,9 +23,7 @@
   background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500513908/Norway_qragdu.jpg);
   background-repeat: repeat;
   background-position: 0 0;
-  background-size: auto 100%;
-/*adjust s value for speed*/
-  animation: animatedBackground 500s linear infinite;
+  // animation: animatedBackground 10s linear infinite;
   padding-bottom: 300px;
   position: fixed;
   background-size: cover;
@@ -39,7 +38,7 @@
     background-position: 0 0;
   }
   to {
-    background-position: 0 -10000px;
+    background-position: 0 -200px;
   }
 }
 //
@@ -82,6 +81,7 @@
   font-size: 14px;
   margin: 7px;
   margin-bottom: 12px;
+  margin-top: 1px;
   border-radius: 9px;
   border: 0;
   color: #333;
@@ -121,8 +121,8 @@ h3 {
 }
 
 span {
-  font-family: 'Bellefair', serif;
-  font-size: 20px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 12px;
 }
 
 
