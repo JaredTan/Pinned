@@ -38,20 +38,21 @@ class SessionForm extends React.Component {
 
   render() {
     const { formType, demoLogin } = this.props;
-    const words = (formType === 'login') ? 'Log In' : 'Sign Up';
+    const words = (formType === 'login') ? 'Log In' : 'Sign Up!';
     const oppWords = (formType === 'login') ? 'Sign Up' : 'Log In';
-    const demoUser = {user: {username:"albert", password:"einstein"}};
+    const demoUser = {user: {username:"DemoUser", password:"pinneddemo"}};
     return (
 
 
-      <div className="login-form-square">
+      <div className="login-form-container">
         <button className="top-corner-button" onClick={this.swapFormType}>{oppWords}</button>
-        <form onSubmit={this.handleSubmit} className="login-form-submit">
-          <h5>Your ideas, pinned.</h5>
+        <form onSubmit={this.handleSubmit} className="login-form">
+          <span className='top-message'>
+            <h5>Welcome to </h5> <h3>pinned.</h3>
+           </span>
           <br/>
-          <h3 className="main-message">{words}</h3>
-          <div className="login-form">
-            <br/>
+          <h4 className="main-message">{words}</h4>
+          <div>
             <label>
               <span>Username</span>
               <br/>
@@ -74,8 +75,8 @@ class SessionForm extends React.Component {
             <br/>
             <input className="submit-form-button"type="submit" value={`${words}`} />
           </div>
-        </form>
         <button className="demo" onClick={() => demoLogin(demoUser)}>Demo</button>
+      </form>
       </div>
     );
   }
