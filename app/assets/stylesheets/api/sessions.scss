@@ -59,7 +59,7 @@
 // }
 
 .login-form {
-  background-color: #f2f2f2;
+  background-color: $light-gray;
   display: flex;
   flex-direction: column;
   vertical-align: middle;
@@ -75,6 +75,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
+input {
+  text-align: center;
+}
 
 .login-input {
   font-weight: bold;
@@ -90,29 +93,6 @@
   box-shadow: none;
   width: 248px;
   letter-spacing: -.4px;
-}
-
-h5 {
-  margin-top: -20px;
-  color: #555;
-  font-size: 18px;
-  display: inline;
-  font-family: 'Comfortaa', cursive;
-}
-
-h4 {
-  color: #555;
-  font-size: 25px;
-  display: inline;
-}
-
-h3 {
-  margin-top: -20px;
-  color: #37BC9B;
-  font-size: 44px;
-  font-weight: 600;
-  display: inline;
-  font-family: 'Comfortaa', cursive;
 }
 
 .main-message {
@@ -139,7 +119,7 @@ span {
   margin-top: 20px;
   cursor: pointer;
   color: black;
-  background-color: #48CFAD;
+  background-color: $light-mint;
 }
 
 .top-corner-button {
@@ -151,7 +131,7 @@ span {
 
 
 .submit-form-button:hover, .top-corner-button:hover, .demo:hover {
-  background-color: #37BC9B;
+  background-color: $dark-mint;
 }
 
 .login-input:focus, .submit-form-button:focus, .demo:focus {

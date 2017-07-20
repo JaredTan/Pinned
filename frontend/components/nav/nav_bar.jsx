@@ -13,7 +13,7 @@ class NavBar extends React.Component {
         <nav className="nav-bar">
           <div className="left-nav">
             <Link className="nav-logo-container" to="/">
-              <h1 className="nav-logo">Pinned.</h1>
+              <h1 className="nav-logo">p</h1>
             </Link>
           </div>
           <div className="mid-nav">
@@ -22,6 +22,7 @@ class NavBar extends React.Component {
             </h2>
           </div>
           <div className="right-nav">
+            <button>Profile</button>
             <button onClick={logout}>Logout</button>
           </div>
         </nav>

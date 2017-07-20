@@ -12,6 +12,30 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  font-family: 'Comfortaa', cursive;
+}
+
+h5 {
+  margin-top: -20px;
+  color: $gray;
+  font-size: 18px;
+  display: inline;
+  font-family: 'Comfortaa', cursive;
+}
+
+h4 {
+  color: $gray;
+  font-size: 25px;
+  display: inline;
+}
+
+h3 {
+  margin-top: -20px;
+  color: $dark-mint;
+  font-size: 44px;
+  font-weight: 600;
+  display: inline;
+  font-family: 'Comfortaa', cursive;
 }
 
 ul {
