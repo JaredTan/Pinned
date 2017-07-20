@@ -43,7 +43,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   background-color: #E8BA9B;
   background-image: url(https://s.pinimg.com/webapp/style/images/bg_multi_case_grid_no_text-adb7650b.jpg);
   background-repeat: repeat;
@@ -66,7 +65,7 @@
   }
 /*use negative width if you want it to flow right to left else and positive for left to right*/
   to {
-    background-position: 0 10000px;
+    background-position: 0 -10000px;
   }
 }
 //
@@ -135,15 +134,16 @@ h4 {
 
 h3 {
   margin-top: -20px;
-  color: #555;
-  font-size: 32px;
+  color: #37BC9B;
+  font-size: 44px;
   font-weight: 600;
   display: inline;
   font-family: 'Comfortaa', cursive;
 }
 
 .main-message {
-  margin-bottom: 38px;
+  margin-bottom: 29px;
+  margin-top: 18px;
 }
 
 span {
@@ -159,13 +159,13 @@ span {
   height: 36px;
   border: 0px;
   height: 36px;
-  border-radius: 4px;
+  border-radius: 38px;
   padding: 0 18px;
   vertical-align: middle;
   margin-top: 20px;
   cursor: pointer;
   color: black;
-  background-color: #f7d5cf;
+  background-color: #48CFAD;
 }
 
 .top-corner-button {
@@ -177,7 +177,7 @@ span {
 
 
 .submit-form-button:hover, .top-corner-button:hover, .demo:hover {
-  background-color: #d82404;
+  background-color: #37BC9B;
 }
 
 .login-input:focus, .submit-form-button:focus, .demo:focus {

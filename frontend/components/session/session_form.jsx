@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
         <button className="top-corner-button" onClick={this.swapFormType}>{oppWords}</button>
         <form onSubmit={this.handleSubmit} className="login-form">
           <span className='top-message'>
-            <h5>Welcome to </h5> <h3>pinned.</h3>
+            <h3>pinned.</h3>
            </span>
           <br/>
           <h4 className="main-message">{words}</h4>
