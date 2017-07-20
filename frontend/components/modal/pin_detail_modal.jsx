@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import PinShowContainer from '../pins/pin_show_container';
+import PinDetailContainer from '../pins/pin_detail_container';
 
 const style = {
   overlay : {
@@ -65,7 +65,7 @@ class PinDetailModal extends React.Component {
           style = {style}
           contentLabel="Pin Modal">
 
-          <PinShowContainer className='pin_show_container'
+          <PinDetailContainer className='pin_show_container'
             closeModal={this.closeModal}
             id={pin.id} />
         </Modal>

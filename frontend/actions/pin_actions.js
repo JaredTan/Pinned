@@ -15,18 +15,21 @@ export const receiveSinglePin = (pin) => ({
 });
 
 export const requestAllPins = () => (dispatch) => {
-  return APIUtil.fetchAllPins()
-  .then(pins => dispatch(receiveAllPins(pins)));
+  return APIUtil.fetchAllPins().then(
+    pins => dispatch(receiveAllPins(pins))
+  );
 };
 
 export const requestSinglePin = id => (dispatch) => {
-  return APIUtil.fetchSinglePin(id)
-  .then(pin => dispatch(receiveSinglePin(pin)));
+  return APIUtil.fetchSinglePin(id).then(
+    pin => dispatch(receiveSinglePin(pin))
+  );
 };
-pi
+
 export const createPin = (pin) => (dispatch) => {
-  return APIUtil.createPin(pin)
-  .then(pin => dispatch(receiveSinglePin(pin)));
+  return APIUtil.createPin(pin).then(
+    pin => dispatch(receiveSinglePin(pin))
+  );
 };
 
 export const removePin = () => ({

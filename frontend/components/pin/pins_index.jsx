@@ -20,9 +20,7 @@ class PinsIndex extends React.Component {
     return (
         {pins.map( (pin) => {
           return (
-            <PinDetailModal key={ pin.id }
-              pin={ pin }>
-            </PinDetailModal>);
+            <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
           }
         )}
     );
