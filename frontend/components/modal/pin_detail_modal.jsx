@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import PinDetailContainer from '../pins/pin_detail_container';
+import PinDetailContainer from '../pin/pin_detail_container';
 
 const style = {
   overlay : {

@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
   requestAllPins: () => dispatch(requestAllPins())
 });
 
-export default connect(mapStateToProps,  mapDispatchToPropspi)(PinsIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(PinsIndex);

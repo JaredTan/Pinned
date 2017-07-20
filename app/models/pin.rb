@@ -1,9 +1,11 @@
-class Pin < ApplicationRecord
+class Pin < ActiveRecord::Base
+  validates :owner, presence: :true
 
-  validates :user, presence: :true
+  belongs_to :owner,
+    class_name: :User,
+    foreign_key: :user_id,
+    primary_key: :id
 
-  belongs_to :user
-  #
   # has_many :pinnings
   #
   # has_many :boards,

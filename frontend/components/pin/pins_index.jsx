@@ -1,9 +1,10 @@
 import React from 'react';
-import PinModal from '../modal/pin_modal';
+import PinDetailModal from '../modal/pin_detail_modal';
 
 class PinsIndex extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   componentWillMount() {
@@ -18,12 +19,16 @@ class PinsIndex extends React.Component {
     let { pins } = this.props;
 
     return (
-        {pins.map( (pin) => {
+      <ul>
+        { pins.map( (pin) => {
           return (
             <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
           }
         )}
-    );
+      </ul>
+    )
+
+
   }
 }
 
