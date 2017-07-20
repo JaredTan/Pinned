@@ -15,12 +15,13 @@
 }
 
 .nav-logo-container {
-  background: $light-gray;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+
   &:hover {
     background: $gray;
+    // background: $light-gray;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
   }
 }
 

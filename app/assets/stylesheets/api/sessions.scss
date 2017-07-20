@@ -36,7 +36,7 @@
     background-position: 0 0;
   }
   to {
-    background-position: -10000px 10000px;
+    background-position: 10000px -10000px;
   }
 }
 //
@@ -94,13 +94,20 @@ input {
 }
 
 .main-message {
-  margin-bottom: 29px;
+  margin-bottom: 24px;
   margin-top: 18px;
 }
 
 span {
   font-family: 'Comfortaa', cursive;
   font-size: 12px;
+}
+
+.session-errors {
+  color: red;
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 5px;
 }
 
 

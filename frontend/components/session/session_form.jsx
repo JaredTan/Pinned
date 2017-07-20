@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.swapFormType = this.swapFormType.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   componentWillReceiveProps( {loggedIn} ) {
@@ -33,14 +34,33 @@ class SessionForm extends React.Component {
 
   swapFormType() {
     const newUrl = (this.props.formType === 'login') ? `/signup` : `/login`;
+    this.props.removeErrors();
     this.props.history.push(newUrl);
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    const user = {username: 'DemoUser', password: 'pinneddemo'};
+    this.props.demoLogin({user});
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
     const { formType, demoLogin } = this.props;
     const words = (formType === 'login') ? 'Log In' : 'Sign Up!';
     const oppWords = (formType === 'login') ? 'Sign Up' : 'Log In';
-    const demoUser = {user: {username:"DemoUser", password:"pinneddemo"}};
+
     return (
 
 
@@ -52,6 +72,7 @@ class SessionForm extends React.Component {
            </span>
           <br/>
           <h4 className="main-message">{words}</h4>
+          <span className="session-errors">{this.renderErrors()}</span>
           <div>
             <label>
               <span>Username</span>
@@ -75,7 +96,7 @@ class SessionForm extends React.Component {
             <br/>
             <input className="submit-form-button"type="submit" value={`${words}`} />
           </div>
-        <button className="demo" onClick={() => demoLogin(demoUser)}>Demo</button>
+          <button className="demo" onClick={this.handleDemoLogin}>Demo</button>
       </form>
       </div>
     );
