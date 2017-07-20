@@ -10,17 +10,15 @@ import PinsIndexContainer from './pin/pins_index_container';
 
 const App = () => (
   <div>
-    <NavBarContainer/>
-    <PinsIndexContainer/>
-    <Switch>
-    </Switch>
+
+
+      <ProtectedRoute path="/" component={NavBarContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <ProtectedRoute exact path="/" component={PinsIndexContainer} />
+
+
   </div>
 );
 
 export default App;
-
-// <AuthRoute path="/signup" component={SessionFormContainer} />
-// <AuthRoute path="/login" component={SessionFormContainer} />
-// <ProtectedRoute path="/" component={NavBarContainer} />
-//
-// <ProtectedRoute exact path="/" component={PinsIndexContainer} />
