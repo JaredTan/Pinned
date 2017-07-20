@@ -16,12 +16,12 @@ class NavBar extends React.Component {
               <h1 className="nav-logo">p</h1>
             </Link>
           </div>
-          <div className="mid-nav">
-            <h2 className="nav-greeting">
+          <div className="search">
+            <h2 className="search-text">
               hi {currentUser.username}, what will you pin today?
             </h2>
           </div>
-          <div className="right-nav">
+          <div className="right">
             <button>Profile</button>
             <button onClick={logout}>Logout</button>
           </div>

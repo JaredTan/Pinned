@@ -20,7 +20,7 @@
   width: 40px;
   height: 40px;
   &:hover {
-    background: $light-mint;
+    background: $gray;
   }
 }
 
@@ -37,24 +37,28 @@ button {
   color: $dark-mint;
   font-size: 15px;
 }
-.mid-nav {
+
+.search {
   background: $light-gray;
   width: 75%;
   height: 38px;
   margin-right: 5px;
+  border: 1px;
+  border-style: solid;
+  border-color: #daede8;
   border-radius: 7px;
   display: flex;
   justify-content: center;
 }
 
-.nav-greeting {
+.search-text {
   margin: 12px;
   font-size: 14px;
   justify-content: center;
   color: $dark-gray;
 }
 
-.right-nav {
+.right {
   width: 15%;
   font-size: 30px;
   margin-top: -2px;
@@ -63,8 +67,4 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.fa.fa-sign-out:hover {
-  cursor: pointer;
 }
