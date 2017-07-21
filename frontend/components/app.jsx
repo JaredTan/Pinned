@@ -8,6 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PinsIndexContainer from './pin/pins_index_container';
 
 
+
 const App = () => (
   <div>
 
