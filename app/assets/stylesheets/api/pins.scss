@@ -16,6 +16,8 @@
 .create-pin-form-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 5px;
   justify-content: center;
   background-color: #E8BA9B;
   background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500527613/G3_wallpaper_Droidviews_06_tme8zv.png);
@@ -61,7 +63,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10%;
-  margin-right: 20%;
+  margin-right: 7%;
   vertical-align: middle;
   height: 50%;
   width: 36%;
@@ -112,7 +114,7 @@ span {
 }
 
 
-.submit-form-button, .top-corner-button, .demo {
+.submit-form-button {
   font-size: 15px;
   font-family: sans-serif;
   font-weight: bold;
@@ -129,12 +131,18 @@ span {
   background-color: $light-mint;
 }
 
-.top-corner-button {
-   position: absolute;
-   top: 0px;
-   right: 20px;
-   width: 100px;
-  }
+.upload-image-container {
+  padding: 10px;
+}
+
+h5 {
+  color: black;
+  font-weight: bold;
+}
+
+img {
+  margin-bottom: 28%;
+}
 
 .image-and-submit {
   display: inline-flex;
@@ -144,14 +152,11 @@ span {
   align-items: baseline;
 }
 
-img {
-  margin-bottom: 36%;
-}
 
-.submit-form-button:hover, .top-corner-button:hover, .demo:hover {
+.submit-form-button:hover {
   background-color: $dark-mint;
 }
 
-.create-pin-input:focus, .submit-form-button:focus, .demo:focus {
+.create-pin-input:focus {
   outline: none;
 }

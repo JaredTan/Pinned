@@ -33,7 +33,6 @@ class PinCreateForm extends React.Component {
   }
 
   addImage(image) {
-    console.log(image.url);
     this.setState({image_url: image.url})
   }
 
@@ -57,7 +56,6 @@ class PinCreateForm extends React.Component {
   }
 
   render() {
-    console.log(this, 'render');
     return (
       <div className="create-pin-form-container">
         <form onSubmit={this.handleSubmit} className="create-pin-form">
@@ -87,16 +85,29 @@ class PinCreateForm extends React.Component {
               />
             </label>
             <br/>
+              <label>
+                <span>URL (optional)</span>
+                <br/>
+                <input type="text"
+                  value={this.state.url}
+                  onChange={this.update('url')}
+                  className="create-pin-input"
+                />
+              </label>
             <div className="image-and-submit">
               <button onClick={this.upload}>Add Pin Image!</button>
               <input className="submit-form-button"type="submit" value={'Submit'} />
             </div>
-          </div>
-      </form>
 
-      <div>
-        <img src={this.state.image_url}></img>
-      </div>
+          </div>
+        </form>
+
+        <div className="upload-image-container">
+          <h5>Your Image:</h5>
+          <br/>
+          <img src={this.state.image_url}></img>
+        </div>
+
       </div>
     );
   }
