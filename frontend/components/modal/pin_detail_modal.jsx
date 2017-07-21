@@ -54,9 +54,8 @@ class PinDetailModal extends React.Component {
     return(
       <div>
         <button
-          className="pins-modal-item"
           onClick={this.openModal}>
-          <img className="pin-modal-img" src={pin.image_url}></img>
+          <img src={pin.image_url}></img>
         </button>
         <Modal
           isOpen={this.state.modalOpen}
@@ -65,7 +64,7 @@ class PinDetailModal extends React.Component {
           style = {style}
           contentLabel="Pin Modal">
 
-          <PinDetailContainer className='pin_show_container'
+          <PinDetailContainer
             closeModal={this.closeModal}
             id={pin.id} />
         </Modal>

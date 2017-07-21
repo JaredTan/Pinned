@@ -11,7 +11,6 @@ import PinsIndexContainer from './pin/pins_index_container';
 const App = () => (
   <div>
 
-
       <ProtectedRoute path="/" component={NavBarContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />

@@ -3,9 +3,9 @@ import { requestAllPins } from '../../actions/pin_actions';
 import { selectAllPins } from '../../reducers/selectors';
 import PinsIndex from './pins_index';
 
-const mapStateToProps = ({ pins }) => ({
-  pins: selectAllPins(pins)
-});
+const mapStateToProps = ({ pins }) => {
+  return {pins: selectAllPins(pins)}
+};
 
 const mapDispatchToProps = dispatch => ({
   requestAllPins: () => dispatch(requestAllPins())

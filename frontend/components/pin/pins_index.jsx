@@ -4,7 +4,6 @@ import PinDetailModal from '../modal/pin_detail_modal';
 class PinsIndex extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentWillMount() {
@@ -17,7 +16,6 @@ class PinsIndex extends React.Component {
 
   render() {
     let { pins } = this.props;
-
     return (
       <ul>
         { pins.map( (pin) => {
