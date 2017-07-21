@@ -1,5 +1,9 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import Dropzone from 'react-dropzone';
+import uploadRequest from 'superagent';
+
+const UPLOAD_PRESET = "p52vd2qa";
+const UPLOAD_URL = "https://api.cloudinary.com/v1_1/jaredtan/image/upload";
 
 class PinCreateForm extends React.Component {
   constructor(props) {
@@ -13,24 +17,26 @@ class PinCreateForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.upload = this.upload.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
   }
+
+
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
-
-  upload(event) {
-    let self = this;
-    event.preventDefault();
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
-      if(!error) {
-        self.addImage(results[0]);
-      }
-    });
-  }
+  //
+  // upload(event) {
+  //   let self = this;
+  //   event.preventDefault();
+  //   cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
+  //     if(!error) {
+  //       self.addImage(results[0]);
+  //     }
+  //   });
+  // }
 
   addImage(image) {
     this.setState({image_url: image.url})
@@ -41,6 +47,20 @@ class PinCreateForm extends React.Component {
     const pin = Object.assign({}, this.state);
     this.props.createPin({pin});
     this.props.history.push('/');
+  }
+
+  handleImageUpload(image) {
+    let upload = uploadRequest.post(UPLOAD_URL)
+                        .field('upload_preset', UPLOAD_PRESET)
+                        .field('file', image);
+
+    upload.end((err, response) => {
+      if (response.body.secure_url !== '') {
+        this.setState({
+          image_url: response.body.secure_url
+        });
+      }
+    });
   }
 
   renderErrors() {
@@ -95,7 +115,17 @@ class PinCreateForm extends React.Component {
                 />
               </label>
             <div className="image-and-submit">
-              <button onClick={this.upload}>Add Pin Image!</button>
+              <Dropzone
+                multiple={false}
+                accept="image/*"
+                onDrop={this.handleImageUpload}
+                className="create-form-dropzone">
+
+                    <div className="dropzone-text-container">
+                      <h4>Place Image or Click here</h4>
+                    </div>
+
+              </Dropzone>
               <input className="submit-form-button"type="submit" value={'Submit'} />
             </div>
 
@@ -104,8 +134,8 @@ class PinCreateForm extends React.Component {
 
         <div className="upload-image-container">
           <h5>Your Image:</h5>
-          <br/>
           <img className='create-thumbnail' src={this.state.image_url}></img>
+          <br/>
         </div>
 
       </div>
@@ -113,4 +143,4 @@ class PinCreateForm extends React.Component {
   }
 }
 
-export default withRouter(PinCreateForm);
+export default PinCreateForm;

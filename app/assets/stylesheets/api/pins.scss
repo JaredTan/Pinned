@@ -20,7 +20,7 @@
   padding: 5px;
   justify-content: center;
   background-color: #E8BA9B;
-  background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500650073/c0d10fd55e802ac1bf1e2a01ea9c98db_e4pqhf.jpg);
+  background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500527613/G3_wallpaper_Droidviews_06_tme8zv.png);
   background-repeat: repeat;
   background-position: 0 0;
   animation: animatedBackground 500s linear infinite;
@@ -62,7 +62,7 @@
   background-color: $light-gray;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10%;
+  margin-bottom: 6%;
   margin-right: 7%;
   vertical-align: middle;
   height: 50%;
@@ -151,7 +151,7 @@ h5 {
 .image-and-submit {
   display: inline-flex;
   flex-direction: row;
-  width: 110%;
+  width: 100%;
   justify-content: space-around;
   align-items: baseline;
 }
@@ -163,4 +163,27 @@ h5 {
 
 .create-pin-input:focus {
   outline: none;
+}
+
+
+.create-form-dropzone {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  color: $gray;
+  background: $light-gray;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border: 1px dashed $dark-gray;
+  cursor: pointer;
+}
+
+.dropzone-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
