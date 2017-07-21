@@ -20,7 +20,7 @@
   padding: 5px;
   justify-content: center;
   background-color: #E8BA9B;
-  background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500527613/G3_wallpaper_Droidviews_06_tme8zv.png);
+  background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500650073/c0d10fd55e802ac1bf1e2a01ea9c98db_e4pqhf.jpg);
   background-repeat: repeat;
   background-position: 0 0;
   animation: animatedBackground 500s linear infinite;
@@ -38,7 +38,7 @@
     background-position: 0 0;
   }
   to {
-    background-position: 0px -10000px;
+    background-position: 10000px -10000px;
   }
 }
 //
@@ -140,8 +140,12 @@ h5 {
   font-weight: bold;
 }
 
-img {
+.create-thumbnail {
   margin-bottom: 28%;
+  width: 300px;
+  height: auto;
+  border-style: solid;
+  border: 1px;
 }
 
 .image-and-submit {

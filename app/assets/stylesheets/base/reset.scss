@@ -15,6 +15,7 @@ span, article, footer, time, small {
   font-family: 'Comfortaa', cursive;
 }
 
+
 h5 {
   margin-top: -20px;
   color: $gray;
@@ -68,4 +69,10 @@ input[type="submit"] {
   content: "";
   display: block;
   clear: both;
+}
+
+.thumbnail {
+  margin: 2px;
+  width: 300px;
+  height: auto;
 }

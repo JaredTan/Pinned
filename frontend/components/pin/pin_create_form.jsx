@@ -105,7 +105,7 @@ class PinCreateForm extends React.Component {
         <div className="upload-image-container">
           <h5>Your Image:</h5>
           <br/>
-          <img src={this.state.image_url}></img>
+          <img className='create-thumbnail' src={this.state.image_url}></img>
         </div>
 
       </div>
