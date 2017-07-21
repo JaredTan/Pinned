@@ -36,15 +36,17 @@ class PinDetail extends React.Component {
         </div>
 
         <div>
-          <a href={pin.url}>
+
             <h3>{pin.title}</h3>
-          </a>
+
           <figcaption>Pin by: {pin.owner_username}</figcaption>
         </div>
 
         <div>
-          <img src={pin.image_url} alt={pin.title}></img>
           <figcaption>{pin.description}</figcaption>
+          <a href={pin.url}>
+            <img src={pin.image_url} alt={pin.title}></img>
+          </a>
         </div>
       </section>
     );
