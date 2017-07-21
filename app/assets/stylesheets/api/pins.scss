@@ -1,3 +1,145 @@
-// Place all the styles related to the api/pins controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+.create-pin-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E8BA9B;
+  background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500527613/G3_wallpaper_Droidviews_06_tme8zv.png);
+  background-repeat: repeat;
+  background-position: 0 0;
+  animation: animatedBackground 500s linear infinite;
+  padding-bottom: 300px;
+  position: fixed;
+  background-size: cover;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  font-family: 'Comfortaa', cursive;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0px -10000px;
+  }
+}
+//
+
+
+//
+// .create-pin-form-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100%;
+//   width: 100%;
+//   background-color: #000000;
+//   background: url(http://res.cloudinary.com/jaredtan/image/upload/v1500497562/landscape-615429_samvjf.jpg);
+//   background-size: cover;
+//   position: fixed;
+//   font-family: 'Comfortaa', cursive;
+// }
+
+.create-pin-form {
+  background-color: $light-gray;
+  display: flex;
+  margin-bottom: 10%;
+  flex-direction: flex-start;
+  vertical-align: middle;
+  height: 50%;
+  width: 30%;
+  padding: 20px 10px;
+  border-radius: 8px;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+input {
+  text-align: center;
+}
+
+.create-pin-input {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 7px;
+  margin-bottom: 12px;
+  margin-top: 1px;
+  border-radius: 9px;
+  border: 0;
+  color: #333;
+  padding: 10px;
+  background-color: rgba(131, 122, 133, 0.11);
+  box-shadow: none;
+  width: 248px;
+  letter-spacing: -.4px;
+}
+
+.main-message {
+  margin-bottom: 24px;
+  margin-top: 18px;
+}
+
+span {
+  font-family: 'Comfortaa', cursive;
+  font-size: 12px;
+}
+
+.create-pin-errors {
+  color: red;
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+
+.submit-form-button, .top-corner-button, .demo {
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: bold;
+  width: 144px;
+  height: 36px;
+  border: 0px;
+  height: 36px;
+  border-radius: 38px;
+  padding: 0 18px;
+  vertical-align: middle;
+  margin-top: 20px;
+  cursor: pointer;
+  color: black;
+  background-color: $light-mint;
+}
+
+.top-corner-button {
+   position: absolute;
+   top: 0px;
+   right: 20px;
+   width: 100px;
+  }
+
+
+.submit-form-button:hover, .top-corner-button:hover, .demo:hover {
+  background-color: $dark-mint;
+}
+
+.create-pin-input:focus, .submit-form-button:focus, .demo:focus {
+  outline: none;
+}

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { login, signup, logout, removeErrors } from '../../actions/session_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.session.errors

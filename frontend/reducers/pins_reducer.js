@@ -4,6 +4,7 @@ import {RECEIVE_ALL_PINS, RECEIVE_SINGLE_PIN, RESET_PIN} from '../actions/pin_ac
 const defaultState = () => ({
   entities: {},
   currentPin: null,
+  errors: []
 })
 
 const pinsReducer = (state = defaultState(), action) => {

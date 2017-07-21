@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.redirectToCreate = this.redirectToCreate.bind(this);
+  }
+
+  redirectToCreate(event) {
+    event.preventDefault();
+    this.props.history.push('/pins/create');
   }
 
   render() {
@@ -22,6 +29,7 @@ class NavBar extends React.Component {
             </h2>
           </div>
           <div className="right">
+            <button className='create' onClick={this.redirectToCreate}>Create Pin</button>
             <button>Profile</button>
             <button onClick={logout}>Logout</button>
           </div>
