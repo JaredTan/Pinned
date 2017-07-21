@@ -59,11 +59,12 @@
 .create-pin-form {
   background-color: $light-gray;
   display: flex;
+  flex-direction: column;
   margin-bottom: 10%;
-  flex-direction: flex-start;
+  margin-right: 20%;
   vertical-align: middle;
   height: 50%;
-  width: 30%;
+  width: 36%;
   padding: 20px 10px;
   border-radius: 8px;
   text-align: center;
@@ -135,6 +136,17 @@ span {
    width: 100px;
   }
 
+.image-and-submit {
+  display: inline-flex;
+  flex-direction: row;
+  width: 110%;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+img {
+  margin-bottom: 36%;
+}
 
 .submit-form-button:hover, .top-corner-button:hover, .demo:hover {
   background-color: $dark-mint;

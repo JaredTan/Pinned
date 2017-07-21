@@ -87,11 +87,16 @@ class PinCreateForm extends React.Component {
               />
             </label>
             <br/>
-            <button onClick={this.upload}>Add Pin Image!</button>
-            <img src={this.state.image_url}/>
-            <input className="submit-form-button"type="submit" value={'Submit'} />
+            <div className="image-and-submit">
+              <button onClick={this.upload}>Add Pin Image!</button>
+              <input className="submit-form-button"type="submit" value={'Submit'} />
+            </div>
           </div>
       </form>
+
+      <div>
+        <img src={this.state.image_url}></img>
+      </div>
       </div>
     );
   }
