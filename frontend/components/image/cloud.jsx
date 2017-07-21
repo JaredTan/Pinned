@@ -24,7 +24,6 @@ class Image extends React.Component {
   }
 
   upload(event) {
-    console.log(this);
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
       if(!error) {

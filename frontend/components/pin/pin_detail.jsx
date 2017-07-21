@@ -23,23 +23,23 @@ class PinDetail extends React.Component {
 
   render() {
     let { pin } = this.props;
-    console.log(this.props, 'props');
     return (
       <section>
         <div>
           <form onSubmit={this.handleSubmit}>
 
-            <button type="submit">Pin!</button>
+            <button type="submit">
+              <h1>Pin!</h1>
+            </button>
           </form>
           <br/>
         </div>
 
         <div>
-          <h2>{pin.title}</h2>
-
-            <img src={pin.owner_image_url} alt="owner's pic"></img>
-            <figcaption>Pin by: {pin.owner_username}</figcaption>
-
+          <a href={pin.url}>
+            <h3>{pin.title}</h3>
+          </a>
+          <figcaption>Pin by: {pin.owner_username}</figcaption>
         </div>
 
         <div>
