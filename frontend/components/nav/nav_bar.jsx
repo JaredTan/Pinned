@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PinCreateModal from '../modal/pin_create_modal';
 
 
 class NavBar extends React.Component {
@@ -29,7 +30,7 @@ class NavBar extends React.Component {
             </h2>
           </div>
           <div className="right">
-            <button className='create' onClick={this.redirectToCreate}>Create Pin</button>
+            <PinCreateModal/>
             <button>Profile</button>
             <button onClick={logout}>Logout</button>
           </div>

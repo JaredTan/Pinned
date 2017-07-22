@@ -1,5 +1,6 @@
 class Pin < ActiveRecord::Base
-  validates :owner, presence: :true
+  validates :owner, presence: true
+  validates :title, :description, presence: true
 
   belongs_to :owner,
     class_name: :User,
