@@ -7,13 +7,13 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.redirectToCreate = this.redirectToCreate.bind(this);
+    // this.redirectToCreate = this.redirectToCreate.bind(this);
   }
 
-  redirectToCreate(event) {
-    event.preventDefault();
-    this.props.history.push('/pins/create');
-  }
+  // redirectToCreate(event) {
+  //   event.preventDefault();
+  //   this.props.history.push('/pins/create');
+  // }
 
   render() {
     let {currentUser, logout} = this.props;

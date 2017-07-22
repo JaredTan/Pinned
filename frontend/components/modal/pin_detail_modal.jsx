@@ -16,8 +16,8 @@ const style = {
   content : {
     display         : 'flex',
     justifyContent  : 'center',
-    left            : '32%',
-    right           : '32%',
+    left            : '20%',
+    right           : '20%',
     border          : '3px solid #ccc',
     padding         : '10px',
     zIndex          : 11,
@@ -56,7 +56,7 @@ class PinDetailModal extends React.Component {
       <div>
         <button
           onClick={this.openModal}>
-          <img className='thumbnail' src={pin.image_url}></img>
+          <img className='index-thumbnail' src={pin.image_url}></img>
         </button>
         <Modal
           isOpen={this.state.modalOpen}

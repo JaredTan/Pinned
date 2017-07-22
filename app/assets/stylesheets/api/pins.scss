@@ -181,3 +181,25 @@ h5 {
   justify-content: center;
   align-items: center;
 }
+
+.pins-index {
+  margin: 5px auto;
+  margin: 10px top;
+}
+
+.index-thumbnail {
+  margin: 2px;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px;
+  border-style: solid;
+  border-color: $light-mint;
+}
+
+.pin-detail-image {
+  max-width: 600px;
+  border-style: solid;
+  border: 1px;
+  border-radius: 10px;
+}

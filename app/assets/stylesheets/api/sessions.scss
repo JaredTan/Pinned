@@ -21,7 +21,7 @@
   background-image: url(https://s.pinimg.com/webapp/style/images/bg_multi_case_grid_no_text-adb7650b.jpg);
   background-repeat: repeat;
   background-position: 0 0;
-  animation: animatedBackground 500s linear infinite;
+  animation: loginPage 500s linear infinite;
   padding-bottom: 300px;
   position: fixed;
   background-size: cover;
@@ -31,7 +31,7 @@
   font-family: 'Comfortaa', cursive;
 }
 
-@keyframes animatedBackground {
+@keyframes loginPage {
   from {
     background-position: 0 0;
   }
