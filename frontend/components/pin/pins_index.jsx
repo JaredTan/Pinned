@@ -18,7 +18,7 @@ class PinsIndex extends React.Component {
     let { pins } = this.props;
     return (
       <ul>
-        { pins.map( (pin) => {
+        { pins.reverse().map( (pin) => {
           return (
             <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
           }

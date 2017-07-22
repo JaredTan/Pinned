@@ -43,10 +43,11 @@ class PinCreateForm extends React.Component {
   }
 
   handleSubmit(e) {
+    console.log(this,'submit');
     e.preventDefault();
     const pin = Object.assign({}, this.state);
     this.props.createPin({pin});
-    this.props.history.push('/');
+    this.props.ownProps.closeModal();
   }
 
   handleImageUpload(image) {
@@ -76,6 +77,7 @@ class PinCreateForm extends React.Component {
   }
 
   render() {
+    console.log(this,'this,render');
     return (
       <div className="create-pin-form-container">
         <form onSubmit={this.handleSubmit} className="create-pin-form">
