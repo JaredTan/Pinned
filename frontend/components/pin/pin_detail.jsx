@@ -23,6 +23,7 @@ class PinDetail extends React.Component {
 
   render() {
     let { pin } = this.props;
+    console.log(pin, '?');
     return (
       <section>
         <div>

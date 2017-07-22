@@ -43,11 +43,16 @@ ul {
   list-style: none;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
+span {
+  font-family: 'Comfortaa', cursive;
+  font-size: 12px;
 }
+
+
+input {
+  text-align: center;
+}
+
 
 input[type="password"],
 input[type="email"],

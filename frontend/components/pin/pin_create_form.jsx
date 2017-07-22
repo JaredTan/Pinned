@@ -64,6 +64,23 @@ class PinCreateForm extends React.Component {
     });
   }
 
+  displayPicture() {
+    if (this.state.image_url === '') {
+      return (
+        <div className="dropzone-text-container">
+          <h4>Place Image or Click here</h4>
+        </div>
+        )
+      } else {
+      return (
+        <div className="upload-image-container">
+          <img className='create-thumbnail' src={this.state.image_url}></img>
+        </div>
+      )
+    }
+  }
+
+
   renderErrors() {
     return(
       <ul>
@@ -77,7 +94,6 @@ class PinCreateForm extends React.Component {
   }
 
   render() {
-    console.log(this,'this,render');
     return (
       <div className="create-pin-form-container">
         <form onSubmit={this.handleSubmit} className="create-pin-form">
@@ -100,10 +116,10 @@ class PinCreateForm extends React.Component {
             <label>
               <span>Description</span>
               <br/>
-              <input type="text"
+              <textarea rows="4" cols="50"
                 value={this.state.description}
                 onChange={this.update('description')}
-                className="create-pin-input"
+                id="description"
               />
             </label>
             <br/>
@@ -123,22 +139,15 @@ class PinCreateForm extends React.Component {
                 onDrop={this.handleImageUpload}
                 className="create-form-dropzone">
 
-                    <div className="dropzone-text-container">
-                      <h4>Place Image or Click here</h4>
-                    </div>
+                {this.displayPicture()}
+
 
               </Dropzone>
-              <input className="submit-form-button"type="submit" value={'Submit'} />
+              <input className="submit-create-button"type="submit" value={'Submit'} />
             </div>
 
           </div>
         </form>
-
-        <div className="upload-image-container">
-          <h5>Your Image:</h5>
-          <img className='create-thumbnail' src={this.state.image_url}></img>
-          <br/>
-        </div>
 
       </div>
     );

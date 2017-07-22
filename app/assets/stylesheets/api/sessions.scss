@@ -73,10 +73,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-input {
-  text-align: center;
-}
-
 .login-input {
   font-weight: bold;
   font-size: 14px;
@@ -96,11 +92,6 @@ input {
 .main-message {
   margin-bottom: 24px;
   margin-top: 18px;
-}
-
-span {
-  font-family: 'Comfortaa', cursive;
-  font-size: 12px;
 }
 
 .session-errors {

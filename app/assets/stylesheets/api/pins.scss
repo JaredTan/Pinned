@@ -58,7 +58,8 @@
   display: flex;
   flex-direction: row;
   vertical-align: middle;
-  width: 70%;
+  width: 75%;
+  height: 90%;
   margin: 3%;
   padding: 20px 10px;
   border-radius: 8px;
@@ -69,11 +70,8 @@
   -webkit-font-smoothing: antialiased;
 }
 
-input {
-  text-align: center;
-}
 
-.create-pin-input {
+.create-pin-input, textarea {
   font-weight: bold;
   font-size: 14px;
   margin: 7px;
@@ -85,9 +83,13 @@ input {
   padding: 10px;
   background-color: rgba(131, 122, 133, 0.11);
   box-shadow: none;
-  width: 248px;
+  width: 278px;
   letter-spacing: -.4px;
+  text-align: center;
 }
+
+
+
 
 .main-message {
   margin-bottom: 24px;
@@ -107,11 +109,10 @@ span {
 }
 
 
-.submit-form-button {
+.submit-create-button {
   font-size: 15px;
   font-family: sans-serif;
   font-weight: bold;
-  width: 144px;
   height: 36px;
   border: 0px;
   height: 36px;
@@ -131,26 +132,23 @@ span {
 h5 {
   color: black;
   font-weight: bold;
+  background-color: $light-gray;
 }
 
 .create-thumbnail {
-  margin-bottom: 28%;
-  width: 300px;
-  height: auto;
+  max-width: 200px;
+  max-height: 200px;
   border-style: solid;
   border: 1px;
 }
 
 .image-and-submit {
   display: inline-flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  align-items: baseline;
+  flex-direction: column;
 }
 
 
-.submit-form-button:hover {
+.submit-create-button:hover {
   background-color: $dark-mint;
 }
 
@@ -171,8 +169,8 @@ h5 {
   color: $gray;
   background: $light-gray;
   background-size: cover;
-  width: 200px;
-  height: 200px;
+  width: 201px;
+  height: 201px;
   border: 1px dashed $dark-gray;
   cursor: pointer;
 }

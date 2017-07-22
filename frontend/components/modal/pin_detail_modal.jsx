@@ -10,7 +10,7 @@ const style = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(0, 0, 0, .75)',
+    backgroundColor : 'rgba(0, 0, 0, .5)',
     zIndex          : 10
   },
   content : {
@@ -18,7 +18,7 @@ const style = {
     justifyContent  : 'center',
     left            : '32%',
     right           : '32%',
-    border          : '1px solid #ccc',
+    border          : '3px solid #ccc',
     padding         : '10px',
     zIndex          : 11,
     opacity         : 0,
@@ -67,7 +67,7 @@ class PinDetailModal extends React.Component {
 
           <PinDetailContainer
             closeModal={this.closeModal}
-            id={pin.id} />
+            id={pin.id} pin={pin}/>
         </Modal>
       </div>
     );
