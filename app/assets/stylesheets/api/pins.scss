@@ -24,12 +24,11 @@
   background-repeat: repeat;
   background-position: 0 0;
   animation: animatedBackground 500s linear infinite;
-  padding-bottom: 300px;
+  padding-bottom: 100px;
   position: fixed;
   background-size: cover;
   position: fixed;
-  height: 100%;
-  width: 100%;
+  width: 87%;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -62,7 +61,7 @@
   background-color: $light-gray;
   display: flex;
   flex-direction: column;
-  margin-bottom: 6%;
+  margin-top: 6%;
   margin-right: 7%;
   vertical-align: middle;
   height: 50%;
@@ -165,6 +164,9 @@ h5 {
   outline: none;
 }
 
+.pin-create-modal-div {
+  margin-bottom: 10px;
+}
 
 .create-form-dropzone {
   margin-top: 20px;
