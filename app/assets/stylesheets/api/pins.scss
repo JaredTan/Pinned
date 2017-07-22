@@ -24,11 +24,12 @@
   background-repeat: repeat;
   background-position: 0 0;
   animation: animatedBackground 500s linear infinite;
-  padding-bottom: 100px;
+  padding-bottom: 300px;
   position: fixed;
   background-size: cover;
   position: fixed;
-  width: 87%;
+  height: 100%;
+  width: 100%;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -61,7 +62,7 @@
   background-color: $light-gray;
   display: flex;
   flex-direction: column;
-  margin-top: 6%;
+  margin-bottom: 6%;
   margin-right: 7%;
   vertical-align: middle;
   height: 50%;
@@ -77,10 +78,6 @@
 
 input {
   text-align: center;
-}
-
-.pin-create-modal-div {
-  padding-bottom: 10px;
 }
 
 .create-pin-input {
