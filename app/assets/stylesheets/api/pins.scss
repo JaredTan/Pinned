@@ -25,10 +25,9 @@
   background-position: 0 0;
   animation: animatedBackground 500s linear infinite;
   padding-bottom: 100px;
-  position: fixed;
+  margin-right: 2%;
+  position: absolute;
   background-size: cover;
-  position: fixed;
-  width: 87%;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -60,12 +59,10 @@
 .create-pin-form {
   background-color: $light-gray;
   display: flex;
-  flex-direction: column;
-  margin-top: 6%;
-  margin-right: 7%;
+  flex-direction: row;
   vertical-align: middle;
-  height: 50%;
-  width: 36%;
+  width: 70%;
+  margin: 3%;
   padding: 20px 10px;
   border-radius: 8px;
   text-align: center;
