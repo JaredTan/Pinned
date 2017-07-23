@@ -5,28 +5,29 @@ import PinDetailContainer from '../pin/pin_detail_container';
 
 const style = {
   overlay : {
-    position        : 'fixed',
-    top             : 0,
-    left            : 0,
-    right           : 0,
-    bottom          : 0,
-    backgroundColor : 'rgba(0, 0, 0, .5)',
-    zIndex          : 10
+    position                   : 'fixed',
+    top                        : 0,
+    left                       : 0,
+    right                      : 0,
+    bottom                     : 0,
+    backgroundColor            : 'rgba(0, 0, 0, .5)',
+    zIndex                     : 10
   },
   content : {
-    display         : 'flex',
-    justifyContent  : 'center',
-    left            : '15%',
-    right           : '15%',
-    border          : '1px solid #ccc',
+    display                    : 'flex',
+    justifyContent             : 'center',
+    left                       : '15%',
+    right                      : '15%',
+    border                     : '1px solid #ccc',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '4px',
     outline                    : 'none',
     padding                    : '20px',
-    zIndex          : 11,
-    opacity         : 0,
-    transition      : 'opacity 0.4s'
+    backgroundColor            : '#f2f2f2',
+    zIndex                     : 11,
+    opacity                    : 0,
+    transition                 : 'opacity 0.4s'
   }
 };
 class PinDetailModal extends React.Component {

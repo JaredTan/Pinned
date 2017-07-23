@@ -37,7 +37,7 @@ class PinsIndex extends React.Component {
     let { pins } = this.props;
     let masonryOptions = {
       transitionDuration: 1,
-      gutter: 40,
+      gutter: 30,
       fitWidth: true
     };
     const { loading } = this.state;

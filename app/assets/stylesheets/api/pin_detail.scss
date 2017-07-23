@@ -26,6 +26,9 @@
 
 .pin-detail-image {
   border-radius: 3px;
+  border: 1px;
+  border-style: solid;
+  border-color: rgba(181, 181, 181, 0.23);
 }
 
 .pin-button {
@@ -39,5 +42,8 @@
   border-radius: 25px;
   cursor: pointer;
   color: $dark-mint;
-  background-color: $light-gray;
+  background-color: rgba(181, 181, 181, 0.23);
+    &:hover {
+      background: $gray;
+    }
   }

@@ -19,7 +19,6 @@
 
   &:hover {
     background: $gray;
-    // background: $light-gray;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -29,7 +28,7 @@
 .nav-logo{
   position: absolute;
   top: 14px;
-  left: 31px;
+  left: 30px;
   font-size: 28px;
   font-weight: bold;
   color: $dark-mint;

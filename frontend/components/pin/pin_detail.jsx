@@ -27,7 +27,7 @@ class PinDetail extends React.Component {
       <section className='pin-detail-container'>
         <div className='pin-info-container'>
           <button onClick={this.handleSubmit} className="pin-button">
-            <i className='fa fa-thumb-tack fa-2x'></i> Pin
+            <i className='fa fa-star fa-2x'></i> Pin
           </button>
           <br/>
 
