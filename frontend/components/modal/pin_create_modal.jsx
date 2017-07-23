@@ -5,24 +5,29 @@ import PinCreateFormContainer from '../pin/pin_create_form_container';
 
 const style = {
   overlay : {
-    position        : 'fixed',
-    top             : 0,
-    left            : 0,
-    right           : 0,
-    bottom          : 0,
-    backgroundColor : 'rgba(0, 0, 0, .6)',
-    zIndex          : 10
+    position                   : 'fixed',
+    top                        : 0,
+    left                       : 0,
+    right                      : 0,
+    bottom                     : 0,
+    backgroundColor            : 'rgba(0, 0, 0, .6)',
+    zIndex                     : 10
   },
   content : {
-    display         : 'flex',
-    justifyContent  : 'center',
-    left            : '25%',
-    right           : '25%',
-    border          : '5px solid #ccc',
-    padding         : '10px',
-    zIndex          : 11,
-    opacity         : 0,
-    transition      : 'opacity 0.4s'
+    display                    : 'flex',
+    justifyContent             : 'center',
+    left                       : '25%',
+    right                      : '25%',
+    border                     : '0px solid #ccc',
+    overflow                   : 'none',
+    WebkitOverflowScrolling    : 'touch',
+    borderRadius               : '10px',
+    backgroundColor            : '#f2f2f2',
+    outline                    : 'none',
+    padding                    : '20px',
+    zIndex                     : 11,
+    opacity                    : 0,
+    transition                 : 'opacity 0.4s'
   }
 };
 
