@@ -20,7 +20,7 @@
   padding: 5px;
   justify-content: center;
   background-color: #E8BA9B;
-  background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500527613/G3_wallpaper_Droidviews_06_tme8zv.png);
+  background-image: url(http://res.cloudinary.com/jaredtan/image/upload/v1500650073/c0d10fd55e802ac1bf1e2a01ea9c98db_e4pqhf.jpg);
   background-repeat: repeat;
   background-position: 0 0;
   animation: animatedBackground 500s linear infinite;
@@ -33,25 +33,10 @@
     background-position: 0 0;
   }
   to {
-    background-position: 10000px -10000px;
+    background-position: 0px -10000px;
   }
 }
-//
 
-
-//
-// .create-pin-form-container {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100%;
-//   width: 100%;
-//   background-color: #000000;
-//   background: url(http://res.cloudinary.com/jaredtan/image/upload/v1500497562/landscape-615429_samvjf.jpg);
-//   background-size: cover;
-//   position: fixed;
-//   font-family: 'Comfortaa', cursive;
-// }
 
 .create-pin-form {
   background-color: $light-gray;
@@ -129,11 +114,6 @@ span {
   padding: 10px;
 }
 
-h5 {
-  color: black;
-  font-weight: bold;
-  background-color: $light-gray;
-}
 
 .create-thumbnail {
   max-width: 200px;

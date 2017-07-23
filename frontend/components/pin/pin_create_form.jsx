@@ -98,7 +98,7 @@ class PinCreateForm extends React.Component {
       <div className="create-pin-form-container">
         <form onSubmit={this.handleSubmit} className="create-pin-form">
           <span className='top-message'>
-            <h3>Create Pin!</h3>
+            <h1>Create Pin!</h1>
            </span>
           <br/>
           <span className="create-pin-errors">{this.renderErrors()}</span>

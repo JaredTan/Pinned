@@ -10,14 +10,14 @@ const style = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(0, 0, 0, .5)',
+    backgroundColor : 'rgba(0, 0, 0, .6)',
     zIndex          : 10
   },
   content : {
     display         : 'flex',
     justifyContent  : 'center',
-    left            : '20%',
-    right           : '20%',
+    left            : '25%',
+    right           : '25%',
     border          : '5px solid #ccc',
     padding         : '10px',
     zIndex          : 11,

@@ -1,0 +1,43 @@
+.pin-detail-container {
+  padding: 5px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.pin-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-link {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: $dark-mint;
+  margin: 5px;
+}
+
+.pin-detail-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pin-detail-image {
+  border-radius: 3px;
+}
+
+.pin-button {
+  font-size: 15px;
+  padding: 5px 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  vertical-align: middle;
+  margin-top: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-mint;
+  background-color: $light-gray;
+  }
