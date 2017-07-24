@@ -32,9 +32,9 @@ class UserProfile extends React.Component {
           <div className="user-profile-top">
             <div className="user-profile-info-container">
               <h1 className="user-profile-username">{user.username}</h1>
-              <p className="user-description">{user.description}</p>
+              <p className="user-profile-description">{user.description}</p>
             </div>
-            <img className="user-profile-pic" src={user.image_url} alt="user-profile-pic"></img>
+            <img className="user-profile-pic" src={user.image_url} alt="Profile Picture"></img>
             {this.userEditModal()}
           </div>
 

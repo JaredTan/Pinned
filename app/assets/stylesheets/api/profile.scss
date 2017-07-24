@@ -30,7 +30,7 @@
   font-weight: bold;
 }
 
-.user-description {
+.user-profile-description {
   margin-bottom: 20px;
   font-size: 18px;
   color: $dark-gray;
@@ -46,14 +46,6 @@
   background-size: cover;
 }
 
-.user.fa.fa-pencil {
-  font-size: 20px;
-  color: $gray;
-  &:hover {
-    color: $dark-gray;
-  }
-}
-
 .user-profile-bottom {
   margin-top: 50px;
   display: flex;
@@ -66,12 +58,12 @@
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
   color: $gray;
 }
 
 .user-profile-link.active {
-  width: 125px;
+  width: 100px;
   height: 50px;
   color: $dark-gray;
   background: $light-gray;
