@@ -35,8 +35,9 @@ export const createPin = (pin) => (dispatch) => {
   );
 };
 
-export const removePin = () => ({
-  type: REMOVE_PIN
+export const removePin = pin => ({
+  type: REMOVE_PIN,
+  pin
 });
 
 export const resetPin = () => ({

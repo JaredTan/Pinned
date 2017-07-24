@@ -7,26 +7,33 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
 	after_initialize :ensure_session_token
-	before_validation :ensure_session_token_uniqueness
 
-  has_many :pins
-  # 
-  # has_many :boards
-  #
+	has_many :boards
+
+	has_many :owned_pins,
+	    foreign_key: :user_id,
+	    primary_key: :id,
+	    class_name: :Pin
+
+  has_many :pinned_pins,
+		through: :boards,
+		source: :pins
+
+
   # has_many :follows_as_followee,
   #   foreign_key: :following_id,
   #   primary_key: :id,
   #   class_name: :Following
-  #
+	#
   # has_many :follows_as_follower,
   #   foreign_key: :follower_id,
   #   primary_key: :id,
   #   class_name: :Following
-  #
+	#
   # has_many :followers,
   #   through: :follows_as_followee,
   #   source: :Following
-  #
+	#
   # has_many :followings,
   #   through: :followers_as_follower,
   #   source: :Following

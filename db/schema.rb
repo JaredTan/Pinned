@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720205556) do
+ActiveRecord::Schema.define(version: 20170724205648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pinnings", force: :cascade do |t|
+    t.integer "pin_id", null: false
+    t.integer "board_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pin_id", "board_id"], name: "index_pinnings_on_pin_id_and_board_id", unique: true
+  end
 
   create_table "pins", force: :cascade do |t|
     t.string "title", null: false

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :create, :update]
     resource :session, only: [:create, :destroy]
     resources :pins, except: [:new, :edit]
+    resources :boards, except: [:new, :edit]
   end
 
   root "static_pages#root"

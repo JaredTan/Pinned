@@ -16,6 +16,14 @@ export const createPin = pin => {
   return $.ajax({
     method: 'POST',
     url: 'api/pins',
-    data: pin 
+    data: pin
+  });
+};
+
+export const updatePin = (pin, id) => {
+  return $.ajax({
+    method: 'PUT',
+    url: `api/pins/${id}`,
+    data: pin
   });
 };

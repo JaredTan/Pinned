@@ -2,7 +2,7 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import uploadRequest from 'superagent';
 
-const UPLOAD_PRESET = "a27edhbi";
+const UPLOAD_PRESET = "p52vd2qa";
 const UPLOAD_URL = "https://api.cloudinary.com/v1_1/jaredtan/image/upload";
 
 class UserEditForm extends React.Component {

@@ -43,12 +43,13 @@ pin1 = Pin.create!(
 )
 
 pin2 = Pin.create!(
-  title: "Corgi Pupper",
-  description: "Hi human!",
-  url: "http://corgisofig.tumblr.com/post/154815238613",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi2_dg6lfz.jpg",
+  title: "OOP",
+  description: "Principles of OOP",
+  url: "http://www.roldie.com/blog/the-7-principles-of-object-oriented-programming",
+  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/OOP_qrzasx.jpg",
   user_id: demo_user.id
 )
+
 
 pin3 = Pin.create!(
   title: "Brain Hemispheres",
@@ -59,19 +60,19 @@ pin3 = Pin.create!(
 )
 
 pin4 = Pin.create!(
-  title: "Corgu",
-  description: "Woof woof",
-  url: "http://www.shein.com/?url_from=pin20151009",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi3_dirxff.jpg",
-  user_id: user4.id
+  title: "Snow day",
+  description: "FLUFFY AND FROSTY!",
+  url: "https://hiveminer.com/Tags/eyes,silly/Timeline",
+  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi10_emsd0w.jpg",
+  user_id: user2.id
 )
 
 pin5 = Pin.create!(
-  title: "The anatomy of a Corgi",
-  description: "Much science, very doggo.",
-  url: "https://m.imgur.com/gallery/3LPiIut",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi4_jar3pi.jpg",
-  user_id: user3.id
+  title: "SQL Joins",
+  description: "Summaries of the main types of joins",
+  url: "http://sql.sh/2401-sql-join-infographie",
+  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/sqlJoins_d724sd.jpg",
+  user_id: demo_user.id
 )
 
 pin6 = Pin.create!(
@@ -154,27 +155,28 @@ pin15 = Pin.create!(
   user_id: user2.id
 )
 
+
 pin16 = Pin.create!(
-  title: "Snow day",
-  description: "FLUFFY AND FROSTY!",
-  url: "https://hiveminer.com/Tags/eyes,silly/Timeline",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi10_emsd0w.jpg",
-  user_id: user2.id
+  title: "Corgu",
+  description: "Woof woof",
+  url: "http://www.shein.com/?url_from=pin20151009",
+  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi3_dirxff.jpg",
+  user_id: user4.id
 )
 
 pin17 = Pin.create!(
-  title: "SQL Joins",
-  description: "Summaries of the main types of joins",
-  url: "http://sql.sh/2401-sql-join-infographie",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/sqlJoins_d724sd.jpg",
-  user_id: demo_user.id
+  title: "The anatomy of a Corgi",
+  description: "Much science, very doggo.",
+  url: "https://m.imgur.com/gallery/3LPiIut",
+  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi4_jar3pi.jpg",
+  user_id: user3.id
 )
 
 pin18 = Pin.create!(
-  title: "OOP",
-  description: "Principles of OOP",
-  url: "http://www.roldie.com/blog/the-7-principles-of-object-oriented-programming",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/OOP_qrzasx.jpg",
+  title: "Corgi Pupper",
+  description: "Hi human!",
+  url: "http://corgisofig.tumblr.com/post/154815238613",
+  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi2_dg6lfz.jpg",
   user_id: demo_user.id
 )
 
@@ -184,4 +186,137 @@ pin19 = Pin.create!(
   url: "https://websitesetup.org/css3-cheat-sheet/",
   image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586410/css_cheatsheet_cz2nuu.jpg",
   user_id: demo_user.id
+)
+
+Board.destroy_all
+
+board1 = Board.create!(
+  title: "Corgis",
+  description: "The cutest and fluffiest doggos ever!",
+  user_id: demo_user.id
+)
+
+board2 = Board.create!(
+  title: "Programming",
+  description: "Because code is life",
+  user_id: demo_user.id
+)
+
+board3 = Board.create!(
+  title: "Music",
+  description: "Relax and vibe to some catchy tunes.",
+  user_id: demo_user.id
+)
+
+board4 = Board.create!(
+  title: "Doggos",
+  description: "Mostly corgis inside here!",
+  user_id: user2.id
+)
+
+Pinning.destroy_all
+
+pinning1 = Pinning.create!(
+  board_id: board1.id,
+  pin_id: pin1.id
+)
+
+pinning2 = Pinning.create!(
+  board_id: board1.id,
+  pin_id: pin4.id
+)
+
+pinning3 = Pinning.create!(
+  board_id: board1.id,
+  pin_id: pin7.id
+)
+
+pinning4 = Pinning.create!(
+  board_id: board1.id,
+  pin_id: pin9.id
+)
+
+pinning5 = Pinning.create!(
+  board_id: board1.id,
+  pin_id: pin18.id
+)
+
+pinning6 = Pinning.create!(
+  board_id: board2.id,
+  pin_id: pin2.id
+)
+
+pinning7 = Pinning.create!(
+  board_id: board2.id,
+  pin_id: pin3.id
+)
+
+pinning8 = Pinning.create!(
+  board_id: board2.id,
+  pin_id: pin5.id
+)
+
+pinning9 = Pinning.create!(
+  board_id: board2.id,
+  pin_id: pin6.id
+)
+
+pinning10 = Pinning.create!(
+  board_id: board2.id,
+  pin_id: pin8.id
+)
+
+pinning11 = Pinning.create!(
+  board_id: board2.id,
+  pin_id: pin14.id
+)
+
+pinning12 = Pinning.create!(
+  board_id: board2.id,
+  pin_id: pin15.id
+)
+
+pinning13 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin1.id
+)
+
+pinning14 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin4.id
+)
+
+pinning15 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin7.id
+)
+
+pinning16 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin9.id
+)
+
+pinning17 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin11.id
+)
+
+pinning18 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin12.id
+)
+
+pinning19 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin13.id
+)
+
+pinning20 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin14.id
+)
+
+pinning21 = Pinning.create!(
+  board_id: board4.id,
+  pin_id: pin18.id
 )

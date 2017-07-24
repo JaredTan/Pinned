@@ -6,12 +6,12 @@ class Pin < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
-  # has_many :pinnings
-  #
-  # has_many :boards,
-  #   through: :pinnings,
-  #   source: :board
-  #
+  has_many :pinnings, dependent: :destroy
+
+  has_many :boards,
+    through: :pinnings,
+    source: :board
+
 
 
 end
