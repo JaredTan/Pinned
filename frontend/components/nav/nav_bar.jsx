@@ -31,7 +31,9 @@ class NavBar extends React.Component {
           </div>
           <div className="right">
             <PinCreateModal/>
-            <button>Profile</button>
+            <Link to={`/users/${currentUser.id}`}>
+            Profile
+            </Link>
             <button onClick={logout}>Logout</button>
           </div>
         </nav>

@@ -7,12 +7,13 @@ const defaultState = () => ({
   errors: []
 })
 
-const pinsReducer = (state = defaultState(), action) => {
+const pinReducer = (state = defaultState(), action) => {
   switch (action.type) {
     case RECEIVE_ALL_PINS:
       return merge({}, state, {entities: action.pins});
     case RECEIVE_SINGLE_PIN:
       const pin = action.pin;
+
       return merge({}, state, {
         entities: { [pin.id]: pin },
         currentPin: pin.id
@@ -24,4 +25,4 @@ const pinsReducer = (state = defaultState(), action) => {
   }
 };
 
-export default pinsReducer;
+export default pinReducer;

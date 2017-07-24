@@ -22,7 +22,6 @@ class PinDetail extends React.Component {
 
   render() {
     let { pin } = this.props;
-    console.log(pin, '?');
     return (
       <section className='pin-detail-container'>
         <div className='pin-info-container'>
@@ -30,17 +29,11 @@ class PinDetail extends React.Component {
             <i className='fa fa-star fa-2x'></i> Pin
           </button>
           <br/>
-
-
-
             <h4>{pin.title}</h4>
-
           <h5>Pin by:
             <Link className = 'user-link' to='/'>{pin.owner_username}</Link>
           </h5>
-
       </div>
-
         <div className='pin-detail-image-container'>
         {pin.description}
           <a href={pin.url}>

@@ -62,11 +62,10 @@ button {
 
 .right {
   width: 30%;
-  font-size: 30px;
-  margin-top: -2px;
+  margin-top: 12px;
   margin-right: 27px;
-  color: $gray;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
+  color: $dark-mint;
 }

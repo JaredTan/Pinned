@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	before_validation :ensure_session_token_uniqueness
 
   has_many :pins
-  #
+  # 
   # has_many :boards
   #
   # has_many :follows_as_followee,
