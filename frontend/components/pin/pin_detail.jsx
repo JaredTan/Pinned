@@ -22,6 +22,9 @@ class PinDetail extends React.Component {
 
   render() {
     let { pin } = this.props;
+    if (pin == undefined) {
+      pin = {};
+    }
     return (
       <section className='pin-detail-container'>
         <div className='pin-info-container'>
@@ -31,7 +34,7 @@ class PinDetail extends React.Component {
           <br/>
             <h4>{pin.title}</h4>
           <h5>Pin by:
-            <Link className = 'user-link' to='/'>{pin.owner_username}</Link>
+            <Link className = 'user-link' to={`/users/${pin.user_id}`}>{pin.owner_username}</Link>
           </h5>
       </div>
         <div className='pin-detail-image-container'>

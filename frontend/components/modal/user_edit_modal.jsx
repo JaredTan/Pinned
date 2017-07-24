@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import PinCreateFormContainer from '../pin/pin_create_form_container';
+import UserEditFormContainer from '../profile/user_edit_form_container';
 
 
 const style = {
@@ -31,7 +31,7 @@ const style = {
   }
 };
 
-class PinCreateModal extends React.Component {
+class UserEditModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -58,16 +58,16 @@ class PinCreateModal extends React.Component {
 
   render() {
     return(
-      <div className="pin-create-modal-div">
-        <button onClick={this.openModal}>Create Pin</button>
+      <div className="edit-user-modal-div">
+        <button className="edit-user-modal-button" onClick={this.openModal}>Edit</button>
         <Modal
           isOpen={this.state.modalOpen}
           onAfterOpen={this.afterModalOpen}
           onRequestClose={this.closeModal}
           style = {style}
-          contentLabel="Pin Modal">
+          contentLabel="User Edit Modal">
 
-          <PinCreateFormContainer
+          <UserEditFormContainer
             closeModal={this.closeModal}
              />
         </Modal>
@@ -76,4 +76,4 @@ class PinCreateModal extends React.Component {
   }
 }
 
-export default PinCreateModal;
+export default UserEditModal;

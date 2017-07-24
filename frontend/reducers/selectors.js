@@ -5,6 +5,5 @@ export const selectAllPins = pins => {
 };
 
 export const selectSingleUser = ({ users }, id) => {
-  console.log(users,'users');
   return users[id] || {};
 };

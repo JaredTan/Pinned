@@ -1,5 +1,5 @@
 
-// .create-pin-form-container {
+// .edit-user-form-container {
 //   display: flex;
 //   align-items: center;
 //   flex-wrap: wrap;
@@ -24,7 +24,7 @@
 // }
 
 
-.create-pin-form {
+.edit-user-form {
   background-color: $light-gray;
   display: flex;
   flex-direction: row;
@@ -39,7 +39,7 @@
 }
 
 
-.create-pin-input, textarea {
+.edit-user-input, textarea {
   font-weight: bold;
   font-size: 14px;
   margin: 7px;
@@ -57,19 +57,13 @@
 }
 
 
-
-
-.main-message {
+.top-message {
   margin-bottom: 24px;
   margin-top: 18px;
 }
 
-span {
-  font-family: 'Comfortaa', cursive;
-  font-size: 12px;
-}
 
-.create-pin-errors {
+.edit-user-errors {
   color: red;
   font-weight: bold;
   padding: 2px;
@@ -77,7 +71,7 @@ span {
 }
 
 
-.submit-create-button {
+.submit-edit-button {
   font-size: 15px;
   font-family: sans-serif;
   font-weight: bold;
@@ -98,7 +92,7 @@ span {
 }
 
 
-.create-thumbnail {
+.edit-thumbnail {
   max-width: 200px;
   max-height: 200px;
   border-style: solid;
@@ -111,19 +105,19 @@ span {
 }
 
 
-.submit-create-button:hover {
+.submit-edit-button:hover {
   background-color: $dark-mint;
 }
 
-.create-pin-input:focus {
+.edit-user-input:focus {
   outline: none;
 }
 
-.pin-create-modal-div {
-  margin-bottom: 10px;
+.user-edit-modal-div {
+  margin: 10px;
 }
 
-.create-form-dropzone {
+.edit-form-dropzone {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -145,24 +139,17 @@ span {
   align-items: center;
 }
 
-.pins-index {
-  margin: 5px auto;
-  margin: 10px top;
+.edit-user-modal-button {
+  margin-top: 5px;
 }
 
-.index-thumbnail {
-  margin: 2px;
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  border: 1px;
-  border-style: solid;
-  border-color: $light-mint;
-}
+// .user-detail-image {
+//   max-width: 600px;
+//   border-style: solid;
+//   border: 1px;
+//   border-radius: 10px;
+// }
 
-.pin-detail-image {
-  max-width: 600px;
-  border-style: solid;
-  border: 1px;
-  border-radius: 10px;
+.user-edit-username {
+  margin-bottom: 10%;
 }

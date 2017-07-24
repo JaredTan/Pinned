@@ -2,18 +2,16 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import uploadRequest from 'superagent';
 
-const UPLOAD_PRESET = "p52vd2qa";
+const UPLOAD_PRESET = "a27edhbi";
 const UPLOAD_URL = "https://api.cloudinary.com/v1_1/jaredtan/image/upload";
 
-class PinCreateForm extends React.Component {
+class UserEditForm extends React.Component {
   constructor(props) {
     super(props);
+    const oldUser = this.props.chosenUser;
     this.state = {
-      title: '',
-      description: '',
-      url: '',
-      image_url: '',
-      user_id: ''
+      description: oldUser.description,
+      image_url: oldUser.image_url
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -44,8 +42,9 @@ class PinCreateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const pin = Object.assign({}, this.state);
-    this.props.createPin({pin});
+    const user = Object.assign({}, this.state);
+    const id = this.props.match.params.userId;
+    this.props.updateUser({user}, id);
     this.props.ownProps.closeModal();
   }
 
@@ -64,10 +63,10 @@ class PinCreateForm extends React.Component {
   }
 
   displayPicture() {
-    if (this.state.image_url === '') {
+    if (!this.state.image_url) {
       return (
         <div className="dropzone-text-container">
-          <h4>Place Image or Click here</h4>
+          <h4>Place Profile Picture or Click Here</h4>
         </div>
         )
       } else {
@@ -97,20 +96,14 @@ class PinCreateForm extends React.Component {
       <div className="create-pin-form-container">
         <form onSubmit={this.handleSubmit} className="create-pin-form">
           <span className='top-message'>
-            <h1>Create Pin!</h1>
+            <h1>Update Your Profile</h1>
+            <br/>
+            Username: {this.props.currentUser.username}
            </span>
           <br/>
           <span className="create-pin-errors">{this.renderErrors()}</span>
           <div>
-            <label>
-              <span>Title</span>
-              <br/>
-              <input type="text"
-                value={this.state.title}
-                onChange={this.update('title')}
-                className="create-pin-input"
-              />
-            </label>
+
             <br/>
             <label>
               <span>Description</span>
@@ -122,15 +115,7 @@ class PinCreateForm extends React.Component {
               />
             </label>
             <br/>
-              <label>
-                <span>URL (optional)</span>
-                <br/>
-                <input type="text"
-                  value={this.state.url}
-                  onChange={this.update('url')}
-                  className="create-pin-input"
-                />
-              </label>
+
             <div className="image-and-submit">
               <Dropzone
                 multiple={false}
@@ -153,4 +138,4 @@ class PinCreateForm extends React.Component {
   }
 }
 
-export default PinCreateForm;
+export default UserEditForm;

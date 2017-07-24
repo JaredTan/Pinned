@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import UserEditModal from '../modal/user_edit_modal';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -18,16 +19,35 @@ class UserProfile extends React.Component {
     }
   }
 
-render () {
-  const {user} = this.props;
+  userEditModal () {
+    return (this.props.currentUser.id == this.props.match.params.userId) ? <UserEditModal/> : null
+  }
 
-  return (
-    <div className="post-detail">
-        <h1> {user.username}</h1>
-        <h2> {user.description}</h2>
-    </div>
-  );
- }
+
+
+  render() {
+      let { user } = this.props;
+      return (
+        <section className="user-profile-container">
+          <div className="user-profile-top">
+            <div className="user-profile-info-container">
+              <h1 className="user-profile-username">{user.username}</h1>
+              <p className="user-description">{user.description}</p>
+            </div>
+            <img className="user-profile-pic" src={user.image_url} alt="user-profile-pic"></img>
+            {this.userEditModal()}
+          </div>
+
+          <div className="user-profile-bottom">
+            <NavLink exact to={`/users/${user.id}`} className="user-profile-link">
+          Boards
+            </NavLink>
+          </div>
+        </section>
+      );
+    }
+
+
 
 }
 

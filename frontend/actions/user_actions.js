@@ -29,3 +29,9 @@ export const requestSingleUser = id => (dispatch) => {
     user => dispatch(receiveSingleUser(user))
   );
 };
+
+export const updateUser = (user, id) => (dispatch) => {
+  return APIUtil.updateUser(user, id).then(
+    user => dispatch(receiveSingleUser(user))
+  );
+};

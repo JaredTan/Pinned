@@ -6,10 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
-demo_user = User.create!(username: 'DemoUser', password:'pinneddemo')
-user2 = User.create!(username: 'Jared', password:'password')
-user3 = User.create!(username: 'JavascriptMaster', password: 'justkidding')
-user4 = User.create!(username: 'Munyo', password:'coffeemaster')
+
+demo_user = User.create!(
+  username: 'DemoUser',
+  password:'pinneddemo',
+  description: 'The awesomest demo user ever!',
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1500875429/olvpghh4qe2oldkvxpi4.jpg'
+)
+user2 = User.create!(
+  username: 'Jared',
+  password:'password',
+  description: 'Hello world!',
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1500875447/djghiggm9js7sh0eleks.jpg'
+)
+user3 = User.create!(
+  username: 'JavascriptMaster',
+  password: 'justkidding',
+  description: 'I love curly braces',
+  image_url: ''
+)
+user4 = User.create!(
+  username: 'Munyo',
+  password:'coffeemaster',
+  description: 'Best project mentor ever.',
+  image_url: ''
+)
 
 Pin.destroy_all
 

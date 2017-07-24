@@ -1,10 +1,13 @@
 import {connect} from 'react-redux';
 import UserProfile from './user_profile';
-// import {selectSingleUser} from '../../reducers/selectors';
+import {selectSingleUser} from '../../reducers/selectors';
 import {requestSingleUser} from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  return {user: state.user}
+  return {
+    user: state.users.chosenUser,
+    currentUser: state.session.currentUser
+  }
 };
 
 const mapDispatchToProps = dispatch => ({
