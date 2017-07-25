@@ -35,6 +35,12 @@ export const createBoard = (board) => (dispatch) => {
   );
 };
 
+export const deleteBoard = board => dispatch => {
+  return APIUtil.deleteBoard(board).then(
+    board => dispatch(removeBoard(board))
+  );
+};
+
 export const removeBoard = board => ({
   type: REMOVE_BOARD,
   board

@@ -35,6 +35,12 @@ export const createPin = (pin) => (dispatch) => {
   );
 };
 
+export const deletePin = pin => dispatch => {
+  return APIUtil.deletePin(pin).then(
+    pin => dispatch(removePin(pin))
+  );
+};
+
 export const removePin = pin => ({
   type: REMOVE_PIN,
   pin

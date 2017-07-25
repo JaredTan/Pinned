@@ -21,12 +21,18 @@ class BoardDetail extends React.Component {
   }
 
   render() {
-    let { board } = this.props;
+    let { board, currentUserId, deleteBoard } = this.props;
     if (board == undefined) {
       board = {};
     }
     return (
       <section className='board-detail-container'>
+        { currentUserId === board.user_id ?
+          <button onClick={() => deleteBoard(board)} className='delete-button'>
+            <i className="fa fa-times"></i> Delete
+            </button>
+            : null
+          }
         <div className='board-info-container'>
           <br/>
             <h4>{board.title}</h4>
