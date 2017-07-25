@@ -38,7 +38,7 @@ class Api::PinsController < ApplicationController
   end
 
   def destroy
-    @pin = current_user.pins.find(params[:id])
+    @pin = current_user.owned_pins.find(params[:id])
 
     if @pin
       if @pin.destroy

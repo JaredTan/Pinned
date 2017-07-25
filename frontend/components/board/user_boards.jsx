@@ -65,9 +65,9 @@ class UserBoards extends React.Component {
                    className='board-display-pictures-items'
                    options={masonryOptions}
                    >
-                  { values(board.pins).map( pin => {
+                  { values(board.pins).slice(0, 6).map( pin => {
                      return (
-                       <div className='pins-in-board-thumbnail'>
+                       <div>
                          <img className='pins-in-board-thumbnail-pic' src={pin.image_url}></img>
                        </div>
                      )
