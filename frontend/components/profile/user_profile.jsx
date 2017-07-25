@@ -89,6 +89,10 @@ class UserProfile extends React.Component {
 
   render() {
       let { user } = this.props;
+      let image_url = user.image_url
+      if (image_url == '') {
+        image_url = "http://res.cloudinary.com/jaredtan/image/upload/v1500969184/display_pic_nwmrpn.png"
+      }
       return (
         <section className="user-profile-container">
           <div className="user-profile-top">
@@ -97,7 +101,7 @@ class UserProfile extends React.Component {
               <p className="user-profile-description">{user.description}</p>
             </div>
             <div className="user-profile-pic-and-edit">
-              <img className="user-profile-pic" src={user.image_url} alt="Profile Picture"></img>
+              <img className="user-profile-pic" src={image_url} alt="Profile Picture"></img>
               {this.userEditModal()}
             </div>
           </div>

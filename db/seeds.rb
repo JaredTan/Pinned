@@ -29,7 +29,7 @@ user4 = User.create!(
   username: 'Munyo',
   password:'coffeemaster',
   description: 'Best project mentor ever.',
-  image_url: ''
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1500912750/g0lfv1wmkkbdninamy6i.jpg'
 )
 
 Pin.destroy_all
