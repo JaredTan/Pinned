@@ -58,3 +58,15 @@
   height: 240px;
   margin: 20px;
 }
+
+.pins-in-board-thumbnail-pic {
+  width: 50px;
+  max-height: 80px;
+  margin: 2px;
+  border: 1px solid $dark-mint;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}

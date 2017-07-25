@@ -71,7 +71,6 @@ class UserProfile extends React.Component {
   }
 
   userBoards(){
-    console.log(this.props.boards,'boards in user_profile');
     return(
       <div>
         <UserBoardsContainer
