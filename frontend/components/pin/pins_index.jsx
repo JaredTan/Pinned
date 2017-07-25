@@ -1,7 +1,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
 import PinDetailModal from '../modal/pin_detail_modal';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class PinsIndex extends React.Component {
   constructor(props) {
@@ -37,8 +37,15 @@ class PinsIndex extends React.Component {
     return pins;
   }
 
+  handleDelete(board) {
+    const userId = board.user_id;
+    const newRoute = `/users/${userId}`;
+    this.props.deleteBoard(board);
+    this.props.history.push(newRoute);
+  }
+
   render() {
-    let { pins, board, currentUserId } = this.props;
+    let { pins, board, currentUserId, deleteBoard } = this.props;
     let masonryOptions = {
       transitionDuration: 1,
       gutter: 30,
@@ -62,7 +69,7 @@ class PinsIndex extends React.Component {
         {  (boardId == undefined) ? null :
           <section className='board-detail-container'>
             { currentUserId == board.user_id ?
-              <button onClick={() => deleteBoard(board)} className='delete-board-button'>
+              <button onClick={() => this.handleDelete(board)} className='delete-board-button'>
                 <i className="fa fa-times"></i> Delete Board
                 </button>
                 : null

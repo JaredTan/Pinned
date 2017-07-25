@@ -12,7 +12,6 @@ export const receiveAllUsers = (users) => {
 };
 
 export const receiveSingleUser = (user) => {
-  console.log(user, 'user in action');
   return {
     type: RECEIVE_SINGLE_USER,
     user
