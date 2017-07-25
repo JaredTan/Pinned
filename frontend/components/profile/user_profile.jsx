@@ -35,9 +35,9 @@ class UserProfile extends React.Component {
     })
   }
 
-  handleTabClick(name){
+  handleTabClick(tab){
     this.resetTabs();
-    switch (name) {
+    switch (tab) {
       case "pin":
         this.setState({ pinTab: true });
         break;
@@ -71,6 +71,7 @@ class UserProfile extends React.Component {
   }
 
   userBoards(){
+    console.log(this.props.boards,'boards in user_profile');
     return(
       <div>
         <BoardIndexContainer
@@ -118,13 +119,5 @@ class UserProfile extends React.Component {
 
 
 }
-// <div className="user-profile-bottom">
-//   <NavLink exact to={`/users/${user.id}`} className="user-profile-link">
-//     {boards.length} Boards
-//   </NavLink>
-//   <NavLink to={`/users/${user.id}/pins`} className="user-profile-link">
-//     {pins.length} Pins
-//   </NavLink>
-// </div>
 
 export default UserProfile;

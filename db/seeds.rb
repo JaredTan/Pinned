@@ -214,6 +214,12 @@ board4 = Board.create!(
   user_id: user2.id
 )
 
+board5 = Board.create!(
+  title: "Chocolate",
+  description: "Dark sugary goodness",
+  user_id: demo_user.id
+)
+
 Pinning.destroy_all
 
 pinning1 = Pinning.create!(

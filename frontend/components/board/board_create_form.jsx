@@ -31,7 +31,6 @@ class BoardCreateForm extends React.Component {
   }
 
   render() {
-    console.log(this.props, 'board create form props');
     return (
       <div className="create-board-form-container">
         <form onSubmit={this.handleSubmit} className="create-board-form">

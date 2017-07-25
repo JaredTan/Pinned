@@ -1,0 +1,48 @@
+.board-detail-container {
+  font-family: 'Comfortaa', cursive;
+}
+
+.board-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-link {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: $dark-mint;
+  margin: 5px;
+}
+
+.board-detail-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.board-detail-image {
+  border-radius: 3px;
+  border: 1px;
+  border-style: solid;
+  border-color: rgba(181, 181, 181, 0.23);
+}
+
+.board-button {
+  font-size: 15px;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  vertical-align: middle;
+  margin-top: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-mint;
+  background-color: rgba(181, 181, 181, 0.23);
+    &:hover {
+      background: $gray;
+    }
+  }
