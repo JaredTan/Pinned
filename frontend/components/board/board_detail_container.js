@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { requestSingleBoard, resetBoard } from '../../actions/board_actions';
 import BoardDetail from './board_detail';
 
-const mapStateToProps = ({boards}) => {
-  return {board: boards.entities[boards.currentBoard]}
+const mapStateToProps = (state) => {
+  return {board: state.boards};
 };
 
 const mapDispatchToProps = dispatch => ({

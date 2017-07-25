@@ -1,6 +1,6 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
-import BoardDetailModal from '../modal/pin_detail_modal';
+import BoardDetailModal from '../modal/board_detail_modal';
 
 class BoardsIndex extends React.Component {
   constructor(props) {
@@ -33,18 +33,13 @@ class BoardsIndex extends React.Component {
       return null;
     }
     return (
-      <Masonry className={"boards-index"}
-        elementType={'ul'}
-        options={masonryOptions}
-        disableImagesLoaded={false}
-        updateOnEachImageLoad={false}
-        >
-        { reversedSortedBoards.map( (pin) => {
+      <div className="board-index-container">
+        { reversedSortedBoards.map( (board) => {
           return (
-            <BoardDetailModal key={ pin.id } board={ board }></BoardDetailModal>);
+            <BoardDetailModal key={ board.id } board={ board }></BoardDetailModal>);
           }
         )}
-      </Masonry>
+      </div>
     );
 
 

@@ -61,7 +61,7 @@ class BoardDetailModal extends React.Component {
       <div>
         <button
           onClick={this.openModal}>
-          <img className='index-thumbnail' src={board.image_url}></img>
+          <img className='board-index-thumbnail' src={board.image_url}></img>
         </button>
         <Modal
           isOpen={this.state.modalOpen}

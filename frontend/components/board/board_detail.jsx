@@ -28,9 +28,6 @@ class BoardDetail extends React.Component {
     return (
       <section className='board-detail-container'>
         <div className='board-info-container'>
-          <button onClick={this.handleSubmit} className="board-button">
-            <i className='fa fa-star fa-2x'></i> Board
-          </button>
           <br/>
             <h4>{board.title}</h4>
           <h5>Board by:

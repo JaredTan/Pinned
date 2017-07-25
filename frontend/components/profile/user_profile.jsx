@@ -35,7 +35,7 @@ class UserProfile extends React.Component {
     })
   }
 
-  _handleTabClick(name){
+  handleTabClick(name){
     this.resetTabs();
     switch (name) {
       case "pin":
@@ -75,7 +75,7 @@ class UserProfile extends React.Component {
       <div>
         <BoardIndexContainer
           boards={this.props.user.boards}
-          owner={this.state.user}
+          owner={this.props.user}
           />
       </div>
     )
@@ -87,8 +87,7 @@ class UserProfile extends React.Component {
 
 
   render() {
-      let { user, boards } = this.props;
-      console.log(user,'user');
+      let { user } = this.props;
       return (
         <section className="user-profile-container">
           <div className="user-profile-top">
@@ -99,32 +98,11 @@ class UserProfile extends React.Component {
             <img className="user-profile-pic" src={user.image_url} alt="Profile Picture"></img>
             {this.userEditModal()}
           </div>
+
           <div className="user-profile-buttons-bar-container">
-            <div className="user-profile-buttons-bar">
-              <button className={this.state.boardTab ? "profile-tab-button-active" :"profile-tab-button-inactive"}
-                onClick={() => this._handleTabClick("board")}>
-                <div className="profile-button-text-container">
-                  <div>
-                    Boards
-                  </div>
-                  <div>
-
-                  </div>
-                </div>
-              </button>
-              <button className={this.state.pinTab ? "profile-tab-button-active" :"profile-tab-button-inactive"}
-                onClick={() => this._handleTabClick("pin")}>
-                <div className="profile-button-text-container">
-                  <div>
-                    Pins
-                  </div>
-                  <div>
-
-                  </div>
-                </div>
-              </button>
+              <button onClick={() => this.handleTabClick("board")}>Boards</button>
+              <button onClick={() => this.handleTabClick("pin")}>Pins</button>
             </div>
-          </div>
 
 
           {this.state.boardTab ? this.userBoards() : null}
