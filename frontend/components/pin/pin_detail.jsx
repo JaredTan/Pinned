@@ -50,27 +50,29 @@ class PinDetail extends React.Component {
     }
     return (
       <section className='pin-detail-container'>
+        <div className="pinning-dropdown-container">
+          <form onSubmit={this.handlePinning}>
+            <select className="pin-board-select"
+              onChange={this.handleSelection}>
+              <option key="disabled">Choose board</option>
+              {
+                values(currentUser.boards).map((board) => {
+                  if (values(pin.pinned_boards).includes(board.id)) {return;}
+                  return(
+                    <option className="pin-board-option"
+                      key={board.id}
+                      value={board.id}>{board.title}
+                    </option>
+                  );
+                })
+              }
+            </select>
+            <button type="Submit" className="pin-button">
+              <i className="fa fa-star"></i> Pin
+            </button>
+          </form>
+        </div>
         <div className='pin-info-container'>
-            <div className="pinning-dropdown-container">
-              <form onSubmit={this.handlePinning}>
-                <select className="pin-show-board-select"
-                  onChange={this.handleSelection}>
-                  <option key="disabled">Choose board</option>
-                  {
-                    values(currentUser.boards).map((board) => {
-                      if (values(pin.pinned_boards).includes(board.id)) {return;}
-                      return(
-                        <option className="pin-show-option"
-                          key={board.id}
-                          value={board.id}>{board.title}
-                        </option>
-                      );
-                    })
-                  }
-                </select>
-                <button type="Submit" className="fa fa-star pin-button">Pin</button>
-              </form>
-            </div>
 
 
           { currentUser.id === pin.user_id ?

@@ -47,6 +47,17 @@
     }
   }
 
+.pin-board-select {
+  position: relative;
+  right: 16%;
+  margin-top: 4px;
+}
+
+.pinning-dropdown-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .delete-button {
   font-size: 15px;
   padding: 5px 10px;
