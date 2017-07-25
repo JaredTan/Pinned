@@ -46,3 +46,20 @@
       background: $gray;
     }
   }
+
+  .delete-pin-button {
+    font-size: 15px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    vertical-align: middle;
+    margin-top: 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: $red;
+    background-color: rgba(181, 181, 181, 0.23);
+      &:hover {
+        background: $gray;
+      }
+  }

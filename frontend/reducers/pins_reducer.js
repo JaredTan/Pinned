@@ -23,7 +23,7 @@ const pinsReducer = (state = defaultState(), action) => {
     case REMOVE_PIN:
       const pinID = action.pin.id
       const dupState = merge({}, state);
-      delete dupState[pinID]
+      delete dupState.entities[pinID]
       return dupState
     default:
       return state;

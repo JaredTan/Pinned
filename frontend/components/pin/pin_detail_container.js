@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestSinglePin, resetPin } from '../../actions/pin_actions';
+import { requestSinglePin, resetPin, removePin } from '../../actions/pin_actions';
 import PinDetail from './pin_detail';
 
 const mapStateToProps = ({pins}) => {
@@ -8,7 +8,8 @@ const mapStateToProps = ({pins}) => {
 
 const mapDispatchToProps = dispatch => ({
   requestSinglePin: id => dispatch(requestSinglePin(id)),
-  resetPin: () => dispatch(resetPin())
+  resetPin: () => dispatch(resetPin()),
+  removePin: pin => dispatch(removePin(pin))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PinDetail);

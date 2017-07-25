@@ -21,7 +21,7 @@ class PinDetail extends React.Component {
   }
 
   render() {
-    let { pin } = this.props;
+    let { pin, removePin } = this.props;
     if (pin == undefined) {
       pin = {};
     }
@@ -30,6 +30,9 @@ class PinDetail extends React.Component {
         <div className='pin-info-container'>
           <button onClick={this.handleSubmit} className="pin-button">
             <i className='fa fa-star'></i> Pin
+          </button>
+          <button onClick={() => removePin(pin)} className='delete-pin-button'>
+            <i className="fa fa-times"></i> Delete
           </button>
           <br/>
             <h4>{pin.title}</h4>
