@@ -29,7 +29,6 @@
   display: flex;
   flex-direction: row;
   vertical-align: middle;
-  height: 90%;
   padding: 40px 20px;
   border-radius: 8px;
   text-align: center;
@@ -123,6 +122,12 @@ span {
   margin-bottom: 10px;
 }
 
+.input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .create-form-dropzone {
   margin-top: 20px;
   display: flex;
@@ -147,7 +152,11 @@ span {
 
 .pins-index {
   margin: 5px auto;
-  margin: 10px top;
+  margin-top: 0px;
+}
+
+.pin-index-container {
+  padding: 76px 18px 0px;
 }
 
 .index-thumbnail {

@@ -1,5 +1,4 @@
 .user-profile-container {
-  margin-top: 15px;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -8,6 +7,7 @@
 }
 
 .user-profile-top {
+  margin: 30px;
   width: 100%;
   height: auto;
   display: flex;

@@ -101,7 +101,7 @@ class PinCreateForm extends React.Component {
            </span>
           <br/>
           <span className="create-pin-errors">{this.renderErrors()}</span>
-          <div>
+          <div className='input-area'>
             <label>
               <span>Title</span>
               <br/>

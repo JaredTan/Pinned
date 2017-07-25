@@ -36,6 +36,7 @@ class NavBar extends React.Component {
             </Link>
             <button onClick={logout}>Logout</button>
           </div>
+          <div className='filler-space'></div>
         </nav>
     );
   }

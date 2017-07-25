@@ -48,18 +48,20 @@ class PinsIndex extends React.Component {
       return null;
     }
     return (
-      <Masonry className={"pins-index"}
-        elementType={'ul'}
-        options={masonryOptions}
-        disableImagesLoaded={false}
-        updateOnEachImageLoad={false}
-        >
-        { reversedSortedPins.map( (pin) => {
-          return (
-            <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
-          }
-        )}
-      </Masonry>
+      <div className='pin-index-container'>
+        <Masonry className={"pins-index"}
+          elementType={'ul'}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={false}
+          >
+          { reversedSortedPins.map( (pin) => {
+            return (
+              <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
+            }
+          )}
+        </Masonry>
+      </div>
     );
 
 
