@@ -7,7 +7,7 @@ const boardsReducer = (state = {}, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_SINGLE_BOARD:
-      return merge({}, state, action.board);
+      return merge({}, action.board);
     case REMOVE_BOARD:
       const boardID = action.board.id
       const dupState = merge({}, state);

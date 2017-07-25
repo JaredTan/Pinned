@@ -2,8 +2,9 @@ import React from 'react';
 import Masonry from 'react-masonry-component';
 import BoardDetailModal from '../modal/board_detail_modal';
 import BoardCreateModal from '../modal/board_create_modal';
+import { Link } from 'react-router-dom';
 
-class BoardsIndex extends React.Component {
+class UserBoards extends React.Component {
   constructor(props) {
     super(props);
 
@@ -52,14 +53,11 @@ class BoardsIndex extends React.Component {
          { currentUser.id === owner.id ? this.createNewBoardModal() : null }
          { reversedSortedBoards.map( (board) => {
            return (
-             <section className="board-index-item-container">
-
-
-                   <div>
-                     <BoardDetailModal key={board.id} board={ board }></BoardDetailModal>
-                   </div>
-
-             </section>
+             <Link to={`/boards/${board.id}`}className="board-index-item-container">
+               <div>
+                 {board.title}
+               </div>
+             </Link>
            );
            }
          )}
@@ -72,4 +70,5 @@ class BoardsIndex extends React.Component {
   }
 }
 
-export default BoardsIndex;
+//  <BoardDetailModal key={board.id} board={ board }></BoardDetailModal>
+export default UserBoards;

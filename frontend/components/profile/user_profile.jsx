@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import UserEditModal from '../modal/user_edit_modal';
 import Masonry from 'react-masonry-component';
-import BoardIndexContainer from '../board/boards_index_container';
+import UserBoardsContainer from '../board/user_boards_container';
 import { createPinArray } from '../../reducers/selectors';
 import PinDetailModal from '../modal/pin_detail_modal';
 
@@ -74,7 +74,7 @@ class UserProfile extends React.Component {
     console.log(this.props.boards,'boards in user_profile');
     return(
       <div>
-        <BoardIndexContainer
+        <UserBoardsContainer
           boards={this.props.user.boards}
           owner={this.props.user}
           />
@@ -113,7 +113,6 @@ class UserProfile extends React.Component {
 
 
           {this.state.boardTab ? this.userBoards() : null}
-          {this.state.pinTab ? this.userPinnedPins() : null }
 
 
         </section>
@@ -123,5 +122,6 @@ class UserProfile extends React.Component {
 
 
 }
+// {this.state.pinTab ? this.userPinnedPins() : null }
 
 export default UserProfile;

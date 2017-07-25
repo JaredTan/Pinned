@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: -5px;
 }
 
 .user-link {
@@ -21,6 +22,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 .board-detail-image {
@@ -46,3 +48,19 @@
       background: $gray;
     }
   }
+
+.delete-board-button {
+  font-size: 20px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 30px;
+  vertical-align: middle;
+  margin-top: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: $red;
+  background-color: rgba(181, 181, 181, 0.23);
+    &:hover {
+      background: $gray;
+    }
+}

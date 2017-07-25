@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { requestAllBoards, createBoard } from '../../actions/board_actions';
 import { selectAllBoards } from '../../reducers/selectors';
-import BoardsIndex from './boards_index';
+import UserBoards from './user_boards';
 
 const mapStateToProps = ({session}) => ({
   currentUser: session.currentUser
@@ -13,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
   createBoard: () => dispatch(createBoard())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoardsIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(UserBoards);

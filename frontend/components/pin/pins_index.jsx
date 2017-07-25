@@ -1,6 +1,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
 import PinDetailModal from '../modal/pin_detail_modal';
+import { Link } from 'react-router-dom';
 
 class PinsIndex extends React.Component {
   constructor(props) {
@@ -12,7 +13,9 @@ class PinsIndex extends React.Component {
   }
 
   componentWillMount() {
-    this.props.requestAllPins();
+    const boardId = this.props.match.params.boardId;
+    boardId == undefined ?
+    this.props.requestAllPins() : this.props.requestSingleBoard(boardId);
   }
 
   componentDidMount() {
@@ -35,7 +38,7 @@ class PinsIndex extends React.Component {
   }
 
   render() {
-    let { pins } = this.props;
+    let { pins, board, currentUserId } = this.props;
     let masonryOptions = {
       transitionDuration: 1,
       gutter: 30,
@@ -43,12 +46,42 @@ class PinsIndex extends React.Component {
     };
     const { loading } = this.state;
 
-    let reversedSortedPins = _.sortBy( pins, 'id' ).reverse();
+    const boardId = this.props.match.params.boardId;
+    let pinsToDisplay = (boardId == undefined) ? pins : board.pins;
+
+    let reversedSortedPins = _.sortBy( pinsToDisplay, 'id' ).reverse();
+
     if(loading) {
       return null;
     }
+
+    console.log(this.props, 'this props inside pins index');
+
     return (
       <div className='pin-index-container'>
+        {  (boardId == undefined) ? null :
+          <section className='board-detail-container'>
+            { currentUserId == board.user_id ?
+              <button onClick={() => deleteBoard(board)} className='delete-board-button'>
+                <i className="fa fa-times"></i> Delete Board
+                </button>
+                : null
+            }
+
+            <div className='board-info-container'>
+              <br/>
+                <h4>{board.title}</h4>
+              <h5>Board by:
+                <Link className = 'user-link' to={`/users/${board.user_id}`}>{board.owner_username}</Link>
+              </h5>
+            </div>
+
+            <div className='board-detail-image-container'>
+              {board.description}
+            </div>
+          </section>
+        }
+
         <Masonry className={"pins-index"}
           elementType={'ul'}
           options={masonryOptions}
