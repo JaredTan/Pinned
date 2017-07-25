@@ -62,8 +62,6 @@ class PinsIndex extends React.Component {
       return null;
     }
 
-    console.log(this.props, 'this props inside pins index');
-
     return (
       <div className='pin-index-container'>
         {  (boardId == undefined) ? null :

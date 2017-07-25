@@ -32,7 +32,6 @@ class UserBoards extends React.Component {
   }
 
   render() {
-    console.log(this.props,'props in boards index');
     let { boards, pins, currentUser, owner } = this.props;
 
     let reversedSortedBoards = _.sortBy( boards, 'id' ).reverse();
@@ -88,5 +87,4 @@ class UserBoards extends React.Component {
   }
 }
 
-//  <BoardDetailModal key={board.id} board={ board }></BoardDetailModal>
 export default UserBoards;

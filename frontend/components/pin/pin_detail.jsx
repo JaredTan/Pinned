@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { values } from 'lodash';
+import PropTypes from 'prop-types';
+import Dropdown from 'react-simple-dropdown';
+// const DropdownTrigger = Dropdown.DropdownTrigger;
+// const DropdownContent = Dropdown.DropdownContent;
 
 class PinDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.state = {
+      pin_id: 0,
+      board_id: 0
+    }
+
+    this.handlePinning = this.handlePinning.bind(this);
+    this.handleSelection = this.handleSelection.bind(this);
   }
 
   componentWillMount() {
@@ -15,23 +27,53 @@ class PinDetail extends React.Component {
     this.props.resetPin();
   }
 
-  handleSubmit(e) {
+
+  handleSelection(e) {
     e.preventDefault();
+    this.setState({
+      pin_id: this.props.pin.id,
+      board_id: parseInt(e.currentTarget.value)
+    });
+  }
+
+  handlePinning(e) {
+    e.preventDefault();
+    const pinning = Object.assign({}, this.state);
+    this.props.createPinning({pinning})
     this.props.closeModal();
   }
 
   render() {
-    let { pin, deletePin, currentUserId } = this.props;
+    let { pin, deletePin, currentUser } = this.props;
     if (pin == undefined) {
       pin = {};
     }
     return (
       <section className='pin-detail-container'>
         <div className='pin-info-container'>
-          <button onClick={this.handleSubmit} className="pin-button">
-            <i className='fa fa-star'></i> Pin
-            </button>
-          { currentUserId === pin.user_id ?
+            <div className="pinning-dropdown-container">
+              <form onSubmit={this.handlePinning}>
+                <select className="pin-show-board-select"
+                  onChange={this.handleSelection}>
+                  <option key="disabled">Choose board</option>
+                  {
+                    values(currentUser.boards).map((board) => {
+                      if (values(pin.pinned_boards).includes(board.id)) {return;}
+                      return(
+                        <option className="pin-show-option"
+                          key={board.id}
+                          value={board.id}>{board.title}
+                        </option>
+                      );
+                    })
+                  }
+                </select>
+                <button type="Submit" className="fa fa-star pin-button">Pin</button>
+              </form>
+            </div>
+
+
+          { currentUser.id === pin.user_id ?
             <button onClick={() => deletePin(pin)} className='delete-button'>
               <i className="fa fa-times"></i> Delete
               </button>
