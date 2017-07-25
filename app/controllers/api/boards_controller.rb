@@ -1,9 +1,6 @@
 class Api::BoardsController < ApplicationController
 
   def index
-    @boards = Board.where(user_id: params[:user_id])
-
-    render 'api/boards/index'
   end
 
   def show

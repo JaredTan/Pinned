@@ -4,7 +4,56 @@
 }
 
 .board-index-thumbnail {
-  width: 200px;
-  height: 200px;
+  width: 240px;
+  height: 240px;
+  margin: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.profile-boards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: transparent;
+  flex-direction: row;
+  margin-bottom: 100px;
+  margin-top:30px;
+}
+
+.user-profile-items {
+  position: relative;
+  background-color: transparent;
+  width: 100vw;
+  z-index: 1;
+}
+
+.board-index-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  border: 2px solid $gray;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+  width: 240px;
+  height: 240px;
+}
+
+.board-index-item-container:hover {
+  background-color: white;
+  border: 2px solid $dark-gray;
+  cursor: pointer;
+}
+
+.create-board-index-thumbnail {
+  width: 240px;
+  height: 240px;
   margin: 20px;
 }

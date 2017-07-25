@@ -1,5 +1,5 @@
 class Board < ActiveRecord::Base
-  validates :user, presence: true
+  validates :owner, presence: true
 
   belongs_to :owner,
     primary_key: :id,

@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import BoardDetailContainer from '../board/board_detail_container';
+import BoardCreateFormContainer from '../board/board_create_form_container';
 
 
 const style = {
@@ -10,27 +10,28 @@ const style = {
     left                       : 0,
     right                      : 0,
     bottom                     : 0,
-    backgroundColor            : 'rgba(0, 0, 0, .5)',
+    backgroundColor            : 'rgba(0, 0, 0, .6)',
     zIndex                     : 10
   },
   content : {
     display                    : 'flex',
     justifyContent             : 'center',
-    left                       : '15%',
-    right                      : '15%',
-    border                     : '1px solid #ccc',
-    overflow                   : 'auto',
+    left                       : '25%',
+    right                      : '25%',
+    border                     : '0px solid #ccc',
+    overflow                   : 'none',
     WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
+    borderRadius               : '10px',
+    backgroundColor            : 'transparent',
     outline                    : 'none',
     padding                    : '20px',
-    backgroundColor            : '#f2f2f2',
     zIndex                     : 11,
     opacity                    : 0,
     transition                 : 'opacity 0.4s'
   }
 };
-class BoardDetailModal extends React.Component {
+
+class BoardCreateModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -56,12 +57,12 @@ class BoardDetailModal extends React.Component {
   }
 
   render() {
-    let { board } = this.props;
     return(
-      <div>
+      <div className="board-create-modal-div">
         <button className='board-index-thumbnail'
           onClick={this.openModal}>
-          {board.title}
+          Create a new board!
+          <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
         </button>
         <Modal
           isOpen={this.state.modalOpen}
@@ -70,13 +71,13 @@ class BoardDetailModal extends React.Component {
           style = {style}
           contentLabel="Board Modal">
 
-          <BoardDetailContainer
+          <BoardCreateFormContainer
             closeModal={this.closeModal}
-            id={board.id} board={board}/>
+             />
         </Modal>
       </div>
     );
   }
 }
 
-export default BoardDetailModal;
+export default BoardCreateModal;

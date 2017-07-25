@@ -17,8 +17,8 @@ export const receiveSingleBoard = (board) => ({
   board
 });
 
-export const requestAllBoards = () => (dispatch) => {
-  return APIUtil.fetchAllBoards().then(
+export const requestAllBoards = (userId) => (dispatch) => {
+  return APIUtil.fetchAllBoards(userId).then(
     boards => dispatch(receiveAllBoards(boards))
   );
 };

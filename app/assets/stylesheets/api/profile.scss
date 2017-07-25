@@ -4,16 +4,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-top: 55px;
 }
 
 .user-profile-top {
-  margin: 30px;
-  width: 100%;
+  margin-top: 35px;
   height: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 
 .user-profile-info-container {
@@ -24,15 +22,14 @@
 
 .user-profile-username{
   margin-bottom: 20px;
-  align-self: center;
   font-size: 30px;
   color: $dark-gray;
   font-weight: bold;
 }
 
 .user-profile-description {
-  margin-bottom: 20px;
   font-size: 18px;
+  width: 400px;
   color: $dark-gray;
 }
 
@@ -41,34 +38,18 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
+  border: 2px solid slategray;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 
-.user-profile-bottom {
-  margin-top: 50px;
+.user-profile-pic-and-edit {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.user-profile-link {
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: $gray;
 }
 
-.user-profile-link.active {
-  width: 100px;
-  height: 50px;
-  color: $dark-gray;
-  background: $light-gray;
-  border-radius: 50%;
-}
 
 .user-profile-buttons-bar {
   display: flex;
@@ -76,7 +57,7 @@
 }
 
 
-.user-profile-buttons-bar-container {
+.tab-buttons-bar-container {
   width: 30%;
 margin-top: 12px;
 margin-right: 27px;
@@ -84,4 +65,15 @@ display: flex;
 justify-content: space-around;
 align-items: baseline;
 color: #37BC9B;
+}
+
+
+.tab-button {
+  font-size: 30px;
+  color: $dark-gray;
+  border-radius: 10px;
+}
+
+.tab-button:hover {
+font-weight: bold;
 }

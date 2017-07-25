@@ -1,5 +1,5 @@
 
-.create-pin-form {
+.create-board-form {
   background-color: $light-gray;
   display: flex;
   flex-direction: row;
@@ -10,10 +10,11 @@
   justify-content: center;
   align-items: center;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 
 
-.create-pin-input, textarea {
+.create-board-input, textarea {
   font-weight: bold;
   font-size: 14px;
   margin: 7px;
@@ -43,7 +44,7 @@ span {
   font-size: 12px;
 }
 
-.create-pin-errors {
+.create-board-errors {
   color: red;
   font-weight: bold;
   padding: 2px;
@@ -89,11 +90,11 @@ span {
   background-color: $dark-mint;
 }
 
-.create-pin-input:focus {
+.create-board-input:focus {
   outline: none;
 }
 
-.pin-create-modal-div {
+.board-create-modal-div {
   margin-bottom: 10px;
 }
 
@@ -125,12 +126,12 @@ span {
   align-items: center;
 }
 
-.pins-index {
+.boards-index {
   margin: 5px auto;
   margin-top: 0px;
 }
 
-.pin-index-container {
+.board-index-container {
   padding: 76px 18px 0px;
 }
 
@@ -144,7 +145,7 @@ span {
   border-color: $light-mint;
 }
 
-.pin-detail-image {
+.board-detail-image {
   max-width: 600px;
   border-style: solid;
   border: 1px;

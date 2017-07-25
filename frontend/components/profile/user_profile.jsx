@@ -47,7 +47,7 @@ class UserProfile extends React.Component {
     }
   }
 
-  pinShow(){
+  userPinnedPins(){
     const pinArr = createPinArray(this.props.pinned_pins)
     let masonryOptions = {
       transitionDuration: 1,
@@ -95,18 +95,20 @@ class UserProfile extends React.Component {
               <h1 className="user-profile-username">{user.username}</h1>
               <p className="user-profile-description">{user.description}</p>
             </div>
-            <img className="user-profile-pic" src={user.image_url} alt="Profile Picture"></img>
-            {this.userEditModal()}
+            <div className="user-profile-pic-and-edit">
+              <img className="user-profile-pic" src={user.image_url} alt="Profile Picture"></img>
+              {this.userEditModal()}
+            </div>
           </div>
 
-          <div className="user-profile-buttons-bar-container">
-              <button onClick={() => this.handleTabClick("board")}>Boards</button>
-              <button onClick={() => this.handleTabClick("pin")}>Pins</button>
+          <div className="tab-buttons-bar-container">
+              <button className="tab-button" onClick={() => this.handleTabClick("board")}>Boards</button>
+              <button className="tab-button" onClick={() => this.handleTabClick("pin")}>Pins</button>
             </div>
 
 
           {this.state.boardTab ? this.userBoards() : null}
-          {this.state.pinTab ? this.pinShow() : null }
+          {this.state.pinTab ? this.userPinnedPins() : null }
 
 
         </section>
