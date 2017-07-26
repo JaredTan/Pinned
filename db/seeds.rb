@@ -326,3 +326,40 @@ pinning21 = Pinning.create!(
   board_id: board4.id,
   pin_id: pin18.id
 )
+
+Following.destroy_all
+
+following1 = Following.create!(
+  followee_id: user2.id,
+  follower_id: demo_user.id
+)
+
+following2 = Following.create!(
+  followee_id: user3.id,
+  follower_id: demo_user.id
+)
+
+following3 = Following.create!(
+  followee_id: user4.id,
+  follower_id: demo_user.id
+)
+
+following4 = Following.create!(
+  followee_id: demo_user.id,
+  follower_id: user2.id
+)
+
+following5 = Following.create!(
+  followee_id: demo_user.id,
+  follower_id: user3.id
+)
+
+following6 = Following.create!(
+  followee_id: user3.id,
+  follower_id: user2.id
+)
+
+following7 = Following.create!(
+  followee_id: user3.id,
+  follower_id: user4.id
+)

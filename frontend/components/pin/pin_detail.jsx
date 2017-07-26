@@ -28,6 +28,17 @@ class PinDetail extends React.Component {
     this.props.resetPin();
   }
 
+  handleDelete(pin) {
+    this.props.deletePin(pin);
+    this.props.requestSingleUser(this.props.user.id);
+  }
+
+  handleUnpinning() {
+    let pinId = parseInt(this.props.pin.id);
+    let boardId = parseInt(this.props.match.params.boardId);
+    let pinning = {pinning: {pin_id: pinId, board_id: boardId}};
+    this.props.deletePinning(pinning);
+  }
 
   handleSelection(e) {
     e.preventDefault();
@@ -48,7 +59,6 @@ class PinDetail extends React.Component {
     if (pin == undefined) {
       pin = {};
     }
-
 
     return (
       <section className='pin-detail-container'>
@@ -77,12 +87,22 @@ class PinDetail extends React.Component {
         <div className='pin-info-container'>
 
 
-          { currentUser.id === pin.user_id ?
-            <button onClick={() => deletePin(pin)} className='delete-button'>
-              <i className="fa fa-times"></i> Delete
+          { (currentUser.id === pin.user_id) && (this.props.match.params.boardId == undefined) ?
+            <button onClick={() => this.handleDelete(pin)} className='delete-button'>
+              <i className="fa fa-times"></i> Delete Pin
               </button>
             : null
           }
+
+          { this.props.match.params.boardId ?
+            <button onClick={() => this.handleUnpinning()} className='delete-button'>
+              <i className="fa fa-times"></i> Unpin from Board: {boards.title}
+              </button>
+            : null
+          }
+
+
+
           <br/>
             <h4>{pin.title}</h4>
           <h5>Pin by:

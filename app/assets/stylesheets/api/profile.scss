@@ -10,6 +10,7 @@
 .user-profile-top {
   margin-top: 35px;
   height: auto;
+  width: 60%;
   display: flex;
   align-items: center;
 }
@@ -18,6 +19,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-left: -40px
 }
 
 .user-profile-username{
@@ -29,7 +31,7 @@
 
 .user-profile-description {
   font-size: 18px;
-  width: 400px;
+  width: 380px;
   color: $dark-gray;
 }
 
@@ -50,6 +52,22 @@
   align-items: center;
 }
 
+.follows-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+}
+
+.follow-link {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.follow-link:hover {
+  background-color: $light-gray;
+  padding: 5px;
+  border-radius: 10px;
+}
 
 .user-profile-buttons-bar {
   display: flex;

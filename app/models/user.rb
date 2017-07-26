@@ -19,24 +19,23 @@ class User < ActiveRecord::Base
 		through: :boards,
 		source: :pins
 
+  has_many :followings_as_followee,
+    foreign_key: :followee_id,
+    primary_key: :id,
+    class_name: :Following
 
-  # has_many :follows_as_followee,
-  #   foreign_key: :following_id,
-  #   primary_key: :id,
-  #   class_name: :Following
-	#
-  # has_many :follows_as_follower,
-  #   foreign_key: :follower_id,
-  #   primary_key: :id,
-  #   class_name: :Following
-	#
-  # has_many :followers,
-  #   through: :follows_as_followee,
-  #   source: :Following
-	#
-  # has_many :followings,
-  #   through: :followers_as_follower,
-  #   source: :Following
+  has_many :followings_as_follower,
+    foreign_key: :follower_id,
+    primary_key: :id,
+    class_name: :Following
+
+  has_many :followers,
+    through: :followings_as_followee,
+    source: :follower
+
+  has_many :followees,
+    through: :followings_as_follower,
+    source: :followee
 
   def password=(password)
     @password = password

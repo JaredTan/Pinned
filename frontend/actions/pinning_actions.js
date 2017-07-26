@@ -13,7 +13,7 @@ export const createPinning = (pinning) => (dispatch) => {
 };
 
 export const deletePinning = (pinning) => (dispatch) => {
-  return APIUtil.deletePin(pinning).then(
+  return APIUtil.deletePinning(pinning).then(
     board => dispatch(receiveSingleBoard(board))
   );
 };
