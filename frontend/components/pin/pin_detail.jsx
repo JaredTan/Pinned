@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { values } from 'lodash';
+import { values, merge } from 'lodash';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-simple-dropdown';
 // const DropdownTrigger = Dropdown.DropdownTrigger;
@@ -21,6 +21,7 @@ class PinDetail extends React.Component {
 
   componentWillMount() {
     this.props.requestSinglePin(this.props.id);
+    this.props.requestSingleUser(this.props.currentUser.id);
   }
 
   componentWillUnmount() {
@@ -44,10 +45,12 @@ class PinDetail extends React.Component {
   }
 
   render() {
-    let { pin, deletePin, currentUser } = this.props;
+    let { pin, deletePin, currentUser, boards, user } = this.props;
     if (pin == undefined) {
       pin = {};
     }
+
+
     return (
       <section className='pin-detail-container'>
         <div className="pinning-dropdown-container">
@@ -56,7 +59,7 @@ class PinDetail extends React.Component {
               onChange={this.handleSelection}>
               <option key="disabled">Choose board</option>
               {
-                values(currentUser.boards).map((board) => {
+                values(user.boards).map((board) => {
                   if (values(pin.pinned_boards).includes(board.id)) {return;}
                   return(
                     <option className="pin-board-option"

@@ -22,6 +22,10 @@ export const removeErrors = () => ({
 export const logoutUser = () => ({
   type: LOGOUT_USER
 });
+// 
+// export const fetchUserByBoard = (board) => {
+//
+// }
 
 export const login = user => dispatch => {
   return APIUtil.login(user).then(

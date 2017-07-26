@@ -14,8 +14,8 @@ const usersReducer = (state = defaultState(), action) => {
     case RECEIVE_ALL_USERS:
       return merge({}, state, {entities: action.users});
     case RECEIVE_SINGLE_USER:
-    const user = action.user;
-    return merge(defaultState(), {chosenUser: action.user})
+      const user = action.user;
+      return merge(defaultState(), {chosenUser: action.user})
     default:
       return state;
   }

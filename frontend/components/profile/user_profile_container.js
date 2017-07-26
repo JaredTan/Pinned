@@ -4,7 +4,6 @@ import {selectSingleUser} from '../../reducers/selectors';
 import {requestSingleUser} from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state, 'state in container');
   return {
     user: state.users.chosenUser,
     currentUser: state.session.currentUser
