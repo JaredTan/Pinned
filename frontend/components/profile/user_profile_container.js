@@ -13,8 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   requestSingleUser: id => dispatch(requestSingleUser(id)),
-  createFollowing: follow => dispatch(createFollow(follow)),
-  removeFollowing: follow => dispatch(removeFollow(follow))
+  createFollowing: following => dispatch(createFollowing(following)),
+  removeFollowing: following => dispatch(removeFollowing(following))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

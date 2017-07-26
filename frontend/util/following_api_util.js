@@ -6,9 +6,10 @@ export const createFollowing = following => {
   });
 };
 
-export const deleteFollowing = following => {
+export const removeFollowing = following => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/followings/${following.id}`,
+    url: `api/followings/0`,
+    data: following
   })
 }

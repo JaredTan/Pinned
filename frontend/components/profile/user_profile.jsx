@@ -13,12 +13,11 @@ class UserProfile extends React.Component {
 
     this.state = {
      pinTab: false,
-     boardTab: true,
-     follower_id: 0,
-     followee_id: 0
+     boardTab: true
    }
 
    this.handleFollow = this.handleFollow.bind(this);
+   this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
 
@@ -94,19 +93,22 @@ class UserProfile extends React.Component {
   }
 
   handleFollow() {
+    let {user, currentUser, createFollowing} = this.props;
     let following = {
-      follower_id: this.state.follower_id,
-      followee_id: this.state.followee_id
+      follower_id: currentUser.id,
+      followee_id: user.id
      }
-    this.props.createPinning(newFollowing)
+     createFollowing({following});
   }
 
-  handleUnFollow() {
+
+  handleUnfollow() {
+    let {user, currentUser, removeFollowing} = this.props;
     let following = {
-      follower_id: this.state.follower_id,
-      followee_id: this.state.followee_id
+      follower_id: currentUser.id,
+      followee_id: user.id
      }
-     this.props.removePinning(newFollowing);
+     removeFollowing({following});
   }
 
   followingAndFollowers() {
@@ -122,10 +124,9 @@ class UserProfile extends React.Component {
   }
 
   followOrUnfollow(currentUser, user) {
-    console.log(values(currentUser.followees),'values followees');
     return (values(currentUser.followees)).includes(user.id) ?
-    <button onClick={this.handleFollow}>Follow</button> :
-    <button onClick={this.handleUnFollow}>Unfollow</button>
+      <button onClick={this.handleUnfollow}>Unfollow</button> :
+      <button onClick={this.handleFollow}>Follow</button>
   }
 
   userEditModal () {

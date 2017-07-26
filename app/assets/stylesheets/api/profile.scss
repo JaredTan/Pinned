@@ -10,7 +10,6 @@
 .user-profile-top {
   margin-top: 35px;
   height: auto;
-  width: 60%;
   display: flex;
   align-items: center;
 }
@@ -60,12 +59,13 @@
 
 .follow-link {
   margin-bottom: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .follow-link:hover {
   background-color: $light-gray;
-  padding: 5px;
+
   border-radius: 10px;
 }
 

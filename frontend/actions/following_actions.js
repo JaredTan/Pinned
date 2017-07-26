@@ -1,13 +1,15 @@
 import * as APIUtil from '../util/following_api_util';
 
-export const createFollow = follow => dispatch => {
-  return APIUtil.createFollow(follow).then(
+import { receiveSingleUser } from './user_actions';
+
+export const createFollowing = following => dispatch => {
+  return APIUtil.createFollowing(following).then(
     user => dispatch(receiveSingleUser(user))
   );
 }
 
-export const deleteFollow = follow => dispatch => {
-  return APIUtil.removeFollow(follow).then(
+export const removeFollowing = following => dispatch => {
+  return APIUtil.removeFollowing(following).then(
     user => dispatch(receiveSingleUser(user))
   );
 }

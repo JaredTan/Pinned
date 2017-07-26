@@ -94,7 +94,7 @@ class PinDetail extends React.Component {
             : null
           }
 
-          { this.props.match.params.boardId ?
+          { (this.props.match.params.boardId) && (currentUser.id === boards.user_id)?
             <button onClick={() => this.handleUnpinning()} className='delete-button'>
               <i className="fa fa-times"></i> Unpin from Board: {boards.title}
               </button>
