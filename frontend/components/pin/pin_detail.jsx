@@ -41,7 +41,6 @@ class PinDetail extends React.Component {
     e.preventDefault();
     const pinning = Object.assign({}, this.state);
     this.props.createPinning({pinning})
-    this.props.closeModal();
   }
 
   render() {
@@ -53,8 +52,8 @@ class PinDetail extends React.Component {
 
     return (
       <section className='pin-detail-container'>
-        <div className="pinning-dropdown-container">
-          <form onSubmit={this.handlePinning}>
+        <div >
+          <form className="pinning-dropdown-container" onSubmit={this.handlePinning}>
             <select className="pin-board-select"
               onChange={this.handleSelection}>
               <option key="disabled">Choose board</option>
@@ -71,7 +70,7 @@ class PinDetail extends React.Component {
               }
             </select>
             <button type="Submit" className="pin-button">
-              <i className="fa fa-star"></i> Pin
+              <i className="fa fa-lightbulb-o fa-2x"></i> Pin!
             </button>
           </form>
         </div>
