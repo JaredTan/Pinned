@@ -124,9 +124,9 @@ class UserProfile extends React.Component {
   }
 
   followOrUnfollow(currentUser, user) {
-    return (values(currentUser.followees)).includes(user.id) ?
-      <button onClick={this.handleUnfollow}>Unfollow</button> :
-      <button onClick={this.handleFollow}>Follow</button>
+    return (values(user.followers)).includes(currentUser.id) ?
+      <button className='profile-follow-button' onClick={this.handleUnfollow}>Unfollow</button> :
+      <button className='profile-follow-button' onClick={this.handleFollow}>Follow</button>
   }
 
   userEditModal () {

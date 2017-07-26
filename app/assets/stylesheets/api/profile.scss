@@ -15,17 +15,17 @@
 }
 
 .user-profile-info-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   margin-left: -40px
 }
 
 .user-profile-username{
-  margin-bottom: 20px;
   font-size: 30px;
   color: $dark-gray;
   font-weight: bold;
+}
+
+.profile-follow-button {
+  margin-bottom: 20px;
 }
 
 .user-profile-description {
