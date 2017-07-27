@@ -16,7 +16,6 @@ class UserProfile extends React.Component {
      boardTab: true
    }
 
-
    this.handleFollow = this.handleFollow.bind(this);
    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
@@ -46,14 +45,9 @@ class UserProfile extends React.Component {
 
   handleTabClick(tab){
     this.resetTabs();
-    switch (tab) {
-      case "pin":
-        this.setState({ pinTab: true });
-        break;
-      case "board":
-        this.setState({ boardTab: true });
-        break;
-    }
+    return (tab === "pin") ?
+    this.setState({ pinTab: true }) :
+    this.setState({ boardTab: true })
   }
 
   userPinnedPins(){
@@ -90,30 +84,24 @@ class UserProfile extends React.Component {
     )
   }
 
-  followCount(follows) {
-    if (follows == undefined) {
-      follows = []
-    }
-    return (follows.length);
-  }
 
   handleFollow() {
     let {user, currentUser, createFollowing} = this.props;
     let following = {
       follower_id: currentUser.id,
       followee_id: user.id
-     }
-     createFollowing({following});
+    }
+    createFollowing({following});
   }
 
 
   handleUnfollow() {
-    let {user, currentUser, removeFollowing, requestSingleUser} = this.props;
+    let {user, currentUser, removeFollowing} = this.props;
     let following = {
       follower_id: currentUser.id,
       followee_id: user.id
-     }
-     removeFollowing({following});
+    }
+    removeFollowing({following});
   }
 
   followingAndFollowers() {
@@ -123,12 +111,19 @@ class UserProfile extends React.Component {
     }
     return(
       <div className='follows-container'>
-        {this.followCount(values(user.followees))}
+        <a className='follow-count'>{this.followCount(values(user.followees))}</a>
         <Link className='follow-link' to={`/users/${user.id}/following`}>Following</Link>
-        {this.followCount(values(user.followers))}
+        <a className='follow-count'>{this.followCount(values(user.followers))}</a>
         <Link className='follow-link' to={`/users/${user.id}/followers`}>Followers</Link>
       </div>
     )
+  }
+
+  followCount(follows) {
+    if (follows == undefined) {
+      follows = []
+    }
+    return (follows.length);
   }
 
   followOrUnfollow(currentUser, user) {
@@ -145,11 +140,11 @@ class UserProfile extends React.Component {
     return (
       <div className="user-profile-container">
         <div className="tab-buttons-bar-container">
-          <button className="tab-button" onClick={() => this.handleTabClick("board")}>Boards</button>
-          <button className="tab-button" onClick={() => this.handleTabClick("pin")}>Pins</button>
+          <button className={this.state.boardTab ? "tab-button-on" :"tab-button-off"}
+             onClick={() => this.handleTabClick("board")}>Boards</button>
+           <button className={this.state.pinTab ? "tab-button-on" :"tab-button-off"}
+             onClick={() => this.handleTabClick("pin")}>Pins</button>
         </div>
-
-
       {this.state.boardTab ? this.userBoards() : null}
       {this.state.pinTab ? this.userPinnedPins() : null }
     </div>
@@ -161,7 +156,7 @@ class UserProfile extends React.Component {
     let { currentUser, user, followers, followees } = this.props;
     let sortedUsers = this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
     _.sortBy( followers, 'username' ) :
-    _.sortBy( followees, 'username' ) ;
+    _.sortBy( followees, 'username' );
 
     let displayWords = this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
     'Followers' :
@@ -176,7 +171,6 @@ class UserProfile extends React.Component {
 
     return (
       <div className="follows-index-container">
-
         <h3 className='following-label'>{displayWords}</h3>
         <Masonry className={"follows-index"}
           elementType={'ul'}
@@ -194,7 +188,6 @@ class UserProfile extends React.Component {
           }
         )}
         </Masonry>
-
       </div>
     )
   }
@@ -228,20 +221,17 @@ class UserProfile extends React.Component {
               {this.followingAndFollowers()}
             </div>
           </section>
-
           <div>
-            {this.props.location.pathname.split('/').slice(-1)[0] === "following" ||
+            {
+              this.props.location.pathname.split('/').slice(-1)[0] === "following" ||
               this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
               this.followDisplay() :
               this.profileDisplay()
             }
           </div>
         </section>
-
       );
     }
-
-
 
 }
 

@@ -6,7 +6,6 @@ import NavBarContainer from './nav/nav_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UserProfileContainer from './profile/user_profile_container';
 import PinsIndexContainer from './pin/pins_index_container';
-import FollowsIndexContainer from './follows/follows_index_container';
 
 
 

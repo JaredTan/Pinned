@@ -6,14 +6,7 @@ import PinCreateModal from '../modal/pin_create_modal';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.redirectToCreate = this.redirectToCreate.bind(this);
   }
-
-  // redirectToCreate(event) {
-  //   event.preventDefault();
-  //   this.props.history.push('/pins/create');
-  // }
 
   render() {
     let {currentUser, logout} = this.props;
@@ -26,7 +19,7 @@ class NavBar extends React.Component {
           </div>
           <div className="search">
             <h2 className="search-text">
-              hi {currentUser.username}, click on the pins!
+              your ideas, pinned.
             </h2>
           </div>
           <div className="right">
