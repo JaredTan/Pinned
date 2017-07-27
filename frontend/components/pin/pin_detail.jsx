@@ -54,11 +54,20 @@ class PinDetail extends React.Component {
     this.props.createPinning({pinning})
   }
 
+  // handlePinning(e) {
+  //   e.preventDefault();
+  //   const pinning = Object.assign({}, this.state);
+  //   (values(this.props.pin.pinned_boards).includes(this.state.board_id)) ?
+  //   this.props.deletePinning({pinning}) :
+  //   this.props.createPinning({pinning})
+  // }
+
   render() {
     let { pin, deletePin, currentUser, board, user } = this.props;
     if (pin == undefined) {
       pin = {};
     }
+
 
     return (
       <section className='pin-detail-container'>
@@ -66,18 +75,24 @@ class PinDetail extends React.Component {
           <form className="pinning-dropdown-container" onSubmit={this.handlePinning}>
             <select className="pin-board-select"
               onChange={this.handleSelection}>
-              <option key="disabled">Choose board</option>
+              <option key="disabled">Pin to Board!</option>
               {
                 values(user.boards).map((board) => {
-                  if (values(pin.pinned_boards).includes(board.id)) {return;}
+                  if (values(pin.pinned_boards).includes(board.id)) {
+                  return (
+                    <option className="pin-board-option"
+                      value={board.id}>{board.title}  ✔
+                    </option>
+                  )} else {
                   return(
                     <option className="pin-board-option"
                       key={board.id}
                       value={board.id}>{board.title}
                     </option>
                   );
-                })
-              }
+                }
+              })
+            }
             </select>
             <button type="Submit" className="pin-button">
               <i className="fa fa-lightbulb-o fa-2x"></i> Pin!

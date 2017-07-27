@@ -6,7 +6,7 @@
   background-image: url(https://s.pinimg.com/webapp/style/images/bg_multi_case_grid_no_text-adb7650b.jpg);
   background-repeat: repeat;
   background-position: 0 0;
-  animation: loginPage 500s linear infinite;
+  animation: loginPage 540s linear infinite;
   padding-bottom: 300px;
   position: fixed;
   background-size: cover;
@@ -39,6 +39,7 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   align-items: center;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 34px
 }
 
 .login-input {

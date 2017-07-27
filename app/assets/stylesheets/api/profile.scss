@@ -8,7 +8,7 @@
 }
 
 .user-profile-top {
-  margin-top: 35px;
+  margin-top: 44px;
   height: auto;
   display: flex;
   align-items: center;
@@ -25,7 +25,17 @@
 }
 
 .profile-follow-button {
-
+  font-size: 15px;
+  font-weight: bold;
+  border: 0px;
+  height: 36px;
+  border-radius: 38px;
+  padding: 0 18px;
+  vertical-align: middle;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: black;
+  background-color: $light-mint;
 }
 
 .user-profile-description {

@@ -19,7 +19,7 @@ class NavBar extends React.Component {
           </div>
           <div className="search">
             <h2 className="search-text">
-              your ideas, pinned.
+              hi {currentUser.username}, welcome to pinned.
             </h2>
           </div>
           <div className="right">

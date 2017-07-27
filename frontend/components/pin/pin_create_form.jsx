@@ -106,6 +106,7 @@ class PinCreateForm extends React.Component {
               <span>Title</span>
               <br/>
               <input type="text"
+                required
                 value={this.state.title}
                 onChange={this.update('title')}
                 className="create-pin-input"

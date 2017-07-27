@@ -208,8 +208,8 @@ class UserProfile extends React.Component {
           <section className="user-profile-container">
             <div className="user-profile-top">
               <div className="user-profile-info-container">
+                { currentUser.id == user.id ? null : this.followOrUnfollow(currentUser, user) }
                 <h1 className="user-profile-username">{user.username}</h1>
-                  { currentUser.id == user.id ? null : this.followOrUnfollow(currentUser, user) }
                 <p className="user-profile-description">{user.description}</p>
               </div>
               <div className="user-profile-pic-and-edit">
