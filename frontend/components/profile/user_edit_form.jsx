@@ -8,14 +8,14 @@ const UPLOAD_URL = "https://api.cloudinary.com/v1_1/jaredtan/image/upload";
 class UserEditForm extends React.Component {
   constructor(props) {
     super(props);
-    const oldUser = this.props.chosenUser;
+    const oldUser = this.props.user;
     this.state = {
       description: oldUser.description,
       image_url: oldUser.image_url
     };
 
 
-  
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -83,18 +83,19 @@ class UserEditForm extends React.Component {
   }
 
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
+  // <span className="create-pin-errors">{this.renderErrors()}</span>
   render() {
     return (
       <div className="create-pin-form-container">
@@ -105,7 +106,6 @@ class UserEditForm extends React.Component {
             Username: {this.props.currentUser.username}
            </span>
           <br/>
-          <span className="create-pin-errors">{this.renderErrors()}</span>
           <div>
 
             <br/>

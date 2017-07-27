@@ -5,9 +5,9 @@ import { withRouter } from 'react-router'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    errors: state.users.errors,
+    errors: state.user.errors,
     currentUser: state.session.currentUser,
-    chosenUser: state.users,
+    user: state.user,
     ownProps
   }
 }

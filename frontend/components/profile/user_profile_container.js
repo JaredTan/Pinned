@@ -6,7 +6,7 @@ import {createFollowing, removeFollowing} from '../../actions/following_actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    user: state.users,
+    user: state.user,
     currentUser: state.session.currentUser
   }
 };

@@ -6,12 +6,12 @@ import { createPinning, deletePinning } from '../../actions/pinning_actions';
 import { withRouter } from 'react-router-dom';
 import PinDetail from './pin_detail';
 
-const mapStateToProps = ({pins, session, boards, users}) => {
+const mapStateToProps = ({pins, session, board, user}) => {
   return {
     pin: pins.entities[pins.currentPin],
     currentUser: session.currentUser,
-    user: users,
-    boards
+    user,
+    board
   }
 };
 

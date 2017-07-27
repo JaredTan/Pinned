@@ -7,7 +7,7 @@ import PinsIndex from './pins_index';
 const mapStateToProps = (state) => {
   return {
     pins: selectAllPins(state.pins),
-    board: state.boards,
+    board: state.board,
     currentUserId: state.session.currentUser.id
   }
 };

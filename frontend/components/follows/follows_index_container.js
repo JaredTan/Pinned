@@ -5,12 +5,12 @@ import { selectAllUsers } from '../../reducers/selectors';
 import {withRouter} from 'react-router-dom'
 import FollowsIndex from './follows_index';
 
-const mapStateToProps = state => {
+const mapStateToProps = ({session, user})=> {
   return {
-    currentUser: state.session.currentUser,
-    user: state.users,
-    followers: state.users.followers,
-    following: state.users.followings
+    currentUser: session.currentUser,
+    followers: user.followers,
+    followees: user.followees,
+    user
   }
 };
 

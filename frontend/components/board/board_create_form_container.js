@@ -6,7 +6,7 @@ import BoardCreateForm from './board_create_form';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    errors: state.boards.errors,
+    errors: state.board.errors,
     currentUser: state.session.currentUser,
     ownProps
   }

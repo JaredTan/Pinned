@@ -27,10 +27,11 @@ class BoardCreateForm extends React.Component {
   }
 
 
-  renderErrors() {
-
-  }
-
+  // renderErrors() {
+  //
+  // }
+  //
+  // <span className="create-board-errors">{this.renderErrors()}</span>
   render() {
     return (
       <div className="create-board-form-container">
@@ -39,7 +40,6 @@ class BoardCreateForm extends React.Component {
             <h1>Create Board!</h1>
            </span>
           <br/>
-          <span className="create-board-errors">{this.renderErrors()}</span>
           <div className='input-area'>
             <label>
               <span>Title</span>

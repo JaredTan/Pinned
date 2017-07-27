@@ -4,8 +4,8 @@ import BoardDetail from './board_detail';
 
 const mapStateToProps = (state) => {
   return {
-    board: state.boards,
-    currentUserId: state.session.currentUser.id
+    currentUserId: state.session.currentUser.id,
+    board
   };
 };
 

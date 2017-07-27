@@ -55,7 +55,7 @@ class PinDetail extends React.Component {
   }
 
   render() {
-    let { pin, deletePin, currentUser, boards, user } = this.props;
+    let { pin, deletePin, currentUser, board, user } = this.props;
     if (pin == undefined) {
       pin = {};
     }
@@ -94,9 +94,9 @@ class PinDetail extends React.Component {
             : null
           }
 
-          { (this.props.match.params.boardId) && (currentUser.id === boards.user_id)?
+          { (this.props.match.params.boardId) && (currentUser.id === board.user_id)?
             <button onClick={() => this.handleUnpinning()} className='delete-button'>
-              <i className="fa fa-times"></i> Unpin from Board: {boards.title}
+              <i className="fa fa-times"></i> Unpin from Board: {board.title}
               </button>
             : null
           }

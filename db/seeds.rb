@@ -11,7 +11,7 @@ demo_user = User.create!(
   username: 'DemoUser',
   password:'pinneddemo',
   description: 'The awesomest demo user ever!',
-  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1500875429/olvpghh4qe2oldkvxpi4.jpg'
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi8_w6xf9r.jpg'
 )
 user2 = User.create!(
   username: 'Jared',

@@ -9,6 +9,9 @@ class FollowsIndex extends React.Component {
   constructor (props) {
     super(props);
 
+
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentWillMount() {
@@ -17,9 +20,28 @@ class FollowsIndex extends React.Component {
 
 
   followOrUnfollow(currentUser, user) {
-    return (values(user.followers)).includes(currentUser.id) ?
+    return user.followed ?
       <button className='profile-follow-button' onClick={this.handleUnfollow}>Unfollow</button> :
       <button className='profile-follow-button' onClick={this.handleFollow}>Follow</button>
+  }
+
+  handleFollow() {
+    let {user, currentUser, createFollowing} = this.props;
+    let following = {
+      follower_id: currentUser.id,
+      followee_id: user.id
+     }
+     createFollowing({following});
+  }
+
+
+  handleUnfollow() {
+    let {user, currentUser, removeFollowing} = this.props;
+    let following = {
+      follower_id: currentUser.id,
+      followee_id: user.id
+     }
+     removeFollowing({following});
   }
 
   userEditModal () {
@@ -39,7 +61,6 @@ class FollowsIndex extends React.Component {
 
   render() {
     let { currentUser, user, followers, followees } = this.props;
-    console.log(this.props,'??');
     let sortedUsers = this.props.match.path == '/users/:userId/followers' ?
     _.sortBy( followers, 'username' ) :
     _.sortBy( followees, 'username' ) ;

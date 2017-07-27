@@ -1,9 +1,9 @@
 import merge from 'lodash/merge';
-import {RECEIVE_SINGLE_BOARD, REMOVE_BOARD, RESET_BOARD} from '../actions/board_actions';
+import {RECEIVE_SINGLE_BOARD, REMOVE_BOARD} from '../actions/board_actions';
 
 
 
-const boardsReducer = (state = {}, action) => {
+const boardReducer = (state = {}, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_SINGLE_BOARD:
@@ -13,11 +13,9 @@ const boardsReducer = (state = {}, action) => {
       const dupState = merge({}, state);
       delete dupState[boardId]
       return dupState
-    case RESET_BOARD:
-      return merge({}, state, {currentBoard: {}});
     default:
       return state;
   }
 }
 
-export default boardsReducer;
+export default boardReducer;

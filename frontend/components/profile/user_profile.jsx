@@ -132,7 +132,7 @@ class UserProfile extends React.Component {
   }
 
   followOrUnfollow(currentUser, user) {
-    return (values(user.followers)).includes(currentUser.id) ?
+    return user.followed ?
       <button className='profile-follow-button' onClick={this.handleUnfollow}>Unfollow</button> :
       <button className='profile-follow-button' onClick={this.handleFollow}>Follow</button>
   }

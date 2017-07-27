@@ -13,7 +13,6 @@ const pinsReducer = (state = defaultState(), action) => {
       return merge({}, state, {entities: action.pins});
     case RECEIVE_SINGLE_PIN:
       const pin = action.pin;
-
       return merge({}, state, {
         entities: { [pin.id]: pin },
         currentPin: pin.id
