@@ -54,7 +54,7 @@ class UserBoards extends React.Component {
          { reversedSortedBoards.map( (board) => {
            return (
              <div className='board-display-pictures'>
-               <Link to={`/boards/${board.id}`}className="board-index-item-container">
+               <Link to={`/boards/${board.id}`} key={board.id}className="board-index-item-container">
                  <div>
                    {board.title}
                  </div>
@@ -67,7 +67,7 @@ class UserBoards extends React.Component {
                   { values(board.pins).slice(0, 8).map( pin => {
                      return (
                        <div>
-                         <img className='pins-in-board-thumbnail-pic' src={pin.image_url}></img>
+                         <img className='pins-in-board-thumbnail-pic' key={pin.id} src={pin.image_url}></img>
                        </div>
                      )
                    })

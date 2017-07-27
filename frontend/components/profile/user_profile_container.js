@@ -1,13 +1,14 @@
 import {connect} from 'react-redux';
 import UserProfile from './user_profile';
-import {selectSingleUser} from '../../reducers/selectors';
 import {requestSingleUser, resetUser} from '../../actions/user_actions';
 import {createFollowing, removeFollowing} from '../../actions/following_actions'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ({session, user})=> {
   return {
-    user: state.user,
-    currentUser: state.session.currentUser
+    currentUser: session.currentUser,
+    followers: user.followers,
+    followees: user.followees,
+    user
   }
 };
 

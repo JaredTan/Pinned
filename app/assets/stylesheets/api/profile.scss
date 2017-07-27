@@ -83,7 +83,7 @@
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  color: #37BC9B;
+  color: $dark-mint;
 }
 
 
@@ -94,5 +94,49 @@
 }
 
 .tab-button:hover {
-font-weight: bold;
+  font-weight: bold;
+  background-color: $light-gray;
+}
+
+.follows-index-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 89px;
+}
+
+
+.user-following-profile-top {
+  display: flex;
+  align-items: center;
+}
+
+.user-pins {
+  margin: 5px auto;
+  margin-top: 30px;
+}
+
+
+.following-label {
+
+}
+
+.user-following-profile-pic-thumbnail {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid slategray;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+}
+
+.user-profile-following-pic-and-follow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

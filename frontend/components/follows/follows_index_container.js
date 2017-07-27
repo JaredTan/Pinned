@@ -17,7 +17,6 @@ const mapStateToProps = ({session, user})=> {
 const mapDispatchToProps = dispatch => ({
   createFollowing: following => dispatch(createFollowing(following)),
   removeFollowing: following => dispatch(removeFollowing(following)),
-  requestAllUsers: () => dispatch(requestAllUsers()),
   requestSingleUser: user => dispatch(requestSingleUser(user))
 });
 

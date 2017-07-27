@@ -57,14 +57,14 @@ class UserProfile extends React.Component {
   }
 
   userPinnedPins(){
-    const pinArr = createPinArray(this.props.pinned_pins)
+    const pinArr = createPinArray(this.props.user.pinned_pins)
     let masonryOptions = {
       transitionDuration: 1,
       gutter: 30,
       fitWidth: true
     };
     return(
-      <Masonry className={"pins-index"}
+      <Masonry className={"user-pins"}
         elementType={'ul'}
         options={masonryOptions}
         disableImagesLoaded={false}
@@ -137,14 +137,70 @@ class UserProfile extends React.Component {
       <button className='profile-follow-button' onClick={this.handleFollow}>Follow</button>
   }
 
-  userEditModal () {
+  userEditModal() {
     return (this.props.currentUser.id == this.props.match.params.userId) ? <UserEditModal/> : null
+  }
+
+  profileDisplay() {
+    return (
+      <div className="user-profile-container">
+        <div className="tab-buttons-bar-container">
+          <button className="tab-button" onClick={() => this.handleTabClick("board")}>Boards</button>
+          <button className="tab-button" onClick={() => this.handleTabClick("pin")}>Pins</button>
+        </div>
+
+
+      {this.state.boardTab ? this.userBoards() : null}
+      {this.state.pinTab ? this.userPinnedPins() : null }
+    </div>
+    )
+  }
+
+
+  followDisplay() {
+    let { currentUser, user, followers, followees } = this.props;
+    let sortedUsers = this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
+    _.sortBy( followers, 'username' ) :
+    _.sortBy( followees, 'username' ) ;
+
+    let displayWords = this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
+    'Followers' :
+    'Following' ;
+
+    let masonryOptions = {
+      transitionDuration: 1,
+      gutter: 30,
+      fitWidth: true
+    };
+
+
+    return (
+      <div className="follows-index-container">
+
+        <h3 className='following-label'>{displayWords}</h3>
+        <Masonry className={"follows-index"}
+          elementType={'ul'}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={false}
+          >
+          { sortedUsers.map( (user) => {
+            return (
+              <Link className ='user-profile-following-pic-and-follow' to={`/users/${user.id}`}>
+                <img className="user-following-profile-pic-thumbnail" src={user.image_url}></img>
+                {user.username}
+              </Link>
+            )
+          }
+        )}
+        </Masonry>
+
+      </div>
+    )
   }
 
 
   render() {
-
-
       let { user, currentUser } = this.props;
       if (user == null) {
         user = {};
@@ -155,36 +211,38 @@ class UserProfile extends React.Component {
       }
 
       return (
-        <section className="user-profile-container">
-          <div className="user-profile-top">
-            <div className="user-profile-info-container">
-              <h1 className="user-profile-username">{user.username}</h1>
-                { currentUser.id == user.id ? null : this.followOrUnfollow(currentUser, user) }
-              <p className="user-profile-description">{user.description}</p>
+        <section>
+          <section className="user-profile-container">
+            <div className="user-profile-top">
+              <div className="user-profile-info-container">
+                <h1 className="user-profile-username">{user.username}</h1>
+                  { currentUser.id == user.id ? null : this.followOrUnfollow(currentUser, user) }
+                <p className="user-profile-description">{user.description}</p>
+              </div>
+              <div className="user-profile-pic-and-edit">
+                <Link to={`/users/${user.id}`}>
+                  <img className="user-profile-pic" src={image_url}></img>
+                </Link>
+                {this.userEditModal()}
+              </div>
+              {this.followingAndFollowers()}
             </div>
-            <div className="user-profile-pic-and-edit">
-              <img className="user-profile-pic" src={image_url}></img>
-              {this.userEditModal()}
-            </div>
-            {this.followingAndFollowers()}
+          </section>
+
+          <div>
+            {this.props.location.pathname.split('/').slice(-1)[0] === "following" ||
+              this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
+              this.followDisplay() :
+              this.profileDisplay()
+            }
           </div>
-
-          <div className="tab-buttons-bar-container">
-              <button className="tab-button" onClick={() => this.handleTabClick("board")}>Boards</button>
-              <button className="tab-button" onClick={() => this.handleTabClick("pin")}>Pins</button>
-            </div>
-
-
-          {this.state.boardTab ? this.userBoards() : null}
-
-
         </section>
+
       );
     }
 
 
 
 }
-// {this.state.pinTab ? this.userPinnedPins() : null }
 
 export default UserProfile;
