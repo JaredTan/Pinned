@@ -30,12 +30,24 @@
   border-color: rgba(181, 181, 181, 0.23);
 }
 
-.pin-button {
-  font-size: 20px;
+.board-text {
+  font-size: 15px;
   padding: 5px 10px;
-  position: absolute;
-  top: 35px;
-  left: 20px;
+  vertical-align: middle;
+  margin-top: 9px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-mint;
+  background-color: rgba(181, 181, 181, 0.23);
+    &:hover {
+      background: $gray;
+    }
+  }
+
+
+.pin-button {
+  font-size: 13px;
+  padding: 5px 10px;
   vertical-align: middle;
   margin-top: 20px;
   border-radius: 25px;
@@ -47,10 +59,36 @@
     }
   }
 
+.pin-button-unclickable {
+  font-size: 13px;
+  padding: 5px 10px;
+  vertical-align: middle;
+  margin-top: 20px;
+  cursor: default;
+  border-radius: 25px;
+  color: $dark-gray;
+  background-color: $light-mint;
+}
+
+.pin-board-div {
+  left: 20px;
+  height: 158px;
+  max-width: 150px;
+  overflow: auto;
+  position: absolute;
+}
+
 .pin-board-select {
   position: relative;
   right: 16%;
   margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pin-board-list {
+
 }
 
 .pinning-dropdown-container {
