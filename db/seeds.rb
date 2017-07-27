@@ -23,7 +23,7 @@ user3 = User.create!(
   username: 'JavascriptMaster',
   password: 'justkidding',
   description: 'I love curly braces',
-  image_url: ''
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1500969184/display_pic_nwmrpn.png'
 )
 user4 = User.create!(
   username: 'Munyo',

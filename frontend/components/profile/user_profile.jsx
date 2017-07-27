@@ -16,12 +16,13 @@ class UserProfile extends React.Component {
      boardTab: true
    }
 
+
    this.handleFollow = this.handleFollow.bind(this);
    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
 
-  componentDidMount () {
+  componentWillMount () {
     this.props.requestSingleUser(this.props.match.params.userId);
   }
 
@@ -30,6 +31,10 @@ class UserProfile extends React.Component {
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
       this.props.requestSingleUser(nextProps.match.params.userId);
     }
+  }
+
+  componentWillUnmount() {
+      this.props.resetUser();
   }
 
   resetTabs(){
@@ -103,7 +108,7 @@ class UserProfile extends React.Component {
 
 
   handleUnfollow() {
-    let {user, currentUser, removeFollowing} = this.props;
+    let {user, currentUser, removeFollowing, requestSingleUser} = this.props;
     let following = {
       follower_id: currentUser.id,
       followee_id: user.id
@@ -113,6 +118,9 @@ class UserProfile extends React.Component {
 
   followingAndFollowers() {
     let {user} = this.props;
+    if (user == null) {
+      user = {};
+    }
     return(
       <div className='follows-container'>
         {this.followCount(values(user.followees))}
@@ -135,11 +143,17 @@ class UserProfile extends React.Component {
 
 
   render() {
+
+
       let { user, currentUser } = this.props;
+      if (user == null) {
+        user = {};
+      }
       let image_url = user.image_url
       if (image_url == '') {
         image_url = "http://res.cloudinary.com/jaredtan/image/upload/v1500969184/display_pic_nwmrpn.png"
       }
+
       return (
         <section className="user-profile-container">
           <div className="user-profile-top">

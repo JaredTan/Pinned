@@ -6,7 +6,7 @@ import NavBarContainer from './nav/nav_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UserProfileContainer from './profile/user_profile_container';
 import PinsIndexContainer from './pin/pins_index_container';
-import FollowsIndexContainer from './profile/follows_index_container';
+import FollowsIndexContainer from './follows/follows_index_container';
 
 
 
@@ -15,7 +15,7 @@ const App = () => (
       <ProtectedRoute path="/" component={NavBarContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
-      <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
+      <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer} />
       <ProtectedRoute path="/users/:userId/followers" component={FollowsIndexContainer} />
       <ProtectedRoute path="/users/:userId/following" component={FollowsIndexContainer} />
       <ProtectedRoute path="/boards/:boardId" component={PinsIndexContainer} />

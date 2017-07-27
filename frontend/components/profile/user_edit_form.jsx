@@ -13,6 +13,10 @@ class UserEditForm extends React.Component {
       description: oldUser.description,
       image_url: oldUser.image_url
     };
+
+
+  
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleImageUpload = this.handleImageUpload.bind(this);

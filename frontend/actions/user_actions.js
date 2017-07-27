@@ -2,6 +2,7 @@ import * as APIUtil from '../util/user_api_util';
 
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 export const RECEIVE_SINGLE_USER = "RECEIVE_SINGLE_USER";
+export const RESET_USER = "RESET_USER";
 
 
 export const receiveAllUsers = (users) => {
@@ -35,3 +36,9 @@ export const updateUser = (user, id) => (dispatch) => {
     user => dispatch(receiveSingleUser(user))
   );
 };
+
+export const resetUser = () => {
+  return {
+    type: RESET_USER
+  }
+}

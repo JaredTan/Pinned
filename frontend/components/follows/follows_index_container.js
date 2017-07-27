@@ -8,8 +8,9 @@ import FollowsIndex from './follows_index';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
-    user: state.users.chosenUser,
-    users: selectAllUsers(state.users)
+    user: state.users,
+    followers: state.users.followers,
+    following: state.users.followings
   }
 };
 

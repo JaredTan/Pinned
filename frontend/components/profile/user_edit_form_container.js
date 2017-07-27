@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.users.errors,
     currentUser: state.session.currentUser,
-    chosenUser: state.users.chosenUser,
+    chosenUser: state.users,
     ownProps
   }
 }

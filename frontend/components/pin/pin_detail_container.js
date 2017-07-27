@@ -10,7 +10,7 @@ const mapStateToProps = ({pins, session, boards, users}) => {
   return {
     pin: pins.entities[pins.currentPin],
     currentUser: session.currentUser,
-    user: users.chosenUser,
+    user: users,
     boards
   }
 };

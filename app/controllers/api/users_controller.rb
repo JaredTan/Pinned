@@ -7,6 +7,7 @@ class Api::UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
+		@user.image_url = 'http://res.cloudinary.com/jaredtan/image/upload/v1500969184/display_pic_nwmrpn.png'
 		if @user.save
 			login(@user)
 			render 'api/users/show'
