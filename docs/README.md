@@ -11,11 +11,12 @@ Pinned is a full-stack web application inspired by Pinterest. This project utili
 
 - [x] Hosting on Heroku
 - [x] New User Sign Up and Sign In, Demo Login
-- [ ] Profile
-- [ ] Boards and Pins
-- [ ] Follows
-- [ ] Discover Feed on home page
+- [x] Profile
+- [x] Boards and Pins
+- [x] Follows
+- [x] Discover Feed on home page
 - [ ] Production README
+- [x] Search (Bonus!)
 
 ## Design Documents
 

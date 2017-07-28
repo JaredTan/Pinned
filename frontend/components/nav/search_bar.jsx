@@ -18,15 +18,6 @@ class SearchBar extends React.Component {
     setTimeout(this.setState({searchQuery: e.target.value}, () => this.props.requestSearchResults(this.state.searchQuery)), 50)
   }
 
-  handlePinClick(pin){
-    let {resetSearchResults} = this.props;
-    console.log('?');
-    return (e) => {
-      resetSearchResults();
-      <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>
-    };
-  }
-
   createResultsList(items, type){
     let {resetSearchResults} = this.props;
     const listItems = items.map((item, idx) => {
