@@ -18,7 +18,13 @@ export const deletePinningInBoard = (pinning) => (dispatch) => {
   );
 };
 
-export const deletePinningInPin = pinning => dispatch => {
+export const deletePinningInPinDiffBoard = (pinning) => (dispatch) => {
+  return APIUtil.deletePinning(pinning).then(
+    entities => dispatch(receiveSinglePin(entities.pin))
+  );
+};
+
+export const deletePinningInPinSameBoard = pinning => dispatch => {
   return APIUtil.deletePinning(pinning).then(
     entities => (
       dispatch(receiveSinglePin(entities.pin)),

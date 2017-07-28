@@ -77,12 +77,12 @@ end
 ### Pins Index and Boards Display
 The home page of Pinned is the digital version of a person's DIY pin-board. As a result, the display of the pins should be clean, and aesthetically pleasing to foster creativity. To accomplish a pin / grid like layout, Pinned uses  [masonry-layout](https://www.npmjs.com/package/masonry-layout) to display an optimized grid layout based on the space given.
 
-Masonry is used in both the index page, as well as display a User's Boards.
-
+Masonry is used in both the index page, as well as display a User's Boards. The following code snippet is an example implementation of a nested grid via `<Masonry></Masonry>` to display a user's boards in a their Profile, as well as the first 8 pins in each board.
 
 ```javascript
 import React from 'react';
 import Masonry from 'react-masonry-component';
+import { values } from 'lodash';
 
 class UserBoards extends React.Component {
 

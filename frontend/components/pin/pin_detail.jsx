@@ -50,7 +50,11 @@ class PinDetail extends React.Component {
     let pinId = parseInt(this.props.pin.id);
     let boardId = parseInt(e.currentTarget.value);
     let pinning = {pinning: {pin_id: pinId, board_id: boardId}};
-    this.props.deletePinningInPin(pinning);
+    console.log(boardId, 'boardId');
+    console.log(  this.props.match.params.boardId, 'url');
+    this.props.match.params.boardId == boardId ?
+    this.props.deletePinningInPinSameBoard(pinning) :
+    this.props.deletePinningInPinDiffBoard(pinning);
   }
 
   handleSelection(e) {
