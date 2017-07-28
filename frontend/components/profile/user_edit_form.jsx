@@ -29,16 +29,6 @@ class UserEditForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
-  //
-  // upload(event) {
-  //   let self = this;
-  //   event.preventDefault();
-  //   cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
-  //     if(!error) {
-  //       self.addImage(results[0]);
-  //     }
-  //   });
-  // }
 
   addImage(image) {
     this.setState({image_url: image.url})
@@ -58,6 +48,9 @@ class UserEditForm extends React.Component {
                         .field('file', image);
 
     upload.end((err, response) => {
+      if (err) {
+        this.props.receiveUserErrors(err);
+      }
       if (response.body.secure_url !== '') {
         this.setState({
           image_url: response.body.secure_url
@@ -82,20 +75,18 @@ class UserEditForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
-
-  // <span className="create-pin-errors">{this.renderErrors()}</span>
   render() {
     return (
       <div className="create-pin-form-container">
@@ -105,6 +96,7 @@ class UserEditForm extends React.Component {
             <br/>
             Username: {this.props.currentUser.username}
            </span>
+           <span className="create-pin-errors">{this.renderErrors()}</span>
           <br/>
           <div>
 

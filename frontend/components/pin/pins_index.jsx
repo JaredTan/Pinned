@@ -2,6 +2,7 @@ import React from 'react';
 import Masonry from 'react-masonry-component';
 import PinDetailModal from '../modal/pin_detail_modal';
 import { Link, Redirect } from 'react-router-dom';
+import PreloaderIcon, {ICON_TYPE} from 'react-preloader-icon';
 
 class PinsIndex extends React.Component {
   constructor(props) {
@@ -57,50 +58,47 @@ class PinsIndex extends React.Component {
     let pinsToDisplay = (boardId == undefined) ? pins : board.pins;
 
     let reversedSortedPins = _.sortBy( pinsToDisplay, 'id' ).reverse();
-
-    if(loading) {
-      return null;
-    }
-
     return (
-      <div className='pin-index-container'>
-        {  (boardId == undefined) ? null :
-          <section className='board-detail-container'>
-            { currentUserId == board.user_id ?
-              <button onClick={() => this.handleDelete(board)} className='delete-board-button'>
-                <i className="fa fa-times"></i> Delete Board
-                </button>
-                : null
-            }
+      loading ?
+        <div className="spinner"></div> :
+        <div className='pin-index-container'>
+          {  (boardId == undefined) ? null :
+            <section className='board-detail-container'>
+              { currentUserId == board.user_id ?
+                <button onClick={() => this.handleDelete(board)} className='delete-board-button'>
+                  <i className="fa fa-times"></i> Delete Board
+                  </button>
+                  : null
+              }
 
-            <div className='board-info-container'>
-              <br/>
-                <h4>{board.title}</h4>
-              <h5>Board by:
-                <Link className = 'user-link' to={`/users/${board.user_id}`}>{board.owner_username}</Link>
-              </h5>
-            </div>
+              <div className='board-info-container'>
+                <br/>
+                  <h4>{board.title}</h4>
+                <h5>Board by:
+                  <Link className = 'user-link' to={`/users/${board.user_id}`}>{board.owner_username}</Link>
+                </h5>
+              </div>
 
-            <div className='board-detail-image-container'>
-              {board.description}
-            </div>
-          </section>
-        }
+              <div className='board-detail-image-container'>
+                {board.description}
+              </div>
+            </section>
+          }
 
-        <Masonry className={"pins-index"}
-          elementType={'ul'}
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad={false}
-          >
-          { reversedSortedPins.map( (pin) => {
-            return (
-              <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
-            }
-          )}
-        </Masonry>
-      </div>
-    );
+          <Masonry className={"pins-index"}
+            elementType={'ul'}
+            options={masonryOptions}
+            disableImagesLoaded={false}
+            updateOnEachImageLoad={false}
+            >
+            { reversedSortedPins.map( (pin) => {
+              return (
+                <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
+              }
+            )}
+          </Masonry>
+        </div>
+      );
 
 
   }

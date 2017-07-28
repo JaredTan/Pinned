@@ -9,11 +9,10 @@ class UserBoards extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      loading: true
+    }
   }
-
-  // componentWillMount() {
-  //   this.props.requestAllBoards();
-  // }
 
   componentDidMount() {
     this.setState({ loading: false });
@@ -35,7 +34,7 @@ class UserBoards extends React.Component {
     let { boards, pins, currentUser, owner } = this.props;
 
     let reversedSortedBoards = _.sortBy( boards, 'id' ).reverse();
-
+    let {loading} = this.state;
 
     const masonryOptions = {
      fitWidth: true,
@@ -43,6 +42,8 @@ class UserBoards extends React.Component {
    };
 
    return (
+     loading ?
+     <div className="spinner"></div> :
      <div className='user-profile-items'>
        <Masonry
          elementType={'div'}

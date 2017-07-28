@@ -20,23 +20,15 @@ class PinCreateForm extends React.Component {
     this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
-
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
-  //
-  // upload(event) {
-  //   let self = this;
-  //   event.preventDefault();
-  //   cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
-  //     if(!error) {
-  //       self.addImage(results[0]);
-  //     }
-  //   });
-  // }
+
+  componentWillUnmount() {
+    this.props.resetPinErrors();
+  }
 
   addImage(image) {
     this.setState({image_url: image.url})
@@ -55,10 +47,14 @@ class PinCreateForm extends React.Component {
                         .field('file', image);
 
     upload.end((err, response) => {
+      if (err) {
+        this.props.receivePinErrors(err);
+      }
       if (response.body.secure_url !== '') {
         this.setState({
           image_url: response.body.secure_url
         });
+        this.props.resetPinErrors();
       }
     });
   }

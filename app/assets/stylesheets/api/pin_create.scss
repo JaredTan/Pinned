@@ -139,9 +139,8 @@ span {
   width: 300px;
   height: auto;
   border-radius: 10px;
+  cursor: -webkit-zoom-in;
   border: 1px;
-  border-style: solid;
-  border-color: $light-mint;
 }
 
 .pin-detail-image {

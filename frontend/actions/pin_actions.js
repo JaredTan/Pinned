@@ -4,6 +4,8 @@ export const RECEIVE_ALL_PINS = "RECEIVE_ALL_PINS";
 export const RECEIVE_SINGLE_PIN = "RECEIVE_SINGLE_PIN";
 export const REMOVE_PIN = "REMOVE_PIN";
 export const RESET_PIN = "RESET PIN";
+export const RECEIVE_PIN_ERRORS = "RECEIVE_PIN_ERRORS";
+export const RESET_PIN_ERRORS = "RESET_PIN_ERRORS";
 
 export const receiveAllPins = (pins) => {
   return {
@@ -41,6 +43,13 @@ export const deletePin = pin => dispatch => {
   );
 };
 
+export const receivePinErrors = errors => {
+  return {
+    type: RECEIVE_PIN_ERRORS,
+    errors
+  }
+}
+
 export const removePin = pin => ({
   type: REMOVE_PIN,
   pin
@@ -48,4 +57,8 @@ export const removePin = pin => ({
 
 export const resetPin = () => ({
   type: RESET_PIN
+})
+
+export const resetPinErrors = () => ({
+  type: RESET_PIN_ERRORS
 })
