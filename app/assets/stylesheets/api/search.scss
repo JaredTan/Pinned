@@ -1,8 +1,12 @@
 .search-results-dropdown-container{
   border-radius: 6px;
   background-color: $light-gray;
-  width: 100%;
+  width: 82%;
+  position: fixed;
+  margin-left: -10px;
   z-index: 3;
+  border-left: 1px solid $light-mint;
+  border-right: 1px solid $light-mint;
 }
 
 #search-bar{
