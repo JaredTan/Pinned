@@ -14,7 +14,7 @@ Pinned is a full-stack web application inspired by Pinterest. This project utili
 - [x] Profile
 - [x] Boards and Pins
 - [x] Follows
-- [x] Discover Feed on home page
+- [ ] Discover Feed on home page
 - [ ] Production README
 - [x] Search (Bonus!)
 

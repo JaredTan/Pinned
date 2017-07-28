@@ -10,7 +10,6 @@ class SearchBar extends React.Component {
     this.state = {searchQuery: ""};
     this.handleInput = this.handleInput.bind(this);
     this.createResultsList = this.createResultsList.bind(this);
-    this.handlePinClick = this.handlePinClick.bind(this);
   }
 
   handleInput(e){

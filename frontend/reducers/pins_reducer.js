@@ -7,15 +7,16 @@ const defaultState = () => ({
 })
 
 const pinsReducer = (state = defaultState(), action) => {
+  Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_PINS:
       return merge({}, state, {entities: action.pins});
     case RECEIVE_SINGLE_PIN:
       const pin = action.pin;
-      return merge({}, state, {
-        entities: { [pin.id]: pin },
-        currentPin: pin.id
-      });
+      let newState = merge({}, state);
+      newState.currentPin = pin.id;
+      newState.entities[pin.id] = pin;
+      return newState;
     case RESET_PIN:
       return merge({}, state, {currentPin: {}});
     case REMOVE_PIN:

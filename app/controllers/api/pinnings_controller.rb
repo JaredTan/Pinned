@@ -11,10 +11,10 @@ class Api::PinningsController < ApplicationController
 
   def destroy
     @pinning = Pinning.where(board_id: params[:pinning][:board_id], pin_id: params[:pinning][:pin_id]).first
-    board = @pinning.board
+    @board = @pinning.board
+    @pin = @pinning.pin
     if @pinning.destroy
-      @board = board
-      render 'api/boards/show.json.jbuilder'
+      render 'api/pinnings/show.json.jbuilder'
     else
       render json: @pinning.errors.full_messages, status: 422
     end

@@ -42,7 +42,7 @@ class PinDetail extends React.Component {
     let pinId = parseInt(this.props.pin.id);
     let boardId = parseInt(this.props.match.params.boardId);
     let pinning = {pinning: {pin_id: pinId, board_id: boardId}};
-    this.props.deletePinning(pinning);
+    this.props.deletePinningInBoard(pinning);
   }
 
   handleCheckUnpinning(e) {
@@ -50,7 +50,7 @@ class PinDetail extends React.Component {
     let pinId = parseInt(this.props.pin.id);
     let boardId = parseInt(e.currentTarget.value);
     let pinning = {pinning: {pin_id: pinId, board_id: boardId}};
-    this.props.deletePinning(pinning);
+    this.props.deletePinningInPin(pinning);
   }
 
   handleSelection(e) {
@@ -83,7 +83,8 @@ class PinDetail extends React.Component {
       values(user.boards).map((board) => {
         if (values(pin.pinned_boards).includes(board.id)) {
         return (
-          <button className="pin-button-unclickable"
+          <button className="pin-button"
+            onClick={this.handleCheckUnpinning}
             value={board.id}>{board.title}  ✔
           </button>
         )} else {
