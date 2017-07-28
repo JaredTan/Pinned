@@ -47,12 +47,10 @@ class SearchBar extends React.Component {
       } else if (type === "Users") {
         return (
           <li key={idx}>
-            <button onClick={resetSearchResults}>
-              <div className="list-item-user">
-                <img src={item.image_url}/>
-              </div>
-              <span className="list-item-username">{item.username}</span>
-            </button>
+            <Link to={`/users/${item.id}`}>
+              <img className="list-item-user"src={item.image_url}/>
+              <span className="list-item">{item.username}</span>
+            </Link>
           </li>
         );
       }
