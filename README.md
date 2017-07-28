@@ -141,6 +141,20 @@ render (
 ### Image Hosting
   In order to manage the many images that are uploaded to Pinned, [Cloudinary](http://cloudinary.com/) is used deliver images optimized for any device quickly. Cloudinary is used alongside `dropzone` and `superagent` which allows a user to easily drag and drop photos into a form such as editing their profile.
 
+## Design Documents
+
+* [View Wireframes][views]
+* [Database Schema][db_schema]
+* [API Endpoints][api_endpoints]
+* [React Components][component_hierarchy]
+* [Sample State][sample-state]
+
+[db_schema]: ./docs/schema.md
+[views]: ./docs/views.md
+[api_endpoints]: ./docs/api-endpoints.md
+[component_hierarchy]: ./docs/component-hierarchy.md
+[sample-state]: ./docs/sample-state.md
+
 
 ## Future Plans
 
