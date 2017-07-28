@@ -5,8 +5,8 @@
   position: fixed;
   margin-left: -10px;
   z-index: 3;
-  border-left: 1px solid $light-mint;
-  border-right: 1px solid $light-mint;
+  border-left: 1px solid $gray;
+  border-right: 1px solid $gray;
 }
 
 #search-bar{
@@ -47,7 +47,7 @@
 }
 
 
-.list-item {
+#list-item {
   font-size: 18px;
   color: $dark-mint;
 }
@@ -64,7 +64,7 @@
 }
 
 
-.search-index-thumbnail {
+#search-index-thumbnail {
   margin: 2px;
   width: auto;
   height: 150px;
@@ -84,7 +84,7 @@
   padding-top: 5px;
 }
 
-.list-item-user {
+#list-item-user {
   display: inline;
   height: 100px;
   width: 100px;
@@ -92,7 +92,7 @@
   color: $dark-mint;
 }
 
-.list-item-user img {
+#list-item-user img {
   display: inline;
   height: 100px;
   width: 100px;

@@ -10,6 +10,7 @@ class SearchBar extends React.Component {
     this.state = {searchQuery: ""};
     this.handleInput = this.handleInput.bind(this);
     this.createResultsList = this.createResultsList.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleInput(e){
@@ -17,29 +18,34 @@ class SearchBar extends React.Component {
     setTimeout(this.setState({searchQuery: e.target.value}, () => this.props.requestSearchResults(this.state.searchQuery)), 50)
   }
 
+  handleReset(e){
+    e.preventDefault();
+    this.setState({searchQuery: ""});
+  }
+
   createResultsList(items, type){
     let {resetSearchResults} = this.props;
     const listItems = items.map((item, idx) => {
       if (type === "Pins"){
         return (
-          <li key={idx}>
+          <li key={idx} onClick={this.handleReset}>
               <PinSearchDetailModal key={ item.id } pin={ item }>{item.title}</PinSearchDetailModal>
           </li>
         );
       } else if (type === "Boards") {
         return (
-          <li key={idx}>
+          <li key={idx} onClick={this.handleReset}>
             <Link to={`/boards/${item.id}`}>
-              <span className="list-item">{item.title}</span>
+              <span id="list-item">{item.title}</span>
             </Link>
           </li>
         );
       } else if (type === "Users") {
         return (
-          <li key={idx}>
+          <li key={idx} onClick={this.handleReset}>
             <Link to={`/users/${item.id}`}>
-              <img className="list-item-user"src={item.image_url}/>
-              <span className="list-item">{item.username}</span>
+              <img id="list-item-user"src={item.image_url}/>
+              <span id="list-item">{item.username}</span>
             </Link>
           </li>
         );
@@ -76,7 +82,9 @@ class SearchBar extends React.Component {
 
        document.addEventListener("click", (e) => {
          dropdown = document.getElementsByClassName('search-results-dropdown-container')[0];
-         if (e.path.includes(dropdown) || e.target.id === 'search-bar'){
+         if (e.target.id === 'list-item' || e.target.id === 'list-item-user' || e.target.id === 'search-index-thumbnail') {
+           dropdown.style.display = "none";
+         } else if (e.path.includes(dropdown) || e.target.id === 'search-bar') {
            dropdown.style.display = "block";
          } else {
            dropdown.style.display = "none";
