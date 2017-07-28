@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PinCreateModal from '../modal/pin_create_modal';
+import SearchBarContainer from './search_bar_container';
 
 
 class NavBar extends React.Component {
@@ -18,9 +19,7 @@ class NavBar extends React.Component {
             </Link>
           </div>
           <div className="search">
-            <h2 className="search-text">
-              hi {currentUser.username}, welcome to pinned.
-            </h2>
+            <SearchBarContainer/>
           </div>
           <div className="right">
             <PinCreateModal/>

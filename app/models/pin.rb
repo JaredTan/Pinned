@@ -1,4 +1,10 @@
 class Pin < ActiveRecord::Base
+
+  include PgSearch
+  multisearchable :against => :title
+  pg_search_scope :whose_title_starts_with, against: :title, using: {tsearch: {prefix: true} }
+
+
   validates :owner, presence: :true
 
   belongs_to :owner,

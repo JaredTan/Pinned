@@ -9,6 +9,8 @@ gem 'cloudinary'
 
 gem 'figaro'
 
+gem 'pg_search'
+
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
