@@ -39,18 +39,19 @@
 }
 
 .user-search-items-container ul li:hover{
-  background: #4d4d4d;
+  background: $gray;
   cursor: pointer;
 }
 
 
 .list-item {
   font-size: 18px;
+  color: $dark-mint;
 }
 
 
 .search-items-container li:hover{
-  background: #4d4d4d;
+  background: $gray;
   cursor: pointer;
 }
 

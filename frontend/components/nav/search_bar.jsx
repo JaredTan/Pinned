@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import { values } from 'lodash';
 import PinSearchDetailModal from '../modal/pin_search_detail_modal';
 
@@ -33,15 +33,15 @@ class SearchBar extends React.Component {
       if (type === "Pins"){
         return (
           <li key={idx}>
-              <PinSearchDetailModal className="list-item-pin" key={ item.id } pin={ item }>{item.title}</PinSearchDetailModal>
+              <PinSearchDetailModal key={ item.id } pin={ item }>{item.title}</PinSearchDetailModal>
           </li>
         );
       } else if (type === "Boards") {
         return (
           <li key={idx}>
-            <button onClick={resetSearchResults}>
-              <span className="list-item-board">{item.title}</span>
-            </button>
+            <Link to={`/boards/${item.id}`}>
+              <span className="list-item">{item.title}</span>
+            </Link>
           </li>
         );
       } else if (type === "Users") {

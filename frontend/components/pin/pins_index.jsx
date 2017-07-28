@@ -19,6 +19,12 @@ class PinsIndex extends React.Component {
     this.props.requestAllPins() : this.props.requestSingleBoard(boardId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.boardId !== nextProps.match.params.boardId) {
+      this.props.requestSingleBoard(nextProps.match.params.boardId);
+    }
+  }
+
   componentDidMount() {
     this.setState({ loading: false });
   }
