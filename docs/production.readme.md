@@ -14,15 +14,15 @@ Pinned's database comprises of three main entities - users, pins, and boards.
 
 ### Pin Creation and Pinning
 
-Pins are stored on the back-end with a `user_id`, that is linked to the `current_user` who created the pin after a `current_user` fetch request to the back-end. Similar to the idea of pinning an item to a pin-board, Pins have the functionality of pinning to a board, and deletion by the user.
+Pins are stored on the back-end with a `user_id`, that is linked to the `current_user` who created the pin after a `current_user` fetch request to the back-end. Similar to the idea of pinning an item to a pin-board, pins have the functionality of pinning to a board, and deletion by the user.
 
 ### Board Creating and Pinning
 
-Boards are stored on the back-end, and are more private than pins. When `logged_in`, a board can be created with a `user_id` that is the user's personal showcase of pins for a specific topic. When a pin is pinned to a board, an instance of `Pinning` is created, which connects a pin and a board through `pin_id` and `board_id` through a many-many relationship. Boards may also be searched for other users to view.
+Boards are stored on the back-end, and are more private than pins. When `logged_in`, a board can be created which is a personal showcase of pins for a specific topic. When a pin is pinned to a board, an instance of `Pinning` is created, which connects a pin and a board through `pin_id` and `board_id` through a many-many relationship. Boards may also be searched for other users to view.
 
 ### User Following
 
-Users, in addition to the functionality of encrypted front-end authentication, can edit their profile, and follow/unfollow other users. Similar to pinnings, a many-many join table through `Followings` is used to connect users to other users. Through a user's profile page, a user can view other users' follwers and followings.
+In addition to the having an encrypted front-end authentication, users may edit their profile and follow/unfollow other users. Similar to `Pinning`, a many-many join table through `Following` is used to connect users to other users. A user can view other users' followers and followings through their profile page.
 
 ### Search
 
@@ -77,7 +77,7 @@ end
 ### Pins Index and Boards Display
 The home page of Pinned is the digital version of a person's DIY pin-board. As a result, the display of the pins should be clean, and aesthetically pleasing to foster creativity. To accomplish a pin / grid like layout, Pinned uses  [masonry-layout](https://www.npmjs.com/package/masonry-layout) to display an optimized grid layout based on the space given.
 
-Masonry is used in both the index page, as well as display a User's Boards. The following code snippet is an example implementation of a nested grid via `<Masonry></Masonry>` to display a user's boards in a their Profile, as well as the first 8 pins in each board.
+Masonry is used in both the index page, as well to display a user's boards. The following code snippet is an example implementation of a nested grid via `<Masonry></Masonry>` to display a user's boards in a their profile, as well as the first 8 pins in each board.
 
 ```javascript
 import React from 'react';
@@ -96,8 +96,6 @@ render() {
    fitWidth: true,
    transitionDuration: 0
  };
-
-
 ```
 
 ```html
@@ -111,14 +109,10 @@ render (
     className='profile-boards-container'
     options={masonryOptions}
     >
-    { currentUser.id === owner.id ? this.createNewBoardModal() : null }
+    ...
     { reversedSortedBoards.map( (board) => {
       return (
-        <div className='board-display-pictures'>
-          <Link to={`/boards/${board.id}`} key={board.id}className="board-index-item-container">
-            <div>
-              {board.title}
-            </div>
+          ...
             <Masonry
               elementType={'div'}
               disableImagesLoaded={false}
@@ -127,9 +121,7 @@ render (
               >
              { values(board.pins).slice(0, 8).map( pin => {
                 return (
-                  <div>
-                    <img className='pins-in-board-thumbnail-pic' key={pin.id} src={pin.image_url}></img>
-                  </div>
+                ...
                 )
               })
             }
@@ -141,6 +133,21 @@ render (
     )}
   </Masonry>
   ...
-)
-)
+  )
+  )
 ```
+
+
+### Image Hosting
+  In order to manage the many images that are uploaded to Pinned, [Cloudinary](http://cloudinary.com/) is used deliver images optimized for any device quickly. Cloudinary is used alongside `dropzone` and `superagent` which allows a user to easily drag and drop photos into a form such as editing their profile.
+
+
+## Future Plans
+
+### Infinite Scroll
+
+When the amount of pins in the database becomes too large where fetching all at once becomes unfeasible, the idea of an infinite scroll would be very handy. The index page would fetch only a certain number of pins (~50), then when the user scrolls down past a certain distance in the page, would fetch more pins from the database and add it to the page. This implementation would allow for a smoother user experience.
+
+### Secret Boards
+
+A user could not want their boards to be seen to the public, so adding a section in their profile of secret boards only visible to themselves would be a nice feature. This would be done with a column in the users table called `secret`, which is a boolean and chosen to be a true of false on the creation of the board.
