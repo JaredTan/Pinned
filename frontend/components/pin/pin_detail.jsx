@@ -50,8 +50,6 @@ class PinDetail extends React.Component {
     let pinId = parseInt(this.props.pin.id);
     let boardId = parseInt(e.currentTarget.value);
     let pinning = {pinning: {pin_id: pinId, board_id: boardId}};
-    console.log(boardId, 'boardId');
-    console.log(  this.props.match.params.boardId, 'url');
     this.props.match.params.boardId == boardId ?
     this.props.deletePinningInPinSameBoard(pinning) :
     this.props.deletePinningInPinDiffBoard(pinning);
@@ -72,14 +70,6 @@ class PinDetail extends React.Component {
     let pinning = {pinning: {pin_id: pinId, board_id: boardId}};
     this.props.createPinning(pinning);
   }
-
-  // handlePinning(e) {
-  //   e.preventDefault();
-  //   const pinning = Object.assign({}, this.state);
-  //   (values(this.props.pin.pinned_boards).includes(this.state.board_id)) ?
-  //   this.props.deletePinning({pinning}) :
-  //   this.props.createPinning({pinning})
-  // }
 
   boards() {
     let { pin, deletePin, currentUser, board, user } = this.props;

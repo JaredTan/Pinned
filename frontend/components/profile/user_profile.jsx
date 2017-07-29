@@ -178,9 +178,9 @@ class UserProfile extends React.Component {
           disableImagesLoaded={false}
           updateOnEachImageLoad={false}
           >
-          { sortedUsers.map( (user) => {
+          { sortedUsers.map( (user, idx) => {
             return (
-              <Link className ='user-profile-following-pic-and-follow' to={`/users/${user.id}`}>
+              <Link key={idx} className ='user-profile-following-pic-and-follow' to={`/users/${user.id}`}>
                 <img className="user-following-profile-pic-thumbnail" src={user.image_url}></img>
                 {user.username}
               </Link>

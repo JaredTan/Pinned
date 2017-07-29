@@ -36,28 +36,28 @@ user5 = User.create!(
   username: 'Keith',
   password:'keithwong',
   description: "Dreams don't work unless you take action. The surest way to make your dreams come true is to live them.",
-  image_url: ''
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1501283874/keith_yiqoti.jpg'
 )
 
 user6 = User.create!(
   username: 'Greg',
   password:'gregorypark',
   description: "The only time you fail is when you fall down and stay down.",
-  image_url: ''
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1501027248/h7e3ncu4dfoynbitoxe6.png'
 )
 
 user7 = User.create!(
   username: 'Janet',
   password:'janetlee',
   description: "When you are joyful, when you say yes to life and have fun and project positivity all around you, you become a sun in the center of every constellation, and people want to be near you.",
-  image_url: ''
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1501283913/janet_be3gts.jpg'
 )
 
 user8 = User.create!(
   username: 'Evelyn',
   password:'evelynlee',
   description: "The surest way to make your dreams come true is to live them.",
-  image_url: ''
+  image_url: 'http://res.cloudinary.com/jaredtan/image/upload/v1501283813/evelyn_ewb5vl.jpg'
 )
 
 Pin.destroy_all
