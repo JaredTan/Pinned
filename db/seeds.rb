@@ -36,7 +36,7 @@ user5 = User.create!(
   username: 'Keith',
   password:'keithwong',
   description: "Hi, I'm Keith!",
-  image_url: 'https://res.cloudinary.com/jaredtan/image/upload/v1501283874/keith_yiqoti.jpg'
+  image_url: 'https://res.cloudinary.com/jaredtan/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/v1501283874/keith_yiqoti.jpg'
 )
 
 user6 = User.create!(

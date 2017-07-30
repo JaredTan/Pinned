@@ -37,6 +37,9 @@ class PinCreateForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const pin = Object.assign({}, this.state);
+    if (pin.image_url == '') {
+      pin.image_url = "http://res.cloudinary.com/jaredtan/image/upload/v1501385628/default_image_zuj6wy.jpg"
+    }
     this.props.createPin({pin});
     this.props.ownProps.closeModal();
   }

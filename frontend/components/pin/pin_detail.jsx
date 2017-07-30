@@ -12,13 +12,15 @@ class PinDetail extends React.Component {
     super(props);
 
     this.state = {
-      boardTab: false
+      boardTab: false,
+      deleteTab: false
     }
 
     this.handlePinning = this.handlePinning.bind(this);
     this.handleSelection = this.handleSelection.bind(this);
     this.handleCheckUnpinning = this.handleCheckUnpinning.bind(this);
     this.toggleBoards = this.toggleBoards.bind(this);
+    this.toggleWarning = this.toggleWarning.bind(this);
   }
 
   componentWillMount() {
@@ -33,6 +35,10 @@ class PinDetail extends React.Component {
   handleDelete(pin) {
     this.props.deletePin(pin);
     this.props.requestSingleUser(this.props.user.id);
+  }
+
+  toggleWarning() {
+    this.setState({deleteTab: !this.state.deleteTab})
   }
 
   toggleBoards() {
@@ -106,8 +112,22 @@ class PinDetail extends React.Component {
 
     )
 
+  }
 
-
+  deleteButtons() {
+    let { pin, deletePin } = this.props;
+    return (
+      <div className='delete-pin-yes-no-buttons'>
+        <button className="delete-pin-button-yes"
+          onClick={()=>this.handleDelete(pin)}
+          value={pin.id}>Yes
+        </button>
+        <button className="delete-pin-button-no"
+          onClick={this.toggleWarning}
+          value={pin.id}>No
+        </button>
+      </div>
+    );
   }
 
   render() {
@@ -116,7 +136,8 @@ class PinDetail extends React.Component {
       pin = {};
     }
 
-
+    let warning = this.state.deleteTab ? "Are you sure?" :
+    <div><i className="fa fa-times"></i>Delete Pin</div> ;
     return (
       <section className='pin-detail-container'>
 
@@ -131,11 +152,12 @@ class PinDetail extends React.Component {
         </div>
 
           { (currentUser.id === pin.user_id) && (this.props.match.params.boardId == undefined) ?
-            <button onClick={() => this.handleDelete(pin)} className='delete-button'>
-              <i className="fa fa-times"></i> Delete Pin
+            <button onClick={() => this.toggleWarning()}  className='delete-button'>
+              {warning}
               </button>
             : null
           }
+          {this.state.deleteTab ? this.deleteButtons() : null}
 
           { (this.props.match.params.boardId) && (currentUser.id === board.user_id)?
             <button onClick={() => this.handleUnpinning()} className='delete-button'>

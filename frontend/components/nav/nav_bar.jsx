@@ -26,8 +26,11 @@ class NavBar extends React.Component {
             <Link to={`/users/${currentUser.id}`}>
             Profile
             </Link>
-            <button onClick={logout}>Logout</button>
+            <button className='logout-button'onClick={logout}>Logout</button>
           </div>
+          <a className='github'href="https://github.com/JaredTan/Pinned">
+            <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+          </a>
           <div className='filler-space'></div>
         </nav>
     );

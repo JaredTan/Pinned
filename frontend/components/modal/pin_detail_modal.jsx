@@ -21,7 +21,7 @@ const style = {
     border                     : '1px solid #ccc',
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
+    borderRadius               : '25px',
     outline                    : 'none',
     padding                    : '20px',
     backgroundColor            : '#f2f2f2',

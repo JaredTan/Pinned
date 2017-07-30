@@ -129,6 +129,65 @@
     }
 }
 
+.delete-pin-button {
+  font-size: 15px;
+  padding: 5px 10px;
+  position: absolute;
+  top: 2px;
+  right: 20px;
+  vertical-align: middle;
+  margin-top: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: $red;
+  background-color: rgba(181, 181, 181, 0.23);
+    &:hover {
+      background: $gray;
+    }
+}
+
+.delete-pin-yes-no-buttons {
+  display: flex;
+  align-items: baseline;
+  position: absolute;
+  margin-top:50px;
+  right: 27px;
+}
+
+.delete-pin-button-yes {
+  font-size: 20px;
+  padding: 5px 10px;
+
+
+  vertical-align: middle;
+
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-gray;
+  background-color: $light-mint;
+    &:hover {
+      background: $dark-mint;
+    }
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.delete-pin-button-no {
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-left:10px;
+
+  vertical-align: middle;
+
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-gray;
+  background-color: $light-mint;
+    &:hover {
+      background: $dark-mint;
+    }
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
 .pin-board-select {
   font-size: 15px;
   padding: 5px 10px;
