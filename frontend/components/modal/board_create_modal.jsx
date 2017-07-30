@@ -59,7 +59,8 @@ class BoardCreateModal extends React.Component {
   render() {
     return(
       <div className="board-create-modal-div">
-        <button className='board-index-thumbnail'
+
+        <button className={this.props.small ? "board-index-thumbnail-small" :'board-index-thumbnail'}
           onClick={this.openModal}>
           Create a new board!
           <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
@@ -73,6 +74,7 @@ class BoardCreateModal extends React.Component {
 
           <BoardCreateFormContainer
             closeModal={this.closeModal}
+            pin={this.props.pin}
              />
         </Modal>
       </div>

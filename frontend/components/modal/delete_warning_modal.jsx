@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal';
-import BoardDetailContainer from '../board/board_detail_container';
 
 
 const style = {
@@ -10,27 +9,28 @@ const style = {
     left                       : 0,
     right                      : 0,
     bottom                     : 0,
-    backgroundColor            : 'rgba(0, 0, 0, .5)',
+    backgroundColor            : 'rgba(0, 0, 0, .6)',
     zIndex                     : 10
   },
   content : {
     display                    : 'flex',
     justifyContent             : 'center',
-    left                       : '15%',
-    right                      : '15%',
-    border                     : '1px solid #ccc',
-    overflow                   : 'auto',
+    left                       : '25%',
+    right                      : '25%',
+    border                     : '0px solid #ccc',
+    overflow                   : 'none',
     WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
+    borderRadius               : '10px',
+    backgroundColor            : 'transparent',
     outline                    : 'none',
     padding                    : '20px',
-    backgroundColor            : '#f2f2f2',
     zIndex                     : 11,
     opacity                    : 0,
     transition                 : 'opacity 0.4s'
   }
 };
-class BoardDetailModal extends React.Component {
+
+class DeleteWarningModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -56,12 +56,14 @@ class BoardDetailModal extends React.Component {
   }
 
   render() {
-    let { board } = this.props;
+    let {board, deleteBoard} = this.props;
     return(
-      <div>
-        <button className='board-index-thumbnail'
+      <div className="board-create-modal-div">
+
+        <button className=''
           onClick={this.openModal}>
-          {board.title}
+          Delete Board
+          <i className="fa fa-plus fa-2x" aria-hidden="true"></i>
         </button>
         <Modal
           isOpen={this.state.modalOpen}
@@ -69,14 +71,13 @@ class BoardDetailModal extends React.Component {
           onRequestClose={this.closeModal}
           style = {style}
           contentLabel="Board Modal">
+          Are you sure?
+          <button onClick={deleteBoard(board)}>Delete Board: {board.title}</button>
 
-          <BoardDetailContainer
-            closeModal={this.closeModal}
-            id={board.id} board={board}/>
         </Modal>
       </div>
     );
   }
 }
 
-export default BoardDetailModal;
+export default DeleteWarningModal;

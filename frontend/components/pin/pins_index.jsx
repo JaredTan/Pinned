@@ -9,8 +9,11 @@ class PinsIndex extends React.Component {
     super(props);
 
     this.state = {
-      loading: true
+      loading: true,
+      deleteTab: false
     };
+
+    this.toggleWarning = this.toggleWarning.bind(this);
   }
 
   componentWillMount() {
@@ -28,6 +31,8 @@ class PinsIndex extends React.Component {
   componentDidMount() {
     this.setState({ loading: false });
   }
+
+
 
 
   shufflePins(pins) {
@@ -51,6 +56,26 @@ class PinsIndex extends React.Component {
     this.props.history.push(newRoute);
   }
 
+  toggleWarning() {
+    this.setState({deleteTab: !this.state.deleteTab})
+  }
+
+  deleteButtons() {
+    let { board, deleteBoard } = this.props;
+    return (
+      <div className='delete-yes-no-buttons'>
+        <button className="delete-button-yes"
+          onClick={()=>this.handleDelete(board)}
+          value={board.id}>Yes
+        </button>
+        <button className="delete-button-no"
+          onClick={this.toggleWarning}
+          value={board.id}>No
+        </button>
+      </div>
+    );
+  }
+
   render() {
     let { pins, board, currentUserId, deleteBoard } = this.props;
     let masonryOptions = {
@@ -62,7 +87,8 @@ class PinsIndex extends React.Component {
 
     const boardId = this.props.match.params.boardId;
     let pinsToDisplay = (boardId == undefined) ? pins : board.pins;
-
+    let warning = this.state.deleteTab ? "Are you sure?" :
+    <div><i className="fa fa-times"></i> Delete Board</div>;
     let reversedSortedPins = _.sortBy( pinsToDisplay, 'id' ).reverse();
     return (
       loading ?
@@ -71,12 +97,12 @@ class PinsIndex extends React.Component {
           {  (boardId == undefined) ? null :
             <section className='board-detail-container'>
               { currentUserId == board.user_id ?
-                <button onClick={() => this.handleDelete(board)} className='delete-board-button'>
-                  <i className="fa fa-times"></i> Delete Board
+                <button onClick={() => this.toggleWarning()} className='delete-board-button'>
+                   {warning}
                   </button>
                   : null
               }
-
+              {this.state.deleteTab ? this.deleteButtons() : null}
               <div className='board-info-container'>
                 <br/>
                   <h4>{board.title}</h4>

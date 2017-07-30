@@ -35,28 +35,28 @@ user4 = User.create!(
 user5 = User.create!(
   username: 'Keith',
   password:'keithwong',
-  description: "Dreams don't work unless you take action. The surest way to make your dreams come true is to live them.",
+  description: "Hi, I'm Keith!",
   image_url: 'https://res.cloudinary.com/jaredtan/image/upload/v1501283874/keith_yiqoti.jpg'
 )
 
 user6 = User.create!(
   username: 'Greg',
   password:'gregorypark',
-  description: "The only time you fail is when you fall down and stay down.",
+  description: "Everything in moderation.",
   image_url: 'https://res.cloudinary.com/jaredtan/image/upload/v1501027248/h7e3ncu4dfoynbitoxe6.png'
 )
 
 user7 = User.create!(
   username: 'Janet',
   password:'janetlee',
-  description: "When you are joyful, when you say yes to life and have fun and project positivity all around you, you become a sun in the center of every constellation, and people want to be near you.",
+  description: "Hi, I like arrays.",
   image_url: 'https://res.cloudinary.com/jaredtan/image/upload/v1501283913/janet_be3gts.jpg'
 )
 
 user8 = User.create!(
   username: 'Evelyn',
   password:'evelynlee',
-  description: "The surest way to make your dreams come true is to live them.",
+  description: "Always classy, never sassy.",
   image_url: 'https://res.cloudinary.com/jaredtan/image/upload/v1501283813/evelyn_ewb5vl.jpg'
 )
 
@@ -74,7 +74,7 @@ pin2 = Pin.create!(
   title: "OOP",
   description: "Principles of OOP",
   url: "http://www.roldie.com/blog/the-7-principles-of-object-oriented-programming",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/OOP_qrzasx.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500586411/OOP_qrzasx.jpg",
   user_id: demo_user.id
 )
 
@@ -83,7 +83,7 @@ pin3 = Pin.create!(
   title: "Brain Hemispheres",
   description: "Brain lateralization, where the brain has special functions (logic on left, creativity on right).",
   url: "http://elearninginfographics.com/teach-yourself-code/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500585150/il_570xN.882503178_687n_jsojpo.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500585150/il_570xN.882503178_687n_jsojpo.jpg",
   user_id: demo_user.id
 )
 
@@ -91,7 +91,7 @@ pin4 = Pin.create!(
   title: "Snow day",
   description: "FLUFFY AND FROSTY!",
   url: "https://hiveminer.com/Tags/eyes,silly/Timeline",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi10_emsd0w.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi10_emsd0w.jpg",
   user_id: user2.id
 )
 
@@ -99,7 +99,7 @@ pin5 = Pin.create!(
   title: "SQL Joins",
   description: "Summaries of the main types of joins",
   url: "http://sql.sh/2401-sql-join-infographie",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/sqlJoins_d724sd.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500586411/sqlJoins_d724sd.jpg",
   user_id: demo_user.id
 )
 
@@ -107,7 +107,7 @@ pin6 = Pin.create!(
   title: "Application Programming Interface",
   description: "What is the API?",
   url: "http://www.govtech.com/applications/Whats-an-API-and-Why-Do-You-Need-One.html",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586413/api_p5mgmr.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500586413/api_p5mgmr.jpg",
   user_id: demo_user.id
 )
 
@@ -115,7 +115,7 @@ pin7 = Pin.create!(
   title: "Counting With Corgis",
   description: "You can never have too many corgis.",
   url: "http://themetapicture.com/just-counting-with-corgis/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi5_cfmdqz.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi5_cfmdqz.jpg",
   user_id: demo_user.id
 )
 
@@ -123,7 +123,7 @@ pin8 = Pin.create!(
   title: "HTML5",
   description: "HTML Cheatsheet",
   url: "https://theultralinx.com/2012/11/html-5-cheatsheet/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/html5_adljmq.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500586411/html5_adljmq.jpg",
   user_id: demo_user.id
 )
 
@@ -131,7 +131,7 @@ pin9 = Pin.create!(
   title: "Stairway of Corgus",
   description: "Led Zeppelin would be proud.",
   url: "https://www.homeandwild.com/products/mini-corgi-planter-pots",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi6_dty40w.png",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi6_dty40w.png",
   user_id: user3.id
 )
 
@@ -139,7 +139,7 @@ pin10 = Pin.create!(
   title: "Linux",
   description: "Summary of Linux commands",
   url: "http://imgur.com/gallery/yIdNW",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586410/linux_ag7wud.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500586410/linux_ag7wud.jpg",
   user_id: demo_user.id
 )
 
@@ -147,7 +147,7 @@ pin11 = Pin.create!(
   title: "BEACH DAY!",
   description: "SO MUCH SAND SO MUCH SUN!",
   url: "https://www.homeandwild.com/products/mini-corgi-planter-pots",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi7_kcrig9.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi7_kcrig9.jpg",
   user_id: user2.id
 )
 
@@ -155,7 +155,7 @@ pin12 = Pin.create!(
   title: "Wizard Corgi",
   description: "Housemaster of Gryffindor",
   url: "http://sneakersthecorgi.tumblr.com/post/134495079447/the-world-could-use-a-little-magic-corgipotter",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi8_w6xf9r.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762701/corgi8_w6xf9r.jpg",
   user_id: demo_user.id
 )
 
@@ -163,7 +163,7 @@ pin13 = Pin.create!(
   title: "Chasing the sunset.",
   description: "I can jump so high!",
   url: "https://s-media-cache-ak0.pinimg.com/originals/1e/9c/ff/1e9cffd4989a2a49d8e8ba0a656e6a20.jpg",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi9_qcnat3.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi9_qcnat3.jpg",
   user_id: demo_user.id
 )
 
@@ -171,7 +171,7 @@ pin14 = Pin.create!(
   title: "Programming",
   description: "The history of code",
   url: "http://www.smashingmagazine.com/2010/06/06/designing-the-world-of-programming-infographic/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500586411/World_of_programming_zxuvm7.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500586411/World_of_programming_zxuvm7.jpg",
   user_id: user3.id
 )
 
@@ -179,14 +179,14 @@ pin15 = Pin.create!(
 title: "Corgi Pupper",
 description: "Hi human!",
 url: "http://corgisofig.tumblr.com/post/154815238613",
-image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi2_dg6lfz.jpg",
+image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi2_dg6lfz.jpg",
 user_id: demo_user.id
 )
 pin16 = Pin.create!(
   title: "Corgu",
   description: "Let's play!",
   url: "http://www.shein.com/?url_from=pin20151009",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi3_dirxff.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi3_dirxff.jpg",
   user_id: user4.id
 )
 
@@ -194,7 +194,7 @@ pin17 = Pin.create!(
   title: "The anatomy of a Corgi",
   description: "Much science, very doggo.",
   url: "https://m.imgur.com/gallery/3LPiIut",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi4_jar3pi.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1500762700/corgi4_jar3pi.jpg",
   user_id: user3.id
 )
 
@@ -202,28 +202,28 @@ pin18 = Pin.create!(
 title: "Piano Chords",
 description: "Cheatsheet for piano!",
 url: "http://takelessons.com/blog/jazz-piano-basics",
-image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501279521/music1_b0g99s.jpg",
+image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501279521/music1_b0g99s.jpg",
 user_id: user4.id
 )
 pin19 = Pin.create!(
   title: "The Ultimate Road Trip Playlist",
   description: "Road trips are the best kind of trip.",
   url: "http://www.popsugar.com/smart-living/Road-Trip-Playlist-40155882/?crlt.pid=camp.wd94kg4AIxCD",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501279609/music2_jm9ukj.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501279609/music2_jm9ukj.jpg",
   user_id: user6.id
 )
 pin20 = Pin.create!(
   title: "Music Note",
   description: "Treble~",
   url: "http://adevarul.ro/sanatate/minte-sanatoasa/10-efecte-magice-muzicii-probate-stiintific-1_53ab05e80d133766a8e51a0e/index.html",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501279683/music3_rgq24g.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501279683/music3_rgq24g.jpg",
   user_id: user8.id
 )
 pin21 = Pin.create!(
   title: "9 Types of Tea",
   description: "Handpicked guide for tea.",
   url: "http://www.averiecooks.com/2016/08/ham-cheese-sliders.html/print",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501279749/tea1_od5sft.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501279749/tea1_od5sft.jpg",
   user_id: user7.id
 )
 
@@ -231,7 +231,7 @@ pin22 = Pin.create!(
   title: "Is it tea time?",
   description: "It's always tea time!",
   url: "http://www.adagio.com/list/best_sellers.html",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501279813/tea2_fvptvb.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501279813/tea2_fvptvb.jpg",
   user_id: user7.id
 )
 
@@ -239,7 +239,7 @@ pin23 = Pin.create!(
 title: "Health Benefits of Tea.",
 description: "A mug of herbal tea a day may keep the doctor away!",
 url: "http://www.treehugger.com/health/infographic-shows-health-benefits-teas-and-tisanes.html",
-image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501279851/tea3_tm22ex.jpg",
+image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501279851/tea3_tm22ex.jpg",
 user_id: user2.id
 )
 
@@ -247,14 +247,14 @@ pin24 = Pin.create!(
   title: "Ham and Cheese Sliders",
   description: "Savory goodness.",
   url: "http://www.adagio.com/list/best_sellers.html",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280023/food1_osgvh8.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280023/food1_osgvh8.jpg",
   user_id: user8.id
 )
 pin25 = Pin.create!(
   title: "Shrimp and Gnocchi",
   description: "Gnocchi tossed with tender ship and cream sauce.",
   url: "http://damndelicious.net/2016/12/17/shrimp-and-gnocchi-with-garlic-parmesan-cream-sauce/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280086/food2_qhbym8.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280086/food2_qhbym8.jpg",
   user_id: user8.id
 )
 
@@ -262,7 +262,7 @@ pin26 = Pin.create!(
   title: "Garlic Butter Pizza Pull Apart Bread",
   description: "Mmm, yes please.",
   url: "http://cafedelites.com/2016/11/28/garlic-butter-pizza-pull-apart-bread/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280450/food3_irodyg.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280450/food3_irodyg.jpg",
   user_id: user5.id
 )
 
@@ -270,7 +270,7 @@ pin27 = Pin.create!(
   title: "Modern Bathroom",
   description: "I wouldn't mind a trip to the restroom here.",
   url: "http://www.notey.com/@desiretoinspire_unofficial/external/9918819/a-rustic-and-modern-bathroom.html?utm_content=buffer413e6&utm_medium=social&utm_source=pinterest.com&utm_campaign=buffer",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280518/home1_bpya8j.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280518/home1_bpya8j.jpg",
   user_id: user4.id
 )
 
@@ -278,7 +278,7 @@ pin28 = Pin.create!(
   title: "Loft",
   description: "Prime coding environment.",
   url: "http://www.euamodecoracao.com/lofts-decorados/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280607/home2_ivmlgj.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280607/home2_ivmlgj.jpg",
   user_id: demo_user.id
 )
 
@@ -286,7 +286,7 @@ pin29 = Pin.create!(
   title: "Porch Swing",
   description: "So relaxing.",
   url: "https://www.futuristarchitecture.com/16126-porch-swing.html",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280704/home3_duypni.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280704/home3_duypni.jpg",
   user_id: user6.id
 )
 
@@ -294,21 +294,21 @@ pin30 = Pin.create!(
   title: "Boo!",
   description: "FLUFF",
   url: "http://www.savvysugar.com/Things-Do-Before-You-Die-31147739#photo-33387007",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280880/cute1_lp25dh.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280880/cute1_lp25dh.jpg",
   user_id: user4.id
 )
 pin31 = Pin.create!(
   title: "Panda",
   description: "Nom nom nom bamboo nom.",
   url: "http://postris.com/list/105/23-incredibly-cute-baby-animals-that-will-melt-your-heart/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501280941/cute2_iexkxp.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501280941/cute2_iexkxp.jpg",
   user_id: user2.id
 )
 pin32 = Pin.create!(
   title: "Bunny and corn",
   description: "Is it food or is it a foam roller?",
   url: "http://ehknz.tumblr.com/post/96305189551",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281006/cute3_m5jwbd.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281006/cute3_m5jwbd.jpg",
   user_id: user8.id
 )
 
@@ -316,161 +316,161 @@ pin33 = Pin.create!(
   title: "Don't stop",
   description: "Until you're proud.",
   url: "http://momspark.net/17-inspirational-quotes-to-help-you-rock-2017/?utm_source=coolmompicks.com&utm_medium=referral&utm_campaign=pubexchange_facebook",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281082/inspire1_knjdwc.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281082/inspire1_knjdwc.jpg",
   user_id: user5.id
 )
 pin34 = Pin.create!(
   title: "Fearless",
   description: "From Harry Potter!",
   url: "http://finest10.com/2016/09/30-inspirational-harry-potter-quotes/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281139/inspire2_eaxwgz.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281139/inspire2_eaxwgz.jpg",
   user_id: user7.id
 )
 pin35 = Pin.create!(
   title: "Make it happen.",
   description: "Prove them wrong.",
   url: "http://lifestyleofyourdesign.com/47-of-the-best-inspirational-quotes/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281218/inspire3_zevdh4.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281218/inspire3_zevdh4.jpg",
   user_id: user8.id
 )
 pin36 = Pin.create!(
   title: "French Cheese Puffs",
   description: "So puffy.",
   url: "http://rasamalaysia.com/cheese-puffs-gougeres/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281300/cheese1_yy2evj.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281300/cheese1_yy2evj.jpg",
   user_id: user7.id
 )
 pin37 = Pin.create!(
   title: "Perfect charcuterie.",
   description: "Cheese platters are beautiful.",
   url: "http://lajollamom.com/how-to-make-charcuterie-cheese-board/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281349/cheese2_qnhzlh.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281349/cheese2_qnhzlh.jpg",
   user_id: user2.id
 )
 pin38 = Pin.create!(
   title: "Philly Cheese Steak",
   description: "Melting goodness.",
   url: "http://therecipecritic.com/2017/05/philly-cheese-steak-cheesy-bread/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281432/cheese3_wj56yy.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281432/cheese3_wj56yy.jpg",
   user_id: user7.id
 )
 pin39 = Pin.create!(
   title: "Counting in binary",
   description: "1010101101011111",
   url: "https://chummytees.com/products/counting-in-binary-t-shirt-hoodie-tank-top",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281516/array1_etrk6x.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281516/array1_etrk6x.jpg",
   user_id: user4.id
 )
 pin40 = Pin.create!(
   title: "Data Structures",
   description: "Arrays are #1",
   url: "https://s-media-cache-ak0.pinimg.com/originals/57/09/0d/57090d3701a9bb5a89d894c22db86e81.jpg",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281589/array2_x3amhg.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281589/array2_x3amhg.jpg",
   user_id: user7.id
 )
 pin41 = Pin.create!(
   title: "Algorithms",
   description: "As long as they have arrays",
   url: "https://www.quora.com/topic/Data-Structures",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281662/array3_dl7irw.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281662/array3_dl7irw.jpg",
   user_id: user7.id
 )
 pin42 = Pin.create!(
   title: "Amazing Outfit Ideas",
   description: "So chic",
   url: "https://streetstyle.rocks/street-style/40-amazing-outfit-ideas-that-arent-boring.html",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281735/fashion1_uudo8j.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281735/fashion1_uudo8j.jpg",
   user_id: demo_user.id
 )
 pin43 = Pin.create!(
   title: "Adidas kicks",
   description: "Fresh.",
   url: "http://www.theunstitchd.com/footwear/5-must-have-shoes-in-a-mans-closet//",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281924/fashion3_yrmau0.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281924/fashion3_yrmau0.jpg",
   user_id: user6.id
 )
 pin45 = Pin.create!(
   title: "Choose your weapon",
   description: "Gameboy Color",
   url: "http://www.ebaumsworld.com/pictures/view/82463709/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501281975/game1_gau2bh.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281975/game1_gau2bh.jpg",
   user_id: user7.id
 )
 pin46 = Pin.create!(
   title: "Dark Chocolate Cake",
   description: "Tasty",
   url: "http://cakescottage.com/2016/12/28/dark-chocolate-cake/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282087/chocolate1_xvo3zc.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282087/chocolate1_xvo3zc.jpg",
   user_id: user7.id
 )
 pin47 = Pin.create!(
   title: "Coffee Brewing",
   description: "Artistic Perfection",
   url: "http://localmilkblog.com/2015/12/coffee-brewing-how-to-pour-over-french-press.html?crlt.pid=camp.ZDGifQ7JvDZV",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282135/coffee1_ckaq3o.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282135/coffee1_ckaq3o.jpg",
   user_id: user2.id
 )
 pin48 = Pin.create!(
   title: "Style",
   description: "Call me GQ",
   url: "http://retrodrive.tumblr.com/post/71671475448/casual-male-fashion-blog",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282191/gq1_fngnsp.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282191/gq1_fngnsp.jpg",
   user_id: user8.id
 )
 pin49 = Pin.create!(
   title: "Messi and Ronaldo",
   description: "Legends",
   url: "https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-9/15267554_1613307452309220_7540920180603245021_n.jpg?oh=4fe200b8c7fe1e1e6178473f5e2b5d49&oe=58F92AFA",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282242/soccer1_yqrry3.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282242/soccer1_yqrry3.jpg",
   user_id: user2.id
 )
 pin50 = Pin.create!(
   title: "Computer Ports",
   description: "But where are the curly braces?",
   url: "http://removeandreplace.com/2013/04/13/computer-ports-learn-the-name-and-location-of-the-connections-on-your-desktop-computer-or-laptop/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282284/computer1_jk78ss.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282284/computer1_jk78ss.jpg",
   user_id: user3.id
 )
 pin51 = Pin.create!(
   title: "Golf Ball",
   description: "Just don't lose me!",
   url: "http://www.rockbottomgolf.com/?utm_source=pinterest&utm_medium=social&utm_campaign=golf%20humor",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282333/golf1_p8i8gj.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282333/golf1_p8i8gj.jpg",
   user_id: user2.id
 )
 pin52 = Pin.create!(
   title: "Golf Course",
   description: "Such an amazing view.",
   url: "http://www.break80today.com/products/how-to-break-80-maximum-distance-dvd-w-video/",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282377/golf2_lnpwex.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282377/golf2_lnpwex.jpg",
   user_id: user2.id
 )
 pin53 = Pin.create!(
   title: "Basketball",
   description: "Alley-oooooop",
   url: "https://s-media-cache-ak0.pinimg.com/originals/8c/47/90/8c4790ce281a8b631f5041288a06992b.jpg",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282425/basketball1_ti43dc.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282425/basketball1_ti43dc.jpg",
   user_id: user6.id
 )
 pin54 = Pin.create!(
   title: "Kitty",
   description: "Meowww!",
   url: "http://www.buzzfeed.com/allyson/8-cats-that-are-prettier-than-most-humans-cepf?sub=2462617_1420609&s=mobile#1420609",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282476/cat1_fnlsim.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282476/cat1_fnlsim.jpg",
   user_id: user7.id
 )
 pin55 = Pin.create!(
   title: "Guitar",
   description: "Gibson Les Paul",
   url: "http://frettedchordophones.tumblr.com/post/154434356654/glorifiedguitars-gibson-custom-shop-bella-voce",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282534/guitar1_f18fc2.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282534/guitar1_f18fc2.jpg",
   user_id: user5.id
 )
 pin56 = Pin.create!(
   title: "Energy",
   description: "Just like asteroids written in javascript.",
   url: "https://magic.piktochart.com/output/3056886-untitled-infographic",
-  image_url: "http://res.cloudinary.com/jaredtan/image/upload/v1501282591/science1_ub7mgy.jpg",
+  image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501282591/science1_ub7mgy.jpg",
   user_id: user8.id
 )
 

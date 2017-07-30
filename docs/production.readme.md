@@ -6,7 +6,7 @@ Pinned is a full-stack web application, inspired by Pinterest. This site enables
 
 ## Technology
 
-This personal project uses Ruby on Rails with a PostgreSQL database on the back end, which provides ease in data fetching and storage with simple RESTful APIs. In conjunction with Rails, Pinned uses React.js with a Redux framework on the front-end as a modular way for front-end data flow. Redux's predictable state and self-encapsulated React components that only change when their own data changes allow for web applications like Pinned to function with efficiency and scalability.
+This personal project uses Ruby on Rails with a PostgreSQL database on the back end, which provides ease in data fetching and storage with simple RESTful APIs. In conjunction with Rails, Pinned uses React.js with a Redux framework on the front-end for modular front-end data flow. Redux's predictable state and self-encapsulated React components that only change when their own data changes allow for web applications like Pinned to function with efficiency and scalability.
 
 ## Features and Implementation
 
@@ -164,4 +164,4 @@ When the amount of pins in the database becomes too large where fetching all at 
 
 ### Secret Boards
 
-A user could not want their boards to be seen to the public, so adding a section in their profile of secret boards only visible to themselves would be a nice feature. This would be done with a column in the users table called `secret`, which is a boolean and chosen to be a true of false on the creation of the board.
+A user could not want their boards to be seen to the public, so adding a section in their profile of secret boards only visible to themselves would be a nice feature. This would be done with a column in the users table called `secret`, which is a boolean and chosen to be true or false during the creation of the board.

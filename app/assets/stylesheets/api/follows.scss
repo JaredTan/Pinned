@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding-top: 89px;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 
@@ -34,86 +35,3 @@
   flex-direction: column;
   align-items: center;
 }
-
-// .user-profile-container {
-//   align-self: center;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   padding-top: 55px;
-// }
-//
-// .user-profile-top {
-//   margin-top: 35px;
-//   height: auto;
-//   display: flex;
-//   align-items: center;
-// }
-//
-// .user-profile-info-container {
-//   margin-left: -40px
-// }
-//
-// .user-profile-username{
-//   font-size: 30px;
-//   color: $dark-gray;
-//   font-weight: bold;
-// }
-//
-// .profile-follow-button {
-//
-// }
-//
-// .user-profile-description {
-//   margin-top: 20px;
-//   font-size: 18px;
-//   width: 380px;
-//   color: $dark-gray;
-// }
-//
-//
-// .follows-container {
-//   display: flex;
-//   flex-direction: column;
-//   padding-left: 60px;
-// }
-//
-// .follow-link {
-//   margin-bottom: 20px;
-//   font-size: 24px;
-//   font-weight: bold;
-// }
-//
-// .follow-link:hover {
-//   background-color: $light-gray;
-//
-//   border-radius: 10px;
-// }
-//
-// .user-profile-buttons-bar {
-//   display: flex;
-//   margin: 20px;
-// }
-//
-//
-// .tab-buttons-bar-container {
-//   width: 30%;
-//   margin-top: 40px;
-//   margin-right: 27px;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: baseline;
-//   color: #37BC9B;
-// }
-//
-//
-// .tab-button {
-//   font-size: 30px;
-//   color: $dark-gray;
-//   border-radius: 10px;
-// }
-//
-// .tab-button:hover {
-// font-weight: bold;
-// }

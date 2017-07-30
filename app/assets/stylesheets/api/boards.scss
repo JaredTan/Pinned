@@ -14,6 +14,17 @@
   justify-content: center;
 }
 
+.board-index-thumbnail-small {
+  height: 40px;
+  width: 140px;
+  margin: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
 .profile-boards-container {
   display: flex;
   justify-content: center;
@@ -57,6 +68,49 @@
   width: 240px;
   height: 240px;
   margin: 20px;
+}
+
+
+.delete-yes-no-buttons {
+  display: flex;
+  align-items: baseline;
+  position: absolute;
+  margin-top:75px;
+  right: 55px;
+}
+
+.delete-button-yes {
+  font-size: 20px;
+  padding: 5px 10px;
+
+
+  vertical-align: middle;
+
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-gray;
+  background-color: $light-mint;
+    &:hover {
+      background: $dark-mint;
+    }
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.delete-button-no {
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-left:10px;
+
+  vertical-align: middle;
+
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-gray;
+  background-color: $light-mint;
+    &:hover {
+      background: $dark-mint;
+    }
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .pins-in-board-thumbnail-pic {

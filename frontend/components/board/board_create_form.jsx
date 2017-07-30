@@ -20,18 +20,16 @@ class BoardCreateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let { createBoard, requestSingleUser, requestSinglePin, pin, currentUser, ownProps} = this.props
     const board = Object.assign({}, this.state);
-    this.props.createBoard({board});
-    this.props.requestSingleUser(this.props.currentUser.id);
-    this.props.ownProps.closeModal();
+    createBoard({board});
+    requestSingleUser(currentUser.id);
+    if (pin) {
+      requestSinglePin(pin.id);
+    }
+    ownProps.closeModal();
   }
 
-
-  // renderErrors() {
-  //
-  // }
-  //
-  // <span className="create-board-errors">{this.renderErrors()}</span>
   render() {
     return (
       <div className="create-board-form-container">

@@ -1,6 +1,6 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
-import BoardDetailModal from '../modal/board_detail_modal';
+
 import BoardCreateModal from '../modal/board_create_modal';
 import { Link } from 'react-router-dom';
 import { values } from 'lodash';
@@ -18,7 +18,7 @@ class UserBoards extends React.Component {
     this.setState({ loading: false });
   }
 
-  createNewBoardModal(board){
+  createNewBoardModal(){
     return (
       <section className="board-index-item-container">
 

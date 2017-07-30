@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { requestSinglePin, resetPin, deletePin } from '../../actions/pin_actions';
 import { requestSingleUser } from '../../actions/user_actions';
-import { requestSingleBoard } from '../../actions/board_actions';
+import { requestSingleBoard} from '../../actions/board_actions';
 import { createPinning, deletePinningInPinDiffBoard, deletePinningInPinSameBoard, deletePinningInBoard } from '../../actions/pinning_actions';
 import { withRouter } from 'react-router-dom';
 import PinDetail from './pin_detail';

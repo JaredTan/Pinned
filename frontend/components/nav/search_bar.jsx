@@ -18,6 +18,10 @@ class SearchBar extends React.Component {
     setTimeout(this.setState({searchQuery: e.target.value}, () => this.props.requestSearchResults(this.state.searchQuery)), 50)
   }
 
+  componentWillMount(){
+    this.props.resetSearchResults();
+  }
+
   handleReset(e){
     e.preventDefault();
     this.setState({searchQuery: ""});

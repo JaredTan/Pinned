@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { createBoard } from '../../actions/board_actions';
 import { requestSingleUser } from '../../actions/user_actions';
+import { requestSinglePin } from  '../../actions/pin_actions';
 import { withRouter } from 'react-router-dom';
 import BoardCreateForm from './board_create_form';
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   createBoard: board => dispatch(createBoard(board)),
-  requestSingleUser: userId => dispatch(requestSingleUser(userId))
+  requestSingleUser: userId => dispatch(requestSingleUser(userId)),
+  requestSinglePin: pin => dispatch(requestSinglePin(pin))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardCreateForm));

@@ -61,6 +61,19 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   }
 
+.pin-button-create-board {
+  font-size: 13px;
+  vertical-align: middle;
+  margin-top: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  color: $dark-gray;
+  background-color: $light-mint;
+    &:hover {
+      background: $dark-mint;
+    }
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
 .pin-button-unclickable {
   font-size: 13px;
   padding: 5px 10px;

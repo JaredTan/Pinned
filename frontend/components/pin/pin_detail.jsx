@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { values, merge } from 'lodash';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-simple-dropdown';
+import BoardCreateModal from '../modal/board_create_modal';
 // const DropdownTrigger = Dropdown.DropdownTrigger;
 // const DropdownContent = Dropdown.DropdownContent;
 
@@ -71,8 +72,19 @@ class PinDetail extends React.Component {
     this.props.createPinning(pinning);
   }
 
+  createNewBoardModal(){
+    return (
+      <section className="pin-button-create-board">
+
+            <BoardCreateModal small={true} pin={this.props.pin}/>
+
+      </section>
+    )
+  }
+
   boards() {
     let { pin, deletePin, currentUser, board, user } = this.props;
+
     return (
       values(user.boards).map((board) => {
         if (values(pin.pinned_boards).includes(board.id)) {
@@ -93,6 +105,9 @@ class PinDetail extends React.Component {
       })
 
     )
+
+
+
   }
 
   render() {
@@ -112,7 +127,7 @@ class PinDetail extends React.Component {
             <button className='board-text' onClick={this.toggleBoards}>Pin to Boards!</button>
 
               {this.state.boardTab ? this.boards() : null}
-
+              {this.state.boardTab ? this.createNewBoardModal() : null}
         </div>
 
           { (currentUser.id === pin.user_id) && (this.props.match.params.boardId == undefined) ?
