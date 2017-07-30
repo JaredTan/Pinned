@@ -1,6 +1,6 @@
 # Pinned
 
-[Link to Live Site](https://pin-ned.herokuapp.com)
+[Link to Live Site](http://www.pinned.life)
 
 Pinned is a full-stack web application, inspired by Pinterest. This site enables users to share their creative ideas as well as discover others' ideas through searching and "pinning ideas to boards".
 
@@ -83,9 +83,9 @@ end
 ```
 
 ### Pins Index and Boards Display
-The home page of Pinned is the digital version of a person's DIY pin-board. As a result, the display of the pins should be clean, and aesthetically pleasing to foster creativity. To accomplish a pin / grid like layout, Pinned uses  [masonry-layout](https://www.npmjs.com/package/masonry-layout) to display an optimized grid layout based on the space given.
+The home page of Pinned is the digital version of a person's DIY pin-board. As a result, the display of the boards and pins should be clean and aesthetically pleasing to foster creativity. To accomplish a pin / grid like layout, Pinned uses  [masonry-layout](https://www.npmjs.com/package/masonry-layout) to display an optimized grid layout based on the space given.
 
-Masonry is used in both the index page, as well to display a user's boards. The following code snippet is an example implementation of a nested grid via `<Masonry></Masonry>` to display a user's boards in a their profile, as well as the first 8 pins in each board.
+Masonry is used in both the index page, as well to display a user's boards. The following code snippet is an example implementation of a nested grid via `<Masonry></Masonry>` to display a user's boards in their profile, as well as the first 8 pins in each board.
 
 ![masonry](http://res.cloudinary.com/jaredtan/image/upload/v1501389717/Screen_Shot_2017-07-29_at_9.41.32_PM_yckicd.png)
 
