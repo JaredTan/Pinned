@@ -2,11 +2,16 @@
 
 [Link to Live Site](https://pin-ned.herokuapp.com)
 
-Pinned is a full-stack web application, inspired by Pinterest. This site enables users to share their creative ideas as well as discover other's ideas through search and "pinning ideas to boards".
+Pinned is a full-stack web application, inspired by Pinterest. This site enables users to share their creative ideas as well as discover others' ideas through searching and "pinning ideas to boards".
+
+
+![login](http://res.cloudinary.com/jaredtan/image/upload/v1501388859/Screen_Shot_2017-07-29_at_9.22.09_PM_j711de.png)
+
+*Disclaimer: Login background image taken from [Pinterest](https://www.pinterest.com/)*
 
 ## Technology
 
-This personal project uses Ruby on Rails with a PostgreSQL database on the back end, which provides ease in data fetching and storage with simple RESTful APIs. In conjunction with Rails, Pinned uses React.js with a Redux framework on the front-end as a modular way for front-end data flow. Redux's predictable state and self-encapsulated React components that only change when their own data changes allow for web applications like Pinned to function with ease and scalability.
+This personal project uses Ruby on Rails with a PostgreSQL database on the back end, which provides ease in data fetching and storage with simple RESTful APIs. In conjunction with Rails, Pinned uses React.js with a Redux framework on the front-end for modular front-end data flow. Redux's predictable state and self-encapsulated React components that only change when their own data changes allow for web applications like Pinned to function with quickness and scalability.
 
 ## Features and Implementation
 
@@ -24,6 +29,7 @@ Boards are stored on the back-end, and are more private than pins. When `logged_
 
 In addition to the having an encrypted front-end authentication, users may edit their profile and follow/unfollow other users. Similar to `Pinning`, a many-many join table through `Following` is used to connect users to other users. A user can view other users' followers and followings through their profile page.
 
+![profile](http://res.cloudinary.com/jaredtan/image/upload/v1501388831/Screen_Shot_2017-07-29_at_9.26.44_PM_aaor2l.png)
 ### Search
 
 In order for a user to discover ideas, a searching feature was implemented that searches the entire rails database and displays all pin titles, board titles, and usernames that match a user's input query string in the search bar. Searching is the functional backbone that allows a user to use the application to its fullest.
@@ -31,9 +37,11 @@ In order for a user to discover ideas, a searching feature was implemented that 
 ## Technical Info
 
 ### Search
-The searching feature was implemented using the rails gem [pg_search](https://github.com/Casecommons/pg_search), which utilizes named scopes to take advantage of PostgreSQL's text search capabilities. Pinned's searching mechanism uses PGSearch's `whose_X_start_with` `method_missing` to filter all items that have a column attribute `X` corresponding to a specific query string parameter obtained from the user.
+The searching feature was implemented using the rails gem [pg_search](https://github.com/Casecommons/pg_search), which utilizes named scopes to take advantage of PostgreSQL's text search capabilities. Pinned's searching mechanism uses PGSearch's `whose_X_starts_with` `method_missing` to filter all items that have a column attribute `X` corresponding to a specific query string parameter obtained from the user.
 
 The following code snippet displays the `pg_search` setup in the `Board` model and `Api::SearchesController`. By creating a `search_scope` in `Board`, PGSearch can query `Board` data in more advanced ways than vanilla ActiveRecord.  
+
+![search](http://res.cloudinary.com/jaredtan/image/upload/v1501389538/Screen_Shot_2017-07-29_at_9.38.30_PM_i10auc.png)
 
 ```ruby
 
@@ -79,6 +87,8 @@ The home page of Pinned is the digital version of a person's DIY pin-board. As a
 
 Masonry is used in both the index page, as well to display a user's boards. The following code snippet is an example implementation of a nested grid via `<Masonry></Masonry>` to display a user's boards in a their profile, as well as the first 8 pins in each board.
 
+![masonry](http://res.cloudinary.com/jaredtan/image/upload/v1501389717/Screen_Shot_2017-07-29_at_9.41.32_PM_yckicd.png)
+
 ```javascript
 import React from 'react';
 import Masonry from 'react-masonry-component';
@@ -88,53 +98,48 @@ class UserBoards extends React.Component {
 
   ...
 
-render() {
+  render() {
 
   ...
 
   const masonryOptions = {
-   fitWidth: true,
-   transitionDuration: 0
- };
-```
+    fitWidth: true,
+    transitionDuration: 0
+  };
 
-```html
-render (
-  ...
   return(
     ...
-  <Masonry
-    elementType={'div'}
-    disableImagesLoaded={false}
-    className='profile-boards-container'
-    options={masonryOptions}
-    >
+    <Masonry
+      elementType={'div'}
+      disableImagesLoaded={false}
+      className='profile-boards-container'
+      options={masonryOptions}
+      >
+      ...
+      { reversedSortedBoards.map( (board) => {
+        return (
+            ...
+              <Masonry
+                elementType={'div'}
+                disableImagesLoaded={false}
+                className='board-display-pictures-items'
+                options={masonryOptions}
+                >
+               { values(board.pins).slice(0, 8).map( pin => {
+                  return (
+                  ...
+                  )
+                })
+              }
+              </Masonry>
+        );
+      })}
+    </Masonry>
     ...
-    { reversedSortedBoards.map( (board) => {
-      return (
-          ...
-            <Masonry
-              elementType={'div'}
-              disableImagesLoaded={false}
-              className='board-display-pictures-items'
-              options={masonryOptions}
-              >
-             { values(board.pins).slice(0, 8).map( pin => {
-                return (
-                ...
-                )
-              })
-            }
-            </Masonry>
-          </Link>
-       </div>
-      );
-      }
-    )}
-  </Masonry>
-  ...
   )
-  )
+}
+
+export default UserBoards;
 ```
 
 
@@ -160,8 +165,8 @@ render (
 
 ### Infinite Scroll
 
-When the amount of pins in the database becomes too large where fetching all at once becomes unfeasible, the idea of an infinite scroll would be very handy. The index page would fetch only a certain number of pins (~50), then when the user scrolls down past a certain distance in the page, would fetch more pins from the database and add it to the page. This implementation would allow for a smoother user experience.
+When the amount of pins in the database becomes too large where fetching all at once becomes unfeasibly slow, and infinite scroll would prove worthy. The index page would fetch only a certain number of pins (~50), then when the user scrolls down past a certain distance in the page, another fetch request would occur and add more pins to the page. This implementation would allow for a smoother user experience.
 
 ### Secret Boards
 
-A user could not want their boards to be seen to the public, so adding a section in their profile of secret boards only visible to themselves would be a nice feature. This would be done with a column in the users table called `secret`, which is a boolean and chosen to be a true of false on the creation of the board.
+A user could not want their boards to be seen to the public, so adding a section in their profile of secret boards only visible to themselves would be a nice feature. This would be done with a boolean column in the users table called `secret`, which would set as true or false during the creation of the board.
