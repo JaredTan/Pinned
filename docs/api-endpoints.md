@@ -18,6 +18,10 @@
 + `POST /api/session` - Log in User
 + `DELETE /api/session` -  Log out User
 
+###
+
++ `GET /api/searches` - Fetches Search Data
+
 ### Pins
 
 + `GET /api/pins` - Fetch Pins

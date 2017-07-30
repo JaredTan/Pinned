@@ -144,7 +144,7 @@ export default UserBoards;
 
 
 ### Image Hosting
-  In order to manage the many images that are uploaded to Pinned, [Cloudinary](http://cloudinary.com/) is used deliver images optimized for any device quickly. Cloudinary is used alongside `dropzone` and `superagent` which allows a user to easily drag and drop photos into a form such as editing their profile.
+  In order to manage the many images that are uploaded to Pinned, [Cloudinary](http://cloudinary.com/) is used to deliver images optimized for any device quickly. Cloudinary is used alongside `dropzone` and `superagent` which allows a user to easily drag and drop photos into a form such as editing their profile.
 
 ## Design Documents
 
