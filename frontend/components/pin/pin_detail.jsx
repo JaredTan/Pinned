@@ -92,17 +92,18 @@ class PinDetail extends React.Component {
     let { pin, deletePin, currentUser, board, user } = this.props;
 
     return (
-      values(user.boards).map((board) => {
+      values(user.boards).map((board, idx) => {
         if (values(pin.pinned_boards).includes(board.id)) {
         return (
           <button className="pin-button"
             onClick={this.handleCheckUnpinning}
+            key={idx}
             value={board.id}>{board.title}  ✔
           </button>
         )} else {
         return(
           <button className="pin-button"
-            key={board.id}
+            key={idx}
             onClick={this.handlePinning}
             value={board.id}>{board.title}
           </button>

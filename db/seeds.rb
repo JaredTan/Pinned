@@ -389,6 +389,7 @@ pin43 = Pin.create!(
   image_url: "https://res.cloudinary.com/jaredtan/image/upload/v1501281924/fashion3_yrmau0.jpg",
   user_id: user6.id
 )
+
 pin45 = Pin.create!(
   title: "Choose your weapon",
   description: "Gameboy Color",
@@ -597,12 +598,6 @@ board20 = Board.create!(
 )
 
 board21 = Board.create!(
-  title: "Cats",
-  description: "Pusheen is my spirit animal",
-  user_id: user4.id
-)
-
-board21 = Board.create!(
   title: "Programming",
   description: "101001111010101010010011001",
   user_id: user3.id
@@ -632,6 +627,12 @@ board25 = Board.create!(
   user_id: user2.id
 )
 
+
+board26 = Board.create!(
+  title: "Cats",
+  description: "Pusheen is my spirit animal",
+  user_id: user4.id
+)
 
 
 Pinning.destroy_all
@@ -895,6 +896,14 @@ pinning59 = Pinning.create!(
 pinning60 = Pinning.create!(
   board_id: board24.id,
   pin_id: pin55.id
+)
+pinning61 = Pinning.create!(
+  board_id: board19.id,
+  pin_id: pin46.id
+)
+pinning62 = Pinning.create!(
+  board_id: board26.id,
+  pin_id: pin54.id
 )
 
 
