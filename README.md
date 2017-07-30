@@ -23,11 +23,11 @@ Pins are stored on the back-end with a `user_id`, that is linked to the `current
 
 ### Board Creating and Pinning
 
-Boards are stored on the back-end, and are more private than pins. When `logged_in`, a board can be created which is a personal showcase of pins for a specific topic. When a pin is pinned to a board, an instance of `Pinning` is created, which connects a pin and a board through `pin_id` and `board_id` through a many-many relationship. Boards may also be searched for other users to view.
+Boards are stored on the back-end, and are more private than pins. When `logged_in`, a board may be created which is a user's personal showcase of pins for a specific topic. When a pin is pinned to a board, an instance of `Pinning` is created, which connects a pin and a board through `pin_id` and `board_id` through a many-many relationship. Boards may also be searched for other users to view.
 
 ### User Following
 
-In addition to the having an encrypted front-end authentication, users may edit their profile and follow/unfollow other users. Similar to `Pinning`, a many-many join table through `Following` is used to connect users to other users. A user can view other users' followers and followings through their profile page.
+In addition to the having an encrypted front-end authentication, users may edit their profile and follow/unfollow other users. Similar to `Pinning`, a many-many join table through `Following` is used to connect users to other users. A user may view other users' followers and followings through their profile page.
 
 ![profile](http://res.cloudinary.com/jaredtan/image/upload/v1501388831/Screen_Shot_2017-07-29_at_9.26.44_PM_aaor2l.png)
 ### Search
@@ -37,7 +37,7 @@ In order for a user to discover ideas, a searching feature was implemented that 
 ## Technical Info
 
 ### Search
-The searching feature was implemented using the rails gem [pg_search](https://github.com/Casecommons/pg_search), which utilizes named scopes to take advantage of PostgreSQL's text search capabilities. Pinned's searching mechanism uses PGSearch's `whose_X_starts_with` `method_missing` to filter all items that have a column attribute `X` corresponding to a specific query string parameter obtained from the user.
+The searching feature was implemented using the rails gem [pg_search](https://github.com/Casecommons/pg_search), which utilizes named scopes to take advantage of PostgreSQL's text search capabilities. Pinned uses PGSearch's `whose_X_starts_with` `method_missing` to filter all items that have a column attribute `X` corresponding to a specific query string parameter obtained from the user.
 
 The following code snippet displays the `pg_search` setup in the `Board` model and `Api::SearchesController`. By creating a `search_scope` in `Board`, PGSearch can query `Board` data in more advanced ways than vanilla ActiveRecord.  
 
