@@ -15,7 +15,7 @@ This personal project uses Ruby on Rails with a PostgreSQL database on the back 
 
 ## Features and Implementation
 
-Pinned's database comprises of three main entities - users, pins, and boards.
+Pinned's database is comprised of three main entities - users, pins, and boards.
 
 ### Pin Creation and Pinning
 

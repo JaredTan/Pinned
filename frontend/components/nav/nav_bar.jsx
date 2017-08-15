@@ -22,15 +22,19 @@ class NavBar extends React.Component {
             <SearchBarContainer/>
           </div>
           <div className="right">
-            <PinCreateModal/>
-            <Link to={`/users/${currentUser.id}`}>
-            Profile
-            </Link>
-            <button className='logout-button'onClick={logout}>Logout</button>
+            <div className='right-text'>
+              <PinCreateModal/>
+              <Link to={`/users/${currentUser.id}`}>
+                Profile
+              </Link>
+            </div>
+            <div className='logos'>
+              <button id='logout'  className='fa fa-sign-out fa-2x' onClick={logout}></button>
+              <a className='github'href="https://github.com/JaredTan/Pinned">
+                <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
-          <a className='github'href="https://github.com/JaredTan/Pinned">
-            <i className="fa fa-github fa-2x" aria-hidden="true"></i>
-          </a>
           <div className='filler-space'></div>
         </nav>
     );

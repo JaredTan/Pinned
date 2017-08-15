@@ -55,19 +55,36 @@ button {
   justify-content: center;
   color: $dark-gray;
 }
-
+//
 .right {
   width: 30%;
-  margin-top: 12px;
-  margin-right: 27px;
+  margin-top: 2px;
   display: flex;
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
   color: $dark-mint;
 }
 
-.github {
-  color: $light-mint;
-  margin-right: 30px;
-  padding-top: 2px;
+.right-text {
+  display: flex;
+  width:50%;
+  justify-content: space-around;
+
 }
+
+.logos {
+  display: flex;
+  width: 25%;
+  justify-content: space-around;
+  vertical-align: middle;
+}
+//
+// .github {
+//   color: $light-mint;
+//   margin-right: 30px;
+//   padding-top: 2px;
+// }
+//
+// #logout {
+//   position: absolute;
+// }

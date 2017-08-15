@@ -14,9 +14,6 @@ class UserEditForm extends React.Component {
       image_url: oldUser.image_url
     };
 
-
-
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleImageUpload = this.handleImageUpload.bind(this);
@@ -118,10 +115,7 @@ class UserEditForm extends React.Component {
                 accept="image/*"
                 onDrop={this.handleImageUpload}
                 className="create-form-dropzone">
-
                 {this.displayPicture()}
-
-
               </Dropzone>
               <input className="submit-create-button"type="submit" value={'Submit'} />
             </div>
