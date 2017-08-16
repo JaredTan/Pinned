@@ -67,24 +67,14 @@ button {
 
 .right-text {
   display: flex;
-  width:50%;
+  width: 60%;
   justify-content: space-around;
 
 }
 
 .logos {
   display: flex;
-  width: 25%;
+  width: 35%;
   justify-content: space-around;
-  vertical-align: middle;
+  padding-bottom: 3px;
 }
-//
-// .github {
-//   color: $light-mint;
-//   margin-right: 30px;
-//   padding-top: 2px;
-// }
-//
-// #logout {
-//   position: absolute;
-// }
