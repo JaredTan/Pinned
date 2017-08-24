@@ -137,10 +137,7 @@ class PinCreateForm extends React.Component {
                 accept="image/*"
                 onDrop={this.handleImageUpload}
                 className="create-form-dropzone">
-
                 {this.displayPicture()}
-
-
               </Dropzone>
               <input className="submit-create-button"type="submit" value={'Submit'} />
             </div>

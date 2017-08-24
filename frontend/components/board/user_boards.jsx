@@ -21,28 +21,24 @@ class UserBoards extends React.Component {
   createNewBoardModal(){
     return (
       <section className="board-index-item-container">
-
-            <BoardCreateModal createBoard={this.props.createBoard}/>
-            <div className="create-new-board-text">
-            </div>
-
+        <BoardCreateModal createBoard={this.props.createBoard}/>
+        <div className="create-new-board-text">
+        </div>
       </section>
     )
   }
 
   render() {
     let { boards, pins, currentUser, owner } = this.props;
-
     let reversedSortedBoards = _.sortBy( boards, 'id' ).reverse();
     let {loading} = this.state;
-
     const masonryOptions = {
      fitWidth: true,
      transitionDuration: 0
    };
 
    return (
-     loading ?
+     this.state.loading ?
      <div className="spinner"></div> :
      <div className='user-profile-items'>
        <Masonry
@@ -82,9 +78,6 @@ class UserBoards extends React.Component {
        </Masonry>
    </div>
    )
-
-
-
   }
 }
 

@@ -23,7 +23,6 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
-
     if @user
       if @user.update_attributes(user_params)
         render 'api/users/show'

@@ -1,4 +1,3 @@
-
 json.pin do
   json.set! :owner_image_url, @pin.owner.image_url
   json.set! :owner_username, @pin.owner.username

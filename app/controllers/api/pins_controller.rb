@@ -2,20 +2,17 @@ class Api::PinsController < ApplicationController
 
   def index
     @pins = Pin.all
-
     render 'api/pins/index'
   end
 
   def show
     @pin = Pin.find(params[:id])
-
     render 'api/pins/show'
   end
 
   def create
     @pin = Pin.new(pin_params)
     @pin.user_id = current_user.id
-
     if @pin.save
       render 'api/pins/show'
     else
@@ -25,7 +22,6 @@ class Api::PinsController < ApplicationController
 
   def update
     @pin = current_user.pins.find(params[:id])
-
     if @pin
       if @pin.update(pin_params)
         render 'api/pins/show'
@@ -39,7 +35,6 @@ class Api::PinsController < ApplicationController
 
   def destroy
     @pin = current_user.owned_pins.find(params[:id])
-
     if @pin
       if @pin.destroy
         render 'api/pins/show'

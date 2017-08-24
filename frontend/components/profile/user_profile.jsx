@@ -84,7 +84,6 @@ class UserProfile extends React.Component {
     )
   }
 
-
   handleFollow() {
     let {user, currentUser, createFollowing} = this.props;
     let following = {
@@ -151,7 +150,6 @@ class UserProfile extends React.Component {
     )
   }
 
-
   followDisplay() {
     let { currentUser, user, followers, followees } = this.props;
     let sortedUsers = this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
@@ -167,7 +165,6 @@ class UserProfile extends React.Component {
       gutter: 30,
       fitWidth: true
     };
-
 
     return (
       <div className="follows-index-container">
@@ -191,7 +188,6 @@ class UserProfile extends React.Component {
       </div>
     )
   }
-
 
   render() {
       let { user, currentUser } = this.props;
@@ -232,7 +228,6 @@ class UserProfile extends React.Component {
         </section>
       );
     }
-
 }
 
 export default UserProfile;

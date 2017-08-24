@@ -66,7 +66,6 @@ class UserEditModal extends React.Component {
           onRequestClose={this.closeModal}
           style = {style}
           contentLabel="User Edit Modal">
-
           <UserEditFormContainer
             closeModal={this.closeModal}
              />

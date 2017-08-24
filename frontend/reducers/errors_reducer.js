@@ -7,8 +7,6 @@ const defaultState = () => ({
   pins: []
 })
 
-
-
 const errorsReducer = (state = defaultState(), action) => {
   Object.freeze(state);
   switch (action.type) {

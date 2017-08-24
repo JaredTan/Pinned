@@ -69,7 +69,6 @@ class PinDetailModal extends React.Component {
           onRequestClose={this.closeModal}
           style = {style}
           contentLabel="Pin Modal">
-
           <PinDetailContainer
             closeModal={this.closeModal}
             id={pin.id} pin={pin}/>

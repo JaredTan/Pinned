@@ -63,7 +63,6 @@ class SearchBar extends React.Component {
         <br/>
       </div>
     );
-
   }
 
     searchDropDown(){
@@ -71,19 +70,15 @@ class SearchBar extends React.Component {
       const pins = searchResults.pins || [];
       const boards = searchResults.boards || [];
       const users = searchResults.users || [];
-
       let pinsList;
       let boardsList;
       let usersList;
-
-       if (Object.keys(searchResults).length) {
+       if (Object.keys(searchResults).length > 0) {
          pinsList = pins.length > 0 ? this.createResultsList(pins, "Pins") : null;
          boardsList = boards.length > 0 ? this.createResultsList(boards, "Boards") : null;
          usersList = users.length > 0 ? this.createResultsList(users, "Users") : null;
        }
-
        let dropdown;
-
        document.addEventListener("click", (e) => {
          dropdown = document.getElementsByClassName('search-results-dropdown-container')[0];
          if (e.target.id === 'list-item' || e.target.id === 'list-item-user' || e.target.id === 'search-index-thumbnail') {
@@ -104,10 +99,7 @@ class SearchBar extends React.Component {
       );
     }
 
-
-
   render(){
-
     return(
       <div className="search-container">
         <input id="search-bar" type="text" placeholder='Search' value={this.state.searchQuery} onChange={this.handleInput}/>
@@ -115,7 +107,6 @@ class SearchBar extends React.Component {
       </div>
     );
   }
-
 }
 
 export default SearchBar;

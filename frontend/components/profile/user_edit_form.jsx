@@ -19,8 +19,6 @@ class UserEditForm extends React.Component {
     this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
-
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -96,7 +94,6 @@ class UserEditForm extends React.Component {
            <span className="create-pin-errors">{this.renderErrors()}</span>
           <br/>
           <div>
-
             <br/>
             <label>
               <span>Description</span>
@@ -108,7 +105,6 @@ class UserEditForm extends React.Component {
               />
             </label>
             <br/>
-
             <div className="image-and-submit">
               <Dropzone
                 multiple={false}
@@ -119,10 +115,8 @@ class UserEditForm extends React.Component {
               </Dropzone>
               <input className="submit-create-button"type="submit" value={'Submit'} />
             </div>
-
           </div>
         </form>
-
       </div>
     );
   }

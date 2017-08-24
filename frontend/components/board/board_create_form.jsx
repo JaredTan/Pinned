@@ -17,7 +17,6 @@ class BoardCreateForm extends React.Component {
     });
   }
 
-
   handleSubmit(e) {
     e.preventDefault();
     let { createBoard, requestSingleUser, requestSinglePin, pin, currentUser, ownProps} = this.props
@@ -60,14 +59,11 @@ class BoardCreateForm extends React.Component {
               />
             </label>
             <br/>
-
             <div className="image-and-submit">
               <input className="submit-create-button"type="submit" value={'Submit'} />
             </div>
-
           </div>
         </form>
-
       </div>
     );
   }

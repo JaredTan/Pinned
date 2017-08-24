@@ -60,10 +60,7 @@ class SessionForm extends React.Component {
     const { formType, demoLogin } = this.props;
     const words = (formType === 'login') ? 'Log In' : 'Sign Up!';
     const oppWords = (formType === 'login') ? 'Sign Up' : 'Log In';
-
     return (
-
-
       <div className="login-form-container">
         <button className="top-corner-button" onClick={this.swapFormType}>{oppWords}</button>
         <form onSubmit={this.handleSubmit} className="login-form">

@@ -81,9 +81,7 @@ class PinDetail extends React.Component {
   createNewBoardModal(){
     return (
       <section className="pin-button-create-board">
-
-            <BoardCreateModal small={true} pin={this.props.pin}/>
-
+        <BoardCreateModal small={true} pin={this.props.pin}/>
       </section>
     )
   }

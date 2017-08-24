@@ -5,14 +5,12 @@ class Api::BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-
     render 'api/boards/show'
   end
 
   def create
     @board = Board.new(board_params)
     @board.user_id = current_user.id
-
     if @board.save
       render 'api/boards/show'
     else
@@ -22,7 +20,6 @@ class Api::BoardsController < ApplicationController
 
   def update
     @board = current_user.boards.find(params[:id])
-
     if @board
       if @board.update(board_params)
         render 'api/boards/show'
@@ -36,7 +33,6 @@ class Api::BoardsController < ApplicationController
 
   def destroy
     @board = current_user.boards.find(params[:id])
-
     if @board
       if @board.destroy
         render 'api/boards/show'

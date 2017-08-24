@@ -59,7 +59,6 @@ class DeleteWarningModal extends React.Component {
     let {board, deleteBoard} = this.props;
     return(
       <div className="board-create-modal-div">
-
         <button className=''
           onClick={this.openModal}>
           Delete Board
@@ -73,7 +72,6 @@ class DeleteWarningModal extends React.Component {
           contentLabel="Board Modal">
           Are you sure?
           <button onClick={deleteBoard(board)}>Delete Board: {board.title}</button>
-
         </Modal>
       </div>
     );

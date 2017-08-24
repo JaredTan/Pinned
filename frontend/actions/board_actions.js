@@ -9,7 +9,7 @@ export const receiveAllBoards = (boards) => {
   return {
   type: RECEIVE_ALL_BOARDS,
   boards
-}
+  }
 };
 
 export const receiveSingleBoard = (board) => ({

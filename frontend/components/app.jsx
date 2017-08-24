@@ -7,8 +7,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UserProfileContainer from './profile/user_profile_container';
 import PinsIndexContainer from './pin/pins_index_container';
 
-
-
 const App = () => (
   <div>
       <ProtectedRoute path="/" component={NavBarContainer} />

@@ -19,11 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.store = store;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
   ReactDOM.render(<Root store={store}/>, root);
 });

@@ -41,7 +41,6 @@ export const updateUser = (user, id) => (dispatch) => {
   }).fail(err => dispatch(receiveUserErrors(err.responseJSON)))
 };
 
-
 export const receiveUserErrors = errors => {
   return {
     type: RECEIVE_USER_ERRORS,
@@ -54,7 +53,6 @@ export const resetUser = () => {
     type: RESET_USER
   }
 }
-
 
 export const resetUserErrors= () => {
   return {

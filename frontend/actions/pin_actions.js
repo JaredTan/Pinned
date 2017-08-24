@@ -11,7 +11,7 @@ export const receiveAllPins = (pins) => {
   return {
   type: RECEIVE_ALL_PINS,
   pins
-}
+  }
 };
 
 export const receiveSinglePin = (pin) => ({

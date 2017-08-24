@@ -32,14 +32,10 @@ class PinsIndex extends React.Component {
     this.setState({ loading: false });
   }
 
-
-
-
   shufflePins(pins) {
     let i = 0;
     let j = 0;
     let temp = null;
-
     for (i = pins.length - 1; i > 0; i -= 1) {
       j = Math.floor(Math.random() * (i + 1))
       temp = pins[i];
@@ -110,7 +106,6 @@ class PinsIndex extends React.Component {
                   <Link className = 'user-link' to={`/users/${board.user_id}`}>{board.owner_username}</Link>
                 </h5>
               </div>
-
               <div className='board-detail-image-container'>
                 {board.description}
               </div>
@@ -131,8 +126,6 @@ class PinsIndex extends React.Component {
           </Masonry>
         </div>
       );
-
-
   }
 }
 

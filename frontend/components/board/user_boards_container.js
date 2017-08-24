@@ -7,7 +7,6 @@ const mapStateToProps = ({session}) => ({
   currentUser: session.currentUser
 });
 
-
 const mapDispatchToProps = dispatch => ({
   requestAllBoards: (userId) => dispatch(requestAllBoards(userId)),
   createBoard: () => dispatch(createBoard())
