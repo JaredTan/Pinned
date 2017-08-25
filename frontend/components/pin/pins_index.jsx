@@ -120,7 +120,11 @@ class PinsIndex extends React.Component {
             >
             { reversedSortedPins.map( (pin) => {
               return (
-                <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
+                <div className={"pin-modal-container"}>
+                  <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>
+                  {pin.title}
+                </div>
+              );
               }
             )}
           </Masonry>
