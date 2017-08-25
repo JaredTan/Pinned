@@ -23,7 +23,6 @@ class PinDetail extends React.Component {
 
   componentWillMount() {
     this.props.requestSinglePin(this.props.id);
-    this.props.requestSingleUser(this.props.currentUser.id);
   }
 
   componentWillUnmount() {
@@ -156,15 +155,18 @@ class PinDetail extends React.Component {
             : null
           }
           <br/>
-            <h4>{pin.title}</h4>
-          <h5>Pin by:
-            <Link className = 'user-link' to={`/users/${pin.user_id}`}>{pin.owner_username}</Link>
-          </h5>
+            <h4 className='pin-title'>{pin.title}</h4>
+          <div className='pin-by'>Pin by:
+            <Link className = 'pin-by-link' to={`/users/${pin.user_id}`}>
+              {pin.owner_username}
+              <img className='pin-detail-user-image' src={pin.owner_image_url}></img>
+            </Link>
+          </div>
       </div>
         <div className='pin-detail-image-container'>
         {pin.description}
           <a href={pin.url}>
-            <img className='pin-detail-image' src={pin.image_url} alt={pin.title}></img>
+            <img className='pin-detail-image' src={pin.image_url}></img>
           </a>
         </div>
       </section>
