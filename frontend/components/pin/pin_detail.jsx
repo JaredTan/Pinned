@@ -4,8 +4,6 @@ import { values, merge } from 'lodash';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-simple-dropdown';
 import BoardCreateModal from '../modal/board_create_modal';
-// const DropdownTrigger = Dropdown.DropdownTrigger;
-// const DropdownContent = Dropdown.DropdownContent;
 
 class PinDetail extends React.Component {
   constructor(props) {
@@ -108,9 +106,7 @@ class PinDetail extends React.Component {
         );
         }
       })
-
     )
-
   }
 
   deleteButtons() {
@@ -139,17 +135,13 @@ class PinDetail extends React.Component {
     <div><i className="fa fa-times"></i>Delete Pin</div> ;
     return (
       <section className='pin-detail-container'>
-
-
         <div className='pin-info-container'>
           <div className="pin-board-div"
             onChange={this.handleSelection}>
             <button className='board-text' onClick={this.toggleBoards}>Pin to Boards!</button>
-
               {this.state.boardTab ? this.boards() : null}
               {this.state.boardTab ? this.createNewBoardModal() : null}
         </div>
-
           { (currentUser.id === pin.user_id) && (this.props.match.params.boardId == undefined) ?
             <button onClick={() => this.toggleWarning()}  className='delete-button'>
               {warning}
@@ -157,16 +149,12 @@ class PinDetail extends React.Component {
             : null
           }
           {this.state.deleteTab ? this.deleteButtons() : null}
-
           { (this.props.match.params.boardId) && (currentUser.id === board.user_id)?
             <button onClick={() => this.handleUnpinning()} className='delete-button'>
               <i className="fa fa-times"></i> Unpin from Board: {board.title}
               </button>
             : null
           }
-
-
-
           <br/>
             <h4>{pin.title}</h4>
           <h5>Pin by:

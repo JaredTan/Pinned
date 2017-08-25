@@ -122,7 +122,7 @@ class PinsIndex extends React.Component {
               return (
                 <div className={"pin-modal-container"}>
                   <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>
-                  {pin.title}
+                  <span className={'ellipsis'}>{pin.title}</span>
                 </div>
               );
               }
