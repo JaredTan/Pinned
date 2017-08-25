@@ -23,6 +23,10 @@ class PinDetail extends React.Component {
 
   componentWillMount() {
     this.props.requestSinglePin(this.props.id);
+    this.props.match.params.userId ?
+    this.props.requestSingleUser(this.props.match.params.userId) :
+    this.props.requestSingleUser(this.props.currentUser.id)
+    ;
   }
 
   componentWillUnmount() {

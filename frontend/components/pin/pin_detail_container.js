@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   deletePinningInPinDiffBoard: pinning => dispatch(deletePinningInPinDiffBoard(pinning)),
   deletePinningInPinSameBoard: pinning => dispatch(deletePinningInPinSameBoard(pinning)),
   deletePinningInBoard: pinning => dispatch(deletePinningInBoard(pinning)),
-  requestSingleUser: user => dispatch(requestSingleUser(user)),
+  requestSingleUser: id => dispatch(requestSingleUser(id)),
   requestSingleBoard: id => dispatch(requestSingleBoard(id))
 });
 
