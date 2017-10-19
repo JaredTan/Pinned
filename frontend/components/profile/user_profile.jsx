@@ -20,7 +20,6 @@ class UserProfile extends React.Component {
    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
-
   componentWillMount () {
     this.props.requestSingleUser(this.props.match.params.userId);
   }

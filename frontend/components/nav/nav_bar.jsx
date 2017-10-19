@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PinCreateModal from '../modal/pin_create_modal';
 import SearchBarContainer from './search_bar_container';
 
-
 class NavBar extends React.Component {
   constructor(props) {
     super(props);

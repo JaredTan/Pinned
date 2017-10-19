@@ -78,7 +78,6 @@ class PinCreateForm extends React.Component {
     }
   }
 
-
   renderErrors() {
     return(
       <ul>
@@ -141,10 +140,8 @@ class PinCreateForm extends React.Component {
               </Dropzone>
               <input className="submit-create-button"type="submit" value={'Submit'} />
             </div>
-
           </div>
         </form>
-
       </div>
     );
   }
