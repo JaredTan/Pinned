@@ -4,12 +4,12 @@ import { requestSingleBoard, deleteBoard } from '../../actions/board_actions';
 import { selectAllPins } from '../../reducers/selectors';
 import PinsIndex from './pins_index';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     pins: selectAllPins(state.pins),
     board: state.board,
     currentUserId: state.session.currentUser.id
-  }
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
