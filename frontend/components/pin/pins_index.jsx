@@ -1,8 +1,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
 import PinDetailModal from '../modal/pin_detail_modal';
-import { Link, Redirect } from 'react-router-dom';
-import PreloaderIcon, {ICON_TYPE} from 'react-preloader-icon';
+import { Link } from 'react-router-dom';
 
 class PinsIndex extends React.Component {
   constructor(props) {
@@ -30,19 +29,6 @@ class PinsIndex extends React.Component {
 
   componentDidMount() {
     this.setState({ loading: false });
-  }
-
-  shufflePins(pins) {
-    let i = 0;
-    let j = 0;
-    let temp = null;
-    for (i = pins.length - 1; i > 0; i -= 1) {
-      j = Math.floor(Math.random() * (i + 1))
-      temp = pins[i];
-      pins[i] = pins[j];
-      pins[j] = temp;
-    }
-    return pins;
   }
 
   handleDelete(board) {

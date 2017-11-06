@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { values, merge } from 'lodash';
-import PropTypes from 'prop-types';
+import { values } from 'lodash';
 import Dropdown from 'react-simple-dropdown';
 import BoardCreateModal from '../modal/board_create_modal';
 

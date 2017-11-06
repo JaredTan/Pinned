@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { values } from 'lodash';
+import { Link } from 'react-router-dom';
 import PinSearchDetailModal from '../modal/pin_search_detail_modal';
 
 class SearchBar extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {searchQuery: ""};
@@ -13,21 +12,21 @@ class SearchBar extends React.Component {
     this.handleReset = this.handleReset.bind(this);
   }
 
-  handleInput(e){
+  handleInput(e) {
     e.preventDefault();
     setTimeout(this.setState({searchQuery: e.target.value}, () => this.props.requestSearchResults(this.state.searchQuery)), 50)
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.props.resetSearchResults();
   }
 
-  handleReset(e){
+  handleReset(e) {
     e.preventDefault();
     this.setState({searchQuery: ""});
   }
 
-  createResultsList(items, type){
+  createResultsList(items, type) {
     let {resetSearchResults} = this.props;
     const listItems = items.map((item, idx) => {
       if (type === "Pins"){
@@ -65,7 +64,7 @@ class SearchBar extends React.Component {
     );
   }
 
-    searchDropDown(){
+    searchDropDown() {
       const searchResults = this.props.searchResults;
       const pins = searchResults.pins || [];
       const boards = searchResults.boards || [];
@@ -99,7 +98,7 @@ class SearchBar extends React.Component {
       );
     }
 
-  render(){
+  render() {
     return(
       <div className="search-container">
         <input id="search-bar" type="text" placeholder='Search' value={this.state.searchQuery} onChange={this.handleInput}/>
