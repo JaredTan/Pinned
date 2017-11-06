@@ -7,6 +7,7 @@ class BoardCreateForm extends React.Component {
       title: '',
       description: ''
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }

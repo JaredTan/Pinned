@@ -1,3 +1,4 @@
+import React from 'react';
 import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './nav/nav_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';

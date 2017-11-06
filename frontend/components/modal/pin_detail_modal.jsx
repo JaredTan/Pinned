@@ -2,7 +2,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import PinDetailContainer from '../pin/pin_detail_container';
 
-
 const style = {
   overlay : {
     position                   : 'fixed',
@@ -30,6 +29,7 @@ const style = {
     transition                 : 'opacity 0.4s'
   }
 };
+
 class PinDetailModal extends React.Component {
   constructor(props) {
     super(props);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import UserEditModal from '../modal/user_edit_modal';
 import Masonry from 'react-masonry-component';
 import UserBoardsContainer from '../board/user_boards_container';
@@ -44,21 +44,21 @@ class UserProfile extends React.Component {
     })
   }
 
-  handleTabClick(tab){
+  handleTabClick(tab) {
     this.resetTabs();
     return (tab === "pin") ?
     this.setState({ pinTab: true }) :
     this.setState({ boardTab: true })
   }
 
-  userPinnedPins(){
+  userPinnedPins() {
     const pinArr = createPinArray(this.props.user.pinned_pins)
     let masonryOptions = {
       transitionDuration: 1,
       gutter: 30,
       fitWidth: true
     };
-    return(
+    return (
       <Masonry className={"user-pins"}
         elementType={'ul'}
         options={masonryOptions}
@@ -67,14 +67,14 @@ class UserProfile extends React.Component {
         >
         { pinArr.map( (pin) => {
           return (
-            <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>);
-          }
+            <PinDetailModal key={ pin.id } pin={ pin }></PinDetailModal>
+          )}
         )}
       </Masonry>
-    )
+    );
   }
 
-  userBoards(){
+  userBoards() {
     return(
       <div>
         <UserBoardsContainer
@@ -93,7 +93,6 @@ class UserProfile extends React.Component {
     }
     createFollowing({following});
   }
-
 
   handleUnfollow() {
     let {user, currentUser, removeFollowing} = this.props;
@@ -152,7 +151,7 @@ class UserProfile extends React.Component {
   }
 
   followDisplay() {
-    let { currentUser, user, followers, followees } = this.props;
+    let { followers, followees } = this.props;
     let sortedUsers = this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
     _.sortBy( followers, 'username' ) :
     _.sortBy( followees, 'username' );
@@ -191,44 +190,44 @@ class UserProfile extends React.Component {
   }
 
   render() {
-      let { user, currentUser } = this.props;
-      if (user == null) {
-        user = {};
-      }
-      let image_url = user.image_url
-      if (image_url == '') {
-        image_url = "http://res.cloudinary.com/jaredtan/image/upload/v1500969184/display_pic_nwmrpn.png"
-      }
+    let { user, currentUser } = this.props;
+    if (user == null) {
+      user = {};
+    }
+    let image_url = user.image_url
+    if (image_url == '') {
+      image_url = "http://res.cloudinary.com/jaredtan/image/upload/v1500969184/display_pic_nwmrpn.png"
+    }
 
-      return (
-        <section>
-          <section className="user-profile-container">
-            <div className="user-profile-top">
-              <div className="user-profile-info-container">
-                { currentUser.id == user.id ? null : this.followOrUnfollow(currentUser, user) }
-                <h1 className="user-profile-username">{user.username}</h1>
-                <p className="user-profile-description">{user.description}</p>
-              </div>
-              <div className="user-profile-pic-and-edit">
-                <Link to={`/users/${user.id}`}>
-                  <img className="user-profile-pic" src={image_url}></img>
-                </Link>
-                {this.userEditModal()}
-              </div>
-              {this.followingAndFollowers()}
+    return (
+      <section>
+        <section className="user-profile-container">
+          <div className="user-profile-top">
+            <div className="user-profile-info-container">
+              { currentUser.id == user.id ? null : this.followOrUnfollow(currentUser, user) }
+              <h1 className="user-profile-username">{user.username}</h1>
+              <p className="user-profile-description">{user.description}</p>
             </div>
-          </section>
-          <div>
-            {
-              this.props.location.pathname.split('/').slice(-1)[0] === "following" ||
-              this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
-              this.followDisplay() :
-              this.profileDisplay()
-            }
+            <div className="user-profile-pic-and-edit">
+              <Link to={`/users/${user.id}`}>
+                <img className="user-profile-pic" src={image_url}></img>
+              </Link>
+              {this.userEditModal()}
+            </div>
+            {this.followingAndFollowers()}
           </div>
         </section>
-      );
-    }
+        <div>
+          {
+            this.props.location.pathname.split('/').slice(-1)[0] === "following" ||
+            this.props.location.pathname.split('/').slice(-1)[0] === "followers" ?
+            this.followDisplay() :
+            this.profileDisplay()
+          }
+        </div>
+      </section>
+    );
+  }
 }
 
 export default UserProfile;

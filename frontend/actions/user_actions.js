@@ -33,7 +33,6 @@ export const requestSingleUser = id => (dispatch) => {
 };
 
 export const updateUser = (user, id) => (dispatch) => {
-
   return APIUtil.updateUser(user, id).then(user => {
     dispatch(receiveSingleUser(user));
     dispatch(resetUserErrors());
@@ -54,7 +53,7 @@ export const resetUser = () => {
   }
 }
 
-export const resetUserErrors= () => {
+export const resetUserErrors = () => {
   return {
     type: RESET_USER_ERRORS
   }

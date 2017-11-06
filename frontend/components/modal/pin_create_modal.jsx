@@ -2,7 +2,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import PinCreateFormContainer from '../pin/pin_create_form_container';
 
-
 const style = {
   overlay : {
     position                   : 'fixed',

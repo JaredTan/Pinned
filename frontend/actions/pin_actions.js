@@ -9,8 +9,8 @@ export const RESET_PIN_ERRORS = "RESET_PIN_ERRORS";
 
 export const receiveAllPins = (pins) => {
   return {
-  type: RECEIVE_ALL_PINS,
-  pins
+    type: RECEIVE_ALL_PINS,
+    pins
   }
 };
 

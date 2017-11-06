@@ -2,7 +2,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import UserEditFormContainer from '../profile/user_edit_form_container';
 
-
 const style = {
   overlay : {
     position                   : 'fixed',

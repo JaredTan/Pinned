@@ -7,8 +7,8 @@ export const RESET_BOARD = "RESET BOARD";
 
 export const receiveAllBoards = (boards) => {
   return {
-  type: RECEIVE_ALL_BOARDS,
-  boards
+    type: RECEIVE_ALL_BOARDS,
+    boards
   }
 };
 
