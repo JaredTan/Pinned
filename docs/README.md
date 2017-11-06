@@ -57,7 +57,6 @@ Pinned is a full-stack web application inspired by Pinterest. This project utili
 
 ## Bonus Features (TBD)
 
-+ Search
 + Infinite Scroll
 + Notifications
 + Private Boards

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { values } from 'lodash';
-import Dropdown from 'react-simple-dropdown';
 import BoardCreateModal from '../modal/board_create_modal';
 
 class PinDetail extends React.Component {

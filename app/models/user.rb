@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   multisearchable :against => :username
   pg_search_scope :whose_username_starts_with, against: :username, using: {tsearch: {prefix: true} }
 
-
 	attr_reader :password
 
 	validates :username, :password_digest, :session_token, presence: true
@@ -16,9 +15,9 @@ class User < ActiveRecord::Base
 	has_many :boards
 
 	has_many :owned_pins,
-	    foreign_key: :user_id,
-	    primary_key: :id,
-	    class_name: :Pin
+    foreign_key: :user_id,
+    primary_key: :id,
+    class_name: :Pin
 
   has_many :pinned_pins,
 		through: :boards,

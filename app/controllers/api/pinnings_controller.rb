@@ -1,4 +1,5 @@
 class Api::PinningsController < ApplicationController
+  
   def create
     @pinning = Pinning.new(pinning_params)
     if @pinning.save
