@@ -1,8 +1,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
 import PinDetailModal from '../modal/pin_detail_modal';
-import { Link, Redirect } from 'react-router-dom';
-import PreloaderIcon, {ICON_TYPE} from 'react-preloader-icon';
+import { Link } from 'react-router-dom';
 
 class PinsIndex extends React.Component {
   constructor(props) {
