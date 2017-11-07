@@ -32,7 +32,7 @@ class BoardCreateForm extends React.Component {
 
   render() {
     return (
-      <div className="create-board-form-container">
+      <div>
         <form onSubmit={this.handleSubmit} className="create-board-form">
           <span className='top-message'>
             <h1>Create Board!</h1>

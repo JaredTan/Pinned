@@ -1,3 +1,21 @@
+.pins-index {
+  margin: 5px auto;
+  margin-top: 0px;
+}
+
+.pin-index-container {
+  padding: 76px 18px 0px;
+}
+
+.index-thumbnail {
+  margin: 2px;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  cursor: -webkit-zoom-in;
+  border: 1px;
+}
+
 .pin-modal-container {
   padding: 5px;
   border: 1px solid $dark-gray;
@@ -117,38 +135,12 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.pin-button-unclickable {
-  font-size: 13px;
-  padding: 5px 10px;
-  vertical-align: middle;
-  margin-top: 20px;
-  cursor: default;
-  border-radius: 25px;
-  color: $dark-gray;
-  background-color: $light-mint;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-
 .pin-board-div {
   left: 20px;
   top: 12px;
   display: flex;
   flex-direction: column;
   position: absolute;
-}
-
-.pin-board-select {
-  position: relative;
-  right: 16%;
-  margin-top: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pinning-dropdown-container {
-  display: flex;
-  flex-direction: column;
 }
 
 .delete-button {
@@ -222,27 +214,9 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.pin-board-select {
-  font-size: 15px;
-  padding: 5px 10px;
-  position: absolute;
-  top: 0px;
-  left: 20px;
-  vertical-align: middle;
-  margin-top: 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  color: $dark-gray;
-  background-color: $light-gray;
-    &:hover {
-      background: $dark-mint;
-    }
-}
-
 @keyframes spinner {
   to {transform: rotate(360deg);}
 }
-
 
 .spinner {
   content: '';

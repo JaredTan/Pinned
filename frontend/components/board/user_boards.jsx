@@ -18,12 +18,10 @@ class UserBoards extends React.Component {
     this.setState({ loading: false });
   }
 
-  createNewBoardModal(){
+  createNewBoardModal() {
     return (
       <section className="board-index-item-container">
         <BoardCreateModal createBoard={this.props.createBoard}/>
-        <div className="create-new-board-text">
-        </div>
       </section>
     )
   }
@@ -50,7 +48,7 @@ class UserBoards extends React.Component {
          { currentUser.id === owner.id ? this.createNewBoardModal() : null }
          { reversedSortedBoards.map( (board, idx) => {
            return (
-             <div className='board-display-pictures' key={idx}>
+             <div key={idx}>
                <Link to={`/boards/${board.id}`} key={idx} className="board-index-item-container">
                  <div>
                    {board.title}
@@ -58,7 +56,6 @@ class UserBoards extends React.Component {
                  <Masonry
                    elementType={'div'}
                    disableImagesLoaded={false}
-                   className='board-display-pictures-items'
                    options={masonryOptions}
                    >
                   { values(board.pins).slice(0, 8).map( (pin,idx) => {

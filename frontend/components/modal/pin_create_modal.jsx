@@ -57,8 +57,8 @@ class PinCreateModal extends React.Component {
 
   render() {
     return(
-      <div className="pin-create-modal-div">
-        <button onClick={this.openModal}>Create Pin</button>
+      <div>
+        <button className='create-pin-button' onClick={this.openModal}>Create Pin</button>
         <Modal
           isOpen={this.state.modalOpen}
           onAfterOpen={this.afterModalOpen}

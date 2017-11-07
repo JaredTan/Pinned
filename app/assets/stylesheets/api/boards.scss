@@ -1,8 +1,3 @@
-.board-index-container {
-  display: flex;
-  margin: 20px auto;
-}
-
 .board-index-thumbnail {
   width: 240px;
   height: 240px;
@@ -64,13 +59,6 @@
   border: 2px solid $dark-gray;
   cursor: pointer;
 }
-
-.create-board-index-thumbnail {
-  width: 240px;
-  height: 240px;
-  margin: 20px;
-}
-
 
 .delete-yes-no-buttons {
   display: flex;

@@ -12,41 +12,6 @@
   height: 60%;
 }
 
-.create-board-input, textarea {
-  font-weight: bold;
-  font-size: 14px;
-  margin: 7px;
-  margin-bottom: 12px;
-  margin-top: 1px;
-  border-radius: 9px;
-  border: 0;
-  color: #333;
-  padding: 10px;
-  background-color: rgba(131, 122, 133, 0.11);
-  box-shadow: none;
-  width: 278px;
-  letter-spacing: -.4px;
-  text-align: center;
-}
-
-.main-message {
-  margin-bottom: 24px;
-  margin-top: 18px;
-}
-
-span {
-  font-family: 'Comfortaa', cursive;
-  font-size: 12px;
-}
-
-.create-board-errors {
-  color: red;
-  font-weight: bold;
-  padding: 2px;
-  border-radius: 5px;
-}
-
-
 .submit-create-button {
   font-size: 15px;
   font-family: sans-serif;
@@ -79,23 +44,8 @@ span {
   flex-direction: column;
 }
 
-
 .submit-create-button:hover {
   background-color: $dark-mint;
-}
-
-.create-board-input:focus {
-  outline: none;
-}
-
-.board-create-modal-div {
-  margin-bottom: 10px;
-}
-
-.input-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .create-form-dropzone {
@@ -118,20 +68,4 @@ span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.boards-index {
-  margin: 5px auto;
-  margin-top: 0px;
-}
-
-.board-index-container {
-  padding: 76px 18px 0px;
-}
-
-.board-detail-image {
-  max-width: 600px;
-  border-style: solid;
-  border: 1px;
-  border-radius: 10px;
 }

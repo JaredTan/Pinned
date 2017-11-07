@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.nav-logo{
+.nav-logo {
   position: absolute;
   top: 14px;
   left: 30px;
@@ -29,7 +29,7 @@
   color: $dark-mint;
 }
 
-button {
+.create-pin-button {
   color: $dark-mint;
   font-size: 15px;
 }
@@ -49,14 +49,7 @@ button {
   justify-content: flex-start;
 }
 
-.search-text {
-  margin: 12px;
-  font-size: 14px;
-  justify-content: center;
-  color: $dark-gray;
-}
-//
-.right {
+.right-nav {
   width: 30%;
   margin-top: 2px;
   display: flex;
@@ -65,7 +58,7 @@ button {
   color: $dark-mint;
 }
 
-.right-text {
+.right-nav-text {
   display: flex;
   width:50%;
   justify-content: space-around;

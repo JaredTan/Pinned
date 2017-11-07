@@ -61,7 +61,7 @@ class PinSearchDetailModal extends React.Component {
       <div>
         <button
           onClick={this.openModal}>
-          <img id='search-index-thumbnail' src={pin.image_url}></img>
+          <img className='search-index-thumbnail' src={pin.image_url}></img>
         </button>
         <Modal
           isOpen={this.state.modalOpen}

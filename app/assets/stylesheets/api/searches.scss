@@ -1,4 +1,4 @@
-.search-results-dropdown-container{
+.search-results-dropdown-container {
   border-radius: 6px;
   background-color: $light-gray;
   left: 53px;
@@ -10,7 +10,7 @@
   border-right: 1px solid $gray;
 }
 
-#search-bar{
+#search-bar {
   width: 85%;
   font-size: 18px;
   margin-top: 4px;
@@ -20,10 +20,6 @@
   width: 100%;
   margin-top: 6px;
   margin-left: 7px;
-}
-
-#search-bar-container{
-  border: 1px solid black;
 }
 
 .user-search-items-container {
@@ -46,16 +42,9 @@
   cursor: pointer;
 }
 
-
 #list-item {
   font-size: 18px;
   color: $dark-mint;
-}
-
-
-.search-items-container li:hover{
-  background: $gray;
-  cursor: pointer;
 }
 
 .section-items-container {
@@ -63,20 +52,18 @@
   overflow: auto;
 }
 
+.search-items-container li:hover{
+  background: $gray;
+  cursor: pointer;
+}
 
-#search-index-thumbnail {
+.search-index-thumbnail {
   margin: 2px;
   width: auto;
   height: 150px;
   border-radius: 10px;
   cursor: -webkit-zoom-in;
   border: 1px;
-}
-
-.list-item-username {
-  vertical-align: middle;
-  line-height: 50px;
-  font-size: 17px;
 }
 
 .search-type {

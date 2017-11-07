@@ -28,16 +28,6 @@
   text-align: center;
 }
 
-.main-message {
-  margin-bottom: 24px;
-  margin-top: 18px;
-}
-
-span {
-  font-family: 'Comfortaa', cursive;
-  font-size: 12px;
-}
-
 .create-pin-errors {
   color: red;
   font-weight: bold;
@@ -61,6 +51,10 @@ span {
   background-color: $light-mint;
 }
 
+.submit-create-button:hover {
+  background-color: $dark-mint;
+}
+
 .upload-image-container {
   padding: 10px;
 }
@@ -77,16 +71,8 @@ span {
   flex-direction: column;
 }
 
-
-.submit-create-button:hover {
-  background-color: $dark-mint;
-}
-
 .create-pin-input:focus {
   outline: none;
-}
-
-.pin-create-modal-div {
 }
 
 .input-area {
@@ -115,29 +101,4 @@ span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.pins-index {
-  margin: 5px auto;
-  margin-top: 0px;
-}
-
-.pin-index-container {
-  padding: 76px 18px 0px;
-}
-
-.index-thumbnail {
-  margin: 2px;
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  cursor: -webkit-zoom-in;
-  border: 1px;
-}
-
-.pin-detail-image {
-  max-width: 600px;
-  border-style: solid;
-  border: 1px;
-  border-radius: 10px;
 }

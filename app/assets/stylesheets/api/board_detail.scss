@@ -25,30 +25,6 @@
   margin-bottom: 30px;
 }
 
-.board-detail-image {
-  border-radius: 3px;
-  border: 1px;
-  border-style: solid;
-  border-color: rgba(181, 181, 181, 0.23);
-}
-
-.board-button {
-  font-size: 15px;
-  padding: 5px 10px;
-  position: absolute;
-  top: 0px;
-  left: 20px;
-  vertical-align: middle;
-  margin-top: 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  color: $dark-mint;
-  background-color: rgba(181, 181, 181, 0.23);
-    &:hover {
-      background: $gray;
-    }
-  }
-
 .delete-board-button {
   font-size: 20px;
   padding: 5px 10px;

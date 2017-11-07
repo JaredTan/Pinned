@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
   createResultsList(items, type) {
     let {resetSearchResults} = this.props;
     const listItems = items.map((item, idx) => {
-      if (type === "Pins"){
+      if (type === "Pins") {
         return (
           <li key={idx} onClick={this.handleReset}>
               <PinSearchDetailModal key={ item.id } pin={ item }>{item.title}</PinSearchDetailModal>

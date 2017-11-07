@@ -57,7 +57,7 @@ class UserEditModal extends React.Component {
 
   render() {
     return(
-      <div className="edit-user-modal-div">
+      <div>
         <button className="edit-user-modal-button" onClick={this.openModal}>Edit</button>
         <Modal
           isOpen={this.state.modalOpen}

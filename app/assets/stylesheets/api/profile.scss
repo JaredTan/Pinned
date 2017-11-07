@@ -18,10 +18,14 @@
   margin-left: -40px
 }
 
-.user-profile-username{
+.user-profile-username {
   font-size: 30px;
   color: $dark-gray;
   font-weight: bold;
+}
+
+.edit-user-modal-button {
+  margin-top: 5px;
 }
 
 .profile-follow-button {
@@ -86,11 +90,6 @@
   color: black;
 }
 
-.user-profile-buttons-bar {
-  display: flex;
-  margin: 20px;
-}
-
 .follow-count {
   font-weight: bold;
   font-size: 26px;
@@ -150,17 +149,10 @@
   padding-top: 89px;
 }
 
-
-.user-following-profile-top {
-  display: flex;
-  align-items: center;
-}
-
 .user-pins {
   margin: 5px auto;
   margin-top: 30px;
 }
-
 
 .user-following-profile-pic-thumbnail {
   display: inline-block;
@@ -171,7 +163,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-
 }
 
 .user-profile-following-pic-and-follow {

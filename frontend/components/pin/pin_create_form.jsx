@@ -8,6 +8,7 @@ const UPLOAD_URL = "https://api.cloudinary.com/v1_1/jaredtan/image/upload";
 class PinCreateForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       title: '',
       description: '',
@@ -15,6 +16,7 @@ class PinCreateForm extends React.Component {
       image_url: '',
       user_id: ''
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleImageUpload = this.handleImageUpload.bind(this);
@@ -92,7 +94,7 @@ class PinCreateForm extends React.Component {
 
   render() {
     return (
-      <div className="create-pin-form-container">
+      <div>
         <form onSubmit={this.handleSubmit} className="create-pin-form">
           <span className='top-message'>
             <h1>Create Pin!</h1>
