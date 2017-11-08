@@ -10,13 +10,8 @@ class PinDetail extends React.Component {
     this.state = {
       boardTab: false,
       deleteTab: false
-    }
+    };
 
-    this.handlePinning = this.handlePinning.bind(this);
-    this.handleSelection = this.handleSelection.bind(this);
-    this.handleCheckUnpinning = this.handleCheckUnpinning.bind(this);
-    this.toggleBoards = this.toggleBoards.bind(this);
-    this.toggleWarning = this.toggleWarning.bind(this);
   }
 
   componentWillMount() {
@@ -31,27 +26,28 @@ class PinDetail extends React.Component {
     this.props.resetPin();
   }
 
-  handleDelete(pin) {
+  handleDelete = (pin) => {
+    console.log(this.props,'handleDelete?');
     this.props.deletePin(pin);
     this.props.requestSingleUser(this.props.user.id);
   }
 
-  toggleWarning() {
+  toggleWarning = () => {
     this.setState({deleteTab: !this.state.deleteTab})
   }
 
-  toggleBoards() {
+  toggleBoards = () => {
     this.setState({boardTab: !this.state.boardTab})
   }
 
-  handleUnpinning() {
+  handleUnpinning = () => {
     let pinId = parseInt(this.props.pin.id);
     let boardId = parseInt(this.props.match.params.boardId);
     let pinning = {pinning: {pin_id: pinId, board_id: boardId}};
     this.props.deletePinningInBoard(pinning);
   }
 
-  handleCheckUnpinning(e) {
+  handleCheckUnpinning = (e) => {
     e.preventDefault();
     let pinId = parseInt(this.props.pin.id);
     let boardId = parseInt(e.currentTarget.value);
@@ -61,7 +57,7 @@ class PinDetail extends React.Component {
     this.props.deletePinningInPinDiffBoard(pinning);
   }
 
-  handleSelection(e) {
+  handleSelection = (e) => {
     e.preventDefault();
     this.setState({
       pin_id: this.props.pin.id,
@@ -69,7 +65,7 @@ class PinDetail extends React.Component {
     });
   }
 
-  handlePinning(e) {
+  handlePinning = (e) => {
     e.preventDefault();
     let pinId = parseInt(this.props.pin.id);
     let boardId = parseInt(e.currentTarget.value);
@@ -77,7 +73,7 @@ class PinDetail extends React.Component {
     this.props.createPinning(pinning);
   }
 
-  createNewBoardModal(){
+  createNewBoardModal() {
     return (
       <section className="pin-button-create-board">
         <BoardCreateModal small={true} pin={this.props.pin}/>
@@ -85,7 +81,7 @@ class PinDetail extends React.Component {
     )
   }
 
-  boards() {
+  boards = () => {
     let { pin, deletePin, currentUser, board, user } = this.props;
 
     return (
@@ -110,17 +106,15 @@ class PinDetail extends React.Component {
     )
   }
 
-  deleteButtons() {
+  deleteButtons = () => {
     let { pin, deletePin } = this.props;
     return (
       <div className='delete-pin-yes-no-buttons'>
         <button className="delete-pin-button-yes"
-          onClick={()=>this.handleDelete(pin)}
-          value={pin.id}>Yes
+          onClick={()=>this.handleDelete(pin)}>Yes
         </button>
         <button className="delete-pin-button-no"
-          onClick={this.toggleWarning}
-          value={pin.id}>No
+          onClick={this.toggleWarning}>No
         </button>
       </div>
     );

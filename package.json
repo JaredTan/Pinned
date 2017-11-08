@@ -37,5 +37,9 @@
     "redux-thunk": "^2.2.0",
     "superagent": "^3.5.2",
     "webpack": "^3.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
   }
 }
