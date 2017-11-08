@@ -37,17 +37,14 @@ class PinDetailModal extends React.Component {
     this.state = {
       modalOpen: false,
     };
-
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({ modalOpen: false });
     style.content.opacity = 0;
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({ modalOpen: true });
   }
 
@@ -56,12 +53,12 @@ class PinDetailModal extends React.Component {
   }
 
   render() {
-    let { pin } = this.props;
+    let { pin, search } = this.props;
     return(
       <div>
         <button
           onClick={this.openModal}>
-          <img className='index-thumbnail' src={pin.image_url}></img>
+          <img className={search ? 'search-index-thumbnail' : 'index-thumbnail'} src={pin.image_url}></img>
         </button>
         <Modal
           isOpen={this.state.modalOpen}

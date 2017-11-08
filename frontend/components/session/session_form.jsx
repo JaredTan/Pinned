@@ -4,13 +4,11 @@ import { withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       username: '',
       password: ''
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.swapFormType = this.swapFormType.bind(this);
-    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   componentWillReceiveProps( {loggedIn} ) {
@@ -19,26 +17,26 @@ class SessionForm extends React.Component {
     }
   }
 
-  update(field) {
+  update = (field) => {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm({user});
     this.setState({username: '', password: ''});
   }
 
-  swapFormType() {
+  swapFormType = () => {
     const newUrl = (this.props.formType === 'login') ? `/signup` : `/login`;
     this.props.removeErrors();
     this.props.history.push(newUrl);
   }
 
-  handleDemoLogin(e) {
+  handleDemoLogin = (e) => {
     e.preventDefault();
     const user = {username: 'DemoUser', password: 'pinneddemo'};
     this.props.demoLogin({user});

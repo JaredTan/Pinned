@@ -8,28 +8,21 @@ const UPLOAD_URL = "https://api.cloudinary.com/v1_1/jaredtan/image/upload";
 class UserEditForm extends React.Component {
   constructor(props) {
     super(props);
-    const oldUser = this.props.user;
-    this.state = {
-      description: oldUser.description,
-      image_url: oldUser.image_url
-    };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
-    this.handleImageUpload = this.handleImageUpload.bind(this);
+    const {description, image_url} = this.props.user;
+    this.state = {
+      description,
+      imageUrl: image_url
+    };
   }
 
-  update(field) {
+  update = (field) => {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
-  addImage(image) {
-    this.setState({image_url: image.url})
-  }
-
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     const id = this.props.match.params.userId;
@@ -37,7 +30,7 @@ class UserEditForm extends React.Component {
     this.props.ownProps.closeModal();
   }
 
-  handleImageUpload(image) {
+  handleImageUpload = (image) => {
     let upload = uploadRequest.post(UPLOAD_URL)
                         .field('upload_preset', UPLOAD_PRESET)
                         .field('file', image);
@@ -48,14 +41,14 @@ class UserEditForm extends React.Component {
       }
       if (response.body.secure_url !== '') {
         this.setState({
-          image_url: response.body.secure_url
+          imageUrl: response.body.secure_url
         });
       }
     });
   }
 
   displayPicture() {
-    if (!this.state.image_url) {
+    if (!this.state.imageUrl) {
       return (
         <div className="dropzone-text-container">
           <h4>Place Profile Picture or Click Here</h4>
@@ -64,7 +57,7 @@ class UserEditForm extends React.Component {
       } else {
       return (
         <div className="upload-image-container">
-          <img className='create-thumbnail' src={this.state.image_url}></img>
+          <img className='create-thumbnail' src={this.state.imageUrl}></img>
         </div>
       )
     }
@@ -84,40 +77,38 @@ class UserEditForm extends React.Component {
 
   render() {
     return (
-      <div className="create-pin-form-container">
-        <form onSubmit={this.handleSubmit} className="create-pin-form">
-          <span className='top-message'>
-            <h1>Update Your Profile</h1>
-            <br/>
-            Username: {this.props.currentUser.username}
-           </span>
-           <span className="create-pin-errors">{this.renderErrors()}</span>
+      <form onSubmit={this.handleSubmit} className="create-pin-form">
+        <span className='top-message'>
+          <h1>Update Your Profile</h1>
           <br/>
-          <div>
+          Username: {this.props.currentUser.username}
+         </span>
+         <span className="create-pin-errors">{this.renderErrors()}</span>
+        <br/>
+        <div>
+          <br/>
+          <label>
+            <span>Description</span>
             <br/>
-            <label>
-              <span>Description</span>
-              <br/>
-              <textarea rows="4" cols="50"
-                value={this.state.description}
-                onChange={this.update('description')}
-                id="description"
-              />
-            </label>
-            <br/>
-            <div className="image-and-submit">
-              <Dropzone
-                multiple={false}
-                accept="image/*"
-                onDrop={this.handleImageUpload}
-                className="create-form-dropzone">
-                {this.displayPicture()}
-              </Dropzone>
-              <input className="submit-create-button"type="submit" value={'Submit'} />
-            </div>
+            <textarea rows="4" cols="50"
+              value={this.state.description}
+              onChange={this.update('description')}
+              id="description"
+            />
+          </label>
+          <br/>
+          <div className="image-and-submit">
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={this.handleImageUpload}
+              className="create-form-dropzone">
+              {this.displayPicture()}
+            </Dropzone>
+            <input className="submit-create-button"type="submit" value={'Submit'} />
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }

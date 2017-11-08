@@ -16,13 +16,9 @@ class PinCreateForm extends React.Component {
       image_url: '',
       user_id: ''
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
-    this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
-  update(field) {
+  update = (field) => {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -32,11 +28,7 @@ class PinCreateForm extends React.Component {
     this.props.resetPinErrors();
   }
 
-  addImage(image) {
-    this.setState({image_url: image.url})
-  }
-
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const pin = Object.assign({}, this.state);
     if (pin.image_url == '') {
@@ -46,7 +38,7 @@ class PinCreateForm extends React.Component {
     this.props.ownProps.closeModal();
   }
 
-  handleImageUpload(image) {
+  handleImageUpload = (image) => {
     let upload = uploadRequest.post(UPLOAD_URL)
                         .field('upload_preset', UPLOAD_PRESET)
                         .field('file', image);

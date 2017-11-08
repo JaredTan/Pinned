@@ -11,7 +11,6 @@ class PinDetail extends React.Component {
       boardTab: false,
       deleteTab: false
     };
-
   }
 
   componentWillMount() {
@@ -27,7 +26,6 @@ class PinDetail extends React.Component {
   }
 
   handleDelete = (pin) => {
-    console.log(this.props,'handleDelete?');
     this.props.deletePin(pin);
     this.props.requestSingleUser(this.props.user.id);
   }

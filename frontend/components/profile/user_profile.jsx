@@ -15,12 +15,9 @@ class UserProfile extends React.Component {
      pinTab: false,
      boardTab: true
    }
-
-   this.handleFollow = this.handleFollow.bind(this);
-   this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this.props.requestSingleUser(this.props.match.params.userId);
   }
 
@@ -37,14 +34,14 @@ class UserProfile extends React.Component {
       this.props.resetUser();
   }
 
-  resetTabs(){
+  resetTabs() {
     this.setState({
       pinTab: false,
       boardTab: false
     })
   }
 
-  handleTabClick(tab) {
+  handleTabClick = (tab) => {
     this.resetTabs();
     return (tab === "pin") ?
     this.setState({ pinTab: true }) :
@@ -85,7 +82,7 @@ class UserProfile extends React.Component {
     )
   }
 
-  handleFollow() {
+  handleFollow = () => {
     let {user, currentUser, createFollowing} = this.props;
     let following = {
       follower_id: currentUser.id,
@@ -94,7 +91,7 @@ class UserProfile extends React.Component {
     createFollowing({following});
   }
 
-  handleUnfollow() {
+  handleUnfollow = () => {
     let {user, currentUser, removeFollowing} = this.props;
     let following = {
       follower_id: currentUser.id,

@@ -12,7 +12,6 @@ class PinsIndex extends React.Component {
       deleteTab: false
     };
 
-    this.toggleWarning = this.toggleWarning.bind(this);
   }
 
   componentWillMount() {
@@ -38,7 +37,7 @@ class PinsIndex extends React.Component {
     this.props.history.push(newRoute);
   }
 
-  toggleWarning() {
+  toggleWarning = () => {
     this.setState({deleteTab: !this.state.deleteTab})
   }
 

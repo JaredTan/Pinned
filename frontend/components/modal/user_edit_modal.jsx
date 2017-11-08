@@ -37,17 +37,14 @@ class UserEditModal extends React.Component {
     this.state = {
       modalOpen: false,
     };
-
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({ modalOpen: false });
     style.content.opacity = 0;
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({ modalOpen: true });
   }
 
@@ -56,7 +53,7 @@ class UserEditModal extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <button className="edit-user-modal-button" onClick={this.openModal}>Edit</button>
         <Modal

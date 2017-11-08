@@ -7,18 +7,15 @@ class BoardCreateForm extends React.Component {
       title: '',
       description: ''
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
   }
 
-  update(field) {
+  update = (field) => {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     let { createBoard, requestSingleUser, requestSinglePin, pin, currentUser, ownProps} = this.props
     const board = Object.assign({}, this.state);

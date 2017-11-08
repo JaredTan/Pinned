@@ -1,6 +1,5 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
-
 import BoardCreateModal from '../modal/board_create_modal';
 import { Link } from 'react-router-dom';
 import { values } from 'lodash';

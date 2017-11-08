@@ -1,18 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PinSearchDetailModal from '../modal/pin_search_detail_modal';
+import PinDetailModal from '../modal/pin_detail_modal';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {searchQuery: ""};
-    this.handleInput = this.handleInput.bind(this);
-    this.createResultsList = this.createResultsList.bind(this);
-    this.handleReset = this.handleReset.bind(this);
+    this.state = {
+      searchQuery: ""
+    };
   }
 
-  handleInput(e) {
+  handleInput = (e) => {
     e.preventDefault();
     setTimeout(this.setState({searchQuery: e.target.value}, () => this.props.requestSearchResults(this.state.searchQuery)), 50)
   }
@@ -21,18 +20,18 @@ class SearchBar extends React.Component {
     this.props.resetSearchResults();
   }
 
-  handleReset(e) {
+  handleReset = (e) => {
     e.preventDefault();
     this.setState({searchQuery: ""});
   }
 
-  createResultsList(items, type) {
+  createResultsList = (items, type) => {
     let {resetSearchResults} = this.props;
     const listItems = items.map((item, idx) => {
       if (type === "Pins") {
         return (
           <li key={idx} onClick={this.handleReset}>
-              <PinSearchDetailModal key={ item.id } pin={ item }>{item.title}</PinSearchDetailModal>
+              <PinDetailModal key={ item.id } pin={ item } search={ true }>{item.title}</PinDetailModal>
           </li>
         );
       } else if (type === "Boards") {
@@ -65,7 +64,7 @@ class SearchBar extends React.Component {
   }
 
     searchDropDown() {
-      const searchResults = this.props.searchResults;
+      const {searchResults} = this.props;
       const pins = searchResults.pins || [];
       const boards = searchResults.boards || [];
       const users = searchResults.users || [];
